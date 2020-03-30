@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>f r o n t n d . n i n j a</title>
+    <link rel="stylesheet" href="sass/style.scss" />
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Montserrat&display=swap" rel="stylesheet">
+
+  <body class="index">
+    <!--Læser portfolieprojekterne ind efter sorteringen-->
+    <template class="portfolio_skabelon">
+      <div class="portfolio_klonen">
+        <div class="hojde">
+          <p class="titel_klonen"></p>
+        </div>
+        <img src="" alt="" class="pic color" />
+      </div>
+    </template>
+
+    <!--Læser projektbillederne ind i singleview, som passer til det projekt der er klikket på-->
+    <template class="portfolio_single_skabelon">
+      <div class="projektbillede_wrapper">
+        <img src="" alt="" class="pic" />
+        <p class="enkelt_beskrivelse"></p>
+      </div>
+    </template>
+
+    <header>
+      <!--MOBILMENU-->
+      <nav class="mobile">
+        <div class="streg"></div>
+        <div class="burger_wrap">
+          <p class="person mobile_menu">person</p>
+          <div class="kryds2">
+            <img src="billeder/minus.svg" alt="luk" />
+          </div>
+
+          <p class="portfolio mobile_menu">portfolio</p>
+          <div class="kryds1">
+            <img src="billeder/minus.svg" alt="luk" />
+          </div>
+
+          <div class="home">
+            <img src="billeder/home.svg" alt="home" />
+          </div>
+        </div>
+        <div class="burger1">
+          <ul>
+            <li class="web filter" data-kategori="web_productions">web_productions</li>
+            <li class="graphics filter" data-kategori="graphics">graphics</li>
+            <li class="old_mobile filter" data-kategori="old_stuff">old_stuff</li>
+          </ul>
+        </div>
+        <div class="burger2">
+          <ul class="right">
+            <li class="cv_punkt">cv</li>
+            <li class="contact_punkt">contact</li>
+            <li class="me_punkt">me</li>
+          </ul>
+        </div>
+      </nav>
+
+      <!--DESKTOPMENU-->
+      <nav class="desk">
+        <div class="desk_wrap">
+          <div class="hojre_menupunkter">
+            <p class="desk_person desk_menu alm_punkt" id="person">person</p>
+            <ul class="desk_right fade_out">
+              <li id="cv" class="alm_punkt cv_punkt">cv</li>
+              <!--MAILLINK-->
+              <li id="contact" class="alm_punkt contact_punkt">contact</li>
+              <li id="me" class="alm_punkt me_punkt">me</li>
+            </ul>
+          </div>
+          <div class="desk_home">
+            <img src="billeder/home.svg" alt="home" />
+          </div>
+          <div class="venstre_menupunkter">
+            <p class="desk_portfolio desk_menu alm_punkt" id="portfolio">portfolio</p>
+            <ul class="desk_left fade_out">
+              <!--SORTERING PÅ INDEXSIDEN-->
+              <li id="web_productions" class="alm_punkt filter" data-kategori="web_productions">web_productions</li>
+              <li id="graphics" class="alm_punkt filter" data-kategori="graphics">graphics</li>
+              <li id="old_stuff" class="alm_punkt filter" data-kategori="old_stuff">old_stuff</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="scroll_to"></div>
+    <div class="index_position">
+      <div id="ninja">
+        <img class="logo" src="billeder/ninja_logo_alene.svg" alt="logo" />
+        <h1 class="navn"></h1>
+      </div>
+    </div>
+
+    <div class="om fade_out_quick" id="om">
+      <h1>[ p e r s o n ]</h1>
+      <h2>aspiring frontend ninja at your service</h2>
+      <p>Who am I and what are my core values, work ethics, dreams and ambitions?</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem dolor sed viverra ipsum nunc aliquet bibendum. In nibh mauris cursus mattis molestie a iaculis at erat. Mauris pharetra et ultrices neque ornare aenean. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Commodo ullamcorper a lacus vestibulum sed arcu. Cursus metus aliquam eleifend mi. Proin sagittis nisl rhoncus mattis rhoncus urna neque. Volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Justo eget magna fermentum iaculis eu non diam phasellus. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Penatibus et magnis dis parturient montes nascetur ridiculus mus mauris. Quis blandit turpis cursus in hac habitasse platea dictumst. Ut diam quam nulla porttitor massa id neque aliquam. Proin sed libero enim sed. Vitae purus faucibus ornare suspendisse. Proin fermentum leo vel orci porta. Placerat orci
+        nulla pellentesque dignissim enim sit amet. In iaculis nunc sed augue. Eu lobortis elementum nibh tellus molestie. Facilisi cras fermentum odio eu. Mi quis hendrerit dolor magna eget est. Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Dui vivamus arcu felis bibendum ut tristique. Vestibulum mattis ullamcorper velit sed ullamcorper morbi. Tristique sollicitudin nibh sit amet. Dolor purus non enim praesent elementum facilisis leo vel fringilla. Donec adipiscing tristique risus nec. Sodales neque sodales ut etiam sit. Euismod in pellentesque massa placerat duis ultricies lacus sed. Quam viverra orci sagittis eu. Sit amet mauris commodo quis imperdiet massa tincidunt. Dictum varius duis at consectetur lorem donec massa. Sit amet consectetur adipiscing elit ut. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. Ac feugiat sed lectus vestibulum. Tortor aliquam nulla facilisi cras fermentum odio eu feugiat. Suscipit tellus mauris a diam
+        maecenas sed. Tellus at urna condimentum mattis pellentesque id nibh. Egestas diam in arcu cursus euismod quis viverra nibh cras. Volutpat diam ut venenatis tellus. Nibh nisl condimentum id venenatis a condimentum vitae. Molestie a iaculis at erat pellentesque adipiscing commodo. Dui sapien eget mi proin sed libero enim. Consectetur a erat nam at lectus urna duis convallis convallis. Tincidunt praesent semper feugiat nibh sed pulvinar proin. Eu augue ut lectus arcu. Quisque egestas diam in arcu cursus euismod quis viverra nibh. At consectetur lorem donec massa. Elementum curabitur vitae nunc sed velit dignissim sodales. Lectus proin nibh nisl condimentum id. In eu mi bibendum neque egestas congue quisque egestas. Amet aliquam id diam maecenas ultricies. Eget dolor morbi non arcu risus quis. Sollicitudin tempor id eu nisl nunc mi ipsum. Vitae tortor condimentum lacinia quis vel. Id interdum velit laoreet id donec ultrices. Tempor commodo ullamcorper a lacus vestibulum sed arcu
+        non odio. Euismod quis viverra nibh cras pulvinar mattis nunc sed blandit. Turpis egestas sed tempus urna et pharetra pharetra massa. Fames ac turpis egestas sed tempus urna. Urna et pharetra pharetra massa. Bibendum at varius vel pharetra vel turpis nunc eget. Iaculis urna id volutpat lacus laoreet non curabitur gravida arcu. Adipiscing tristique risus nec feugiat in fermentum posuere. Praesent semper feugiat nibh sed pulvinar proin. Lacinia quis vel eros donec ac. Dui accumsan sit amet nulla facilisi morbi tempus iaculis.
+      </p>
+    </div>
+
+    <section class="portfolioet" id="portfolioet">
+      <h1>[ p o r t f o l i o ]</h1>
+      <p class="tell">
+        This portfolio and the list of projects is an ongoing process. Check in one in a while, and maybe you'll see new and exciting stuff from time to time.
+      </p>
+      <h3 class="kategori"></h3>
+
+      <!---POPUP SINGLE-->
+      <article class="hide projekt_popup">
+        <div class="luk">
+          <img src="billeder/luk_u_ring.svg" alt="luk" />
+        </div>
+        <div class="beskrivelse_wrapper">
+          <h1 class="overskrift_beskriv">Overskrift</h1>
+          <img src="billeder/info_brackets_font2.svg" alt="info" class="info" />
+          <img src="billeder/tilbage.svg" alt="info" class="tilbage hide" />
+          <p class="beskrivelse"></p>
+          <a href="" target="_blank" rel="noreferrer" class="live a">link to website</a>
+        </div>
+        <h1 class="titel"></h1>
+        <div class="projekt_billede_liste"></div>
+      </article>
+      <!---POPUP ENKELT BILLEDE-->
+      <article class="single fade_out">
+        <div class="luk enkelt">
+          <img src="billeder/luk_u_ring.svg" alt="luk" />
+        </div>
+        <img src="" alt="" class="et_billede" />
+        <p class="beskriv"></p>
+      </article>
+      <article class="portfolio_liste"></article>
+    </section>
+
+    <section class="grid_container looking_glass">
+      <div class="background_above">
+        <article class="grid_pictures">
+          <div class="itemA item1">1</div>
+          <div class="itemA item2">2</div>
+          <div class="itemA item3">3</div>
+          <div class="itemA item4">4</div>
+          <div class="itemA item5">5</div>
+          <div class="itemA item6">6</div>
+        </article>
+      </div>
+      <div class="background_below">
+        <article class="grid_pictures">
+          <div class="itemB item7">7</div>
+          <div class="itemB item8">8</div>
+          <div class="itemB item9">9</div>
+          <div class="itemB item10">10</div>
+          <div class="itemB item11">11</div>
+          <div class="itemB item12">12</div>
+        </article>
+      </div>
+    </section>
+    <div class="right_arrow">R</div>
+    <div class="left_arrow">L</div>
+
+
+    <!--POPUP CONTACT-->
+    <div class="contact hide">
+      <h1>[ c o n t a c t ]</h1>
+      <p class="skriv_tekst fade_out">
+        Should your email by any chance not open up, then you can contact me by filling out this form. I will get back to you ASAP.
+      </p>
+    </div>
+
+    <!--POPUP CV-->
+    <div class="cv hide">
+      <h1>[ c v ]</h1>
+      <ol class="fade_out">
+        <li>Uddannelse</li>
+        <li>Certifikater</li>
+        <li>Skills i: (evt. animeret infografik)</li>
+        <ol>
+          <li>photoshop</li>
+          <li>indesign</li>
+          <li>illustrator</li>
+          <li>html</li>
+          <li>css</li>
+          <li>javascript</li>
+        </ol>
+        <li>billede</li>
+        <li>Jobs</li>
+        <li>Sprog (også gerne animeret infografik) - forstå, læse, tale, skrive</li>
+        <li></li>
+      </ol>
+    </div>
+
+    <footer>
+      <p>© f r o n t n d . n i n j a &nbsp;&nbsp;&nbsp;<span class="year">2 0 2 0</span>.</p>
+    </footer>
+    <div class="fixed_scroll">
+      <div class="progress-container"> 
+        <div id="scrollbar"></div>
+      </div>
+    </div> 
+
+
+    <script src="script.js"></script>
+  </body>
+</html>

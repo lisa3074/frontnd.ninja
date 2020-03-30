@@ -1,0 +1,59 @@
+/* The looking-glass */
+.grid_container {
+  width: 80vw;
+  height: 60vh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* The div that slides the upper grid */
+.background_above {
+  width: 240vw;
+  height: 30vh;
+}
+
+/* The div that slides the lower grid */
+.background_below {
+  width: 240vw;
+  height: 30vh;
+  transform: translateX(-160vw);
+}
+/* The grid itself (used on both slides) */
+.grid_pictures {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 40vw);
+  grid-template-rows: 30vh;
+  width: 240vw;
+  height: 30vh;
+  margin: 0 auto;
+}
+
+/* The items in each of the two grid-rows */
+.itemA,
+.itemB {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  border: 1px solid black;
+}
+/* The css variable that calculates the movement og the lower grid */
+.itemB {
+  transform: translateX(calc(var(--positionB) * 1vw));
+  transition: 0.5s;
+}
+/* The css variable that calculates the movement og the upper grid */
+.itemA {
+  transform: translateX(calc(var(--positionA) * 1vw));
+  transition: 0.5s;
+}
+/* The divs that control which way the grid slides */
+.right_arrow,
+.left_arrow {
+  background-color: blue;
+  height: 50px;
+  width: 50px;
+}
+/* For the aroows, when the slide is out of pictures */
+.none {
+  pointer-events: none;
+}
