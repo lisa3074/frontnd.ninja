@@ -8,22 +8,18 @@
 
 /* The div that slides the upper grid */
 .background_above {
-  width: 240vw;
   height: 30vh;
 }
 
 /* The div that slides the lower grid */
 .background_below {
-  width: 240vw;
   height: 30vh;
-  transform: translateX(-160vw);
 }
 /* The grid itself (used on both slides) */
 .grid_pictures {
   display: grid;
   grid-template-columns: repeat(auto-fill, 40vw);
   grid-template-rows: 30vh;
-  width: 240vw;
   height: 30vh;
   margin: 0 auto;
 }

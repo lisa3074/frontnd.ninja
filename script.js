@@ -1,6 +1,6 @@
 "use strict";
 import "@babel/polyfill";
-import { galleryStart } from "./modules/gallery";
+import { galleryStart } from "./modules/portfolio";
 import { burgerMenu } from "./modules/burger";
 import { menuPunkterDesk } from "./modules/deskNavigation";
 import { deskMenu } from "./modules/deskNavigation";

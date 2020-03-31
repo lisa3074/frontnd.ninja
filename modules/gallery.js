@@ -1,4 +1,4 @@
-let gridPositionA;
+/* let gridPositionA;
 let gridPositionB;
 export function galleryStart() {
   gridPositionA = 0;
@@ -53,4 +53,4 @@ function pointerEvents() {
   } else {
     document.querySelector(".left_arrow").classList.remove("none");
   }
-}
+} */
