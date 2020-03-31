@@ -43,6 +43,7 @@ export function burgerMenu() {
   });
 
   portfolio.addEventListener("click", function() {
+    document.querySelector("#portfolioet").classList.remove("hide");
     portfolio.classList = "scale_down portfolio mobile_menu";
     burger1.classList = "transition_left burger1";
     burger2.classList = "transition_right_back burger2";

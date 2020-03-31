@@ -13,7 +13,7 @@
 
 /* The div that slides the lower grid */
 .background_below {
-  height: 30vh;
+  height: 25vh;
 }
 /* The grid itself (used on both slides) */
 .grid_pictures {
@@ -29,8 +29,6 @@
 .itemB {
   width: 100%;
   height: 100%;
-  background-color: red;
-  border: 1px solid black;
 }
 /* The css variable that calculates the movement og the lower grid */
 .itemB {
@@ -43,14 +41,78 @@
   transform: translateX(calc(0vw + var(--positionA) * 1vw));
   transition: 0.5s;
 }
+.arrow_wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: center;
+}
 /* The divs that control which way the grid slides */
+.right_arrow img,
+.left_arrow img {
+  height: 12vw;
+  width: auto;
+  object-fit: contain;
+}
 .right_arrow,
 .left_arrow {
-  background-color: blue;
-  height: 50px;
-  width: 50px;
+  height: 10vw;
+  width: 10vw;
+  z-index: 0;
+  margin: 10vw 12vw;
+  text-align: center;
 }
+
 /* For the aroows, when the slide is out of pictures */
 .none {
   pointer-events: none;
+}
+
+@media (min-width: 500px) {
+  .right_arrow img,
+  .left_arrow img {
+    height: 7vw;
+  }
+  .right_arrow,
+  .left_arrow {
+    height: 7vw;
+    width: 7vw;
+    margin: 5vw 7vw;
+  }
+}
+@media (min-width: 700px) {
+  .right_arrow img,
+  .left_arrow img {
+    height: 5vw;
+  }
+  .right_arrow,
+  .left_arrow {
+    height: 5vw;
+    width: 5vw;
+    margin: 5vw 5vw;
+  }
+}
+@media (min-width: 900px) {
+  .right_arrow img,
+  .left_arrow img {
+    height: 4vw;
+  }
+  .right_arrow,
+  .left_arrow {
+    height: 4vw;
+    width: 4vw;
+    margin: 4vw 4vw;
+  }
+}
+@media (min-width: 1100px) {
+  .right_arrow img,
+  .left_arrow img {
+    height: 3vw;
+  }
+  .right_arrow,
+  .left_arrow {
+    height: 5vw;
+    width: 5vw;
+    margin: 2vw 3vw;
+  }
 }

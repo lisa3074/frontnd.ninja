@@ -75,19 +75,25 @@ function displayPortfolio() {
           checkType(project, singlePicInfo, projectList);
         });
         portfolioGridB.appendChild(klon);
-        if (count < 4 || count == 4) {
-          document.querySelector(".right_arrow").classList.add("none");
-          document.querySelector(".left_arrow").classList.add("none");
-        } else {
-          document.querySelector(".right_arrow").classList.remove("none");
-          document.querySelector(".left_arrow").classList.add("none");
-        }
         countLength();
       }
     }
   });
+  hideArrows();
 }
-
+function hideArrows() {
+  if (count < 4 || count == 4) {
+    document.querySelector(".right_arrow").classList.add("none");
+    document.querySelector(".left_arrow").classList.add("none");
+    document.querySelector(".left_arrow").classList.add("greyed_out");
+    document.querySelector(".right_arrow").classList.add("greyed_out");
+  } else {
+    document.querySelector(".right_arrow").classList.remove("none");
+    document.querySelector(".right_arrow").classList.remove("greyed_out");
+    document.querySelector(".left_arrow").classList.add("none");
+    document.querySelector(".left_arrow").classList.add("greyed_out");
+  }
+}
 function displayProjectInfo(project, projectList) {
   console.log("projektListe");
   const singlePicTemplate = document.querySelector(".portfolio_single_skabelon");
@@ -156,7 +162,9 @@ export function filtrering() {
     knap.addEventListener("click", function() {
       filter = this.dataset.kategori;
       console.log(filter);
-      displayPortfolio();
+      setTimeout(() => {
+        displayPortfolio();
+      }, 500);
       resetGridPositions();
     });
   });
@@ -225,6 +233,7 @@ function countLength() {
     gridLength = Math.round(gridfirst) * 40;
     console.log("gridLength" + " " + gridLength);
   }
+  hideArrows();
   setLength();
 }
 
@@ -246,13 +255,17 @@ function pointerEvents() {
   console.log(translate);
   if (gridPositionA == "-" + translate) {
     document.querySelector(".right_arrow").classList.add("none");
+    document.querySelector(".right_arrow").classList.add("greyed_out");
   } else {
     document.querySelector(".right_arrow").classList.remove("none");
+    document.querySelector(".right_arrow").classList.remove("greyed_out");
   }
   if (gridPositionB == 0) {
     document.querySelector(".left_arrow").classList.add("none");
+    document.querySelector(".left_arrow").classList.add("greyed_out");
   } else {
     document.querySelector(".left_arrow").classList.remove("none");
+    document.querySelector(".left_arrow").classList.remove("greyed_out");
   }
 }
 
