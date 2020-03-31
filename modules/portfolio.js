@@ -105,7 +105,7 @@ function displayProjectInfo(project, projectList) {
       klon.querySelector("img").src = billede.billede.guid;
       klon.querySelector(".enkelt_beskrivelse").textContent = billede.beskrivelse;
       checkLink(project);
-      listen(klon);
+      listen(klon, billede);
       projectList.appendChild(klon);
     }
   });
@@ -129,7 +129,7 @@ function checkType(project, singlePicInfo, projectList) {
   }
 }
 
-function listen(klon) {
+function listen(klon, billede) {
   klon.firstElementChild.addEventListener("click", function() {
     document.querySelector(".single").classList = "single fade_in_quick";
     document.querySelector(".et_billede").src = billede.billede.guid;
