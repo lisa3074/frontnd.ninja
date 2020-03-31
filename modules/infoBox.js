@@ -1,4 +1,4 @@
-const opacityContainers = document.querySelectorAll(".beskrivelse, .overskrift_beskriv, .live");
+const opacityContainers = document.querySelectorAll(".beskrivelse, .overskrift_beskriv, .link");
 
 export function delegateBox() {
   document.querySelector(".info").addEventListener("mouseenter", displayInfo);
@@ -19,7 +19,6 @@ function displayInfo() {
   setTimeout(function() {
     console.log("opacity 1, mouse");
     opacityContainers.forEach(container => {
-      //container.style.opacity = "1";
       container.classList.add("fade_in_quick");
       container.classList.remove("fade_out_quick");
     });
@@ -47,7 +46,6 @@ function closeInfo() {
   opacityContainers.forEach(container => {
     container.classList.remove("fade_in_quick");
     container.classList.add("fade_out_quick");
-    //container.style.opacity = "0";
   });
   delegateBox();
 }

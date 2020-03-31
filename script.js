@@ -4,7 +4,7 @@ import { galleryStart } from "./modules/gallery";
 import { burgerMenu } from "./modules/burger";
 import { menuPunkterDesk } from "./modules/deskNavigation";
 import { deskMenu } from "./modules/deskNavigation";
-import { hentJson } from "./modules/portfolio";
+import { loadPortfolio, loadProjectInfo } from "./modules/portfolio";
 import { filtrering } from "./modules/portfolio";
 import { delegateBox } from "./modules/infoBox";
 
@@ -28,7 +28,8 @@ function mainDelegation() {
   menuPunkterDesk();
   burgerMenu();
   deskMenu();
-  hentJson();
+  loadPortfolio();
+  loadProjectInfo();
   filtrering();
   isAboutVisible();
   galleryStart();
@@ -62,18 +63,3 @@ function isAboutVisible() {
     document.querySelector("#om").classList = "fade_out_slow om";
   }
 }
-
-/* function projektListe() {
-  console.log("projektListe");
-  const projektListe = document.querySelector(".projekt_billede_liste");
-  const projektSkabelon = document.querySelector(".portfolio_single_skabelon");
-  projektListe.innerHTML = "";
-
-  projektBilleder.forEach(billede => {
-    if (projekt.sorteringstitel == billede.sorteringstitel) {
-      const klon = projektSkabelon.cloneNode(true).content;
-      klon.querySelector("img").src = billede.billede.guid;
-      portfolioListe.appendChild(klon);
-    }
-  });
-} */

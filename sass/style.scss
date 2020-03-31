@@ -1,17 +1,19 @@
 /* 
- * 00: GENERELT
- * 01: INDEX
- * 02: MENU
- * 03: 
- * 04:
- * 05:
- * 06: ANIMATIONER
- * 07: MEDIAQUERIES
- * 08: DIVERSE
+ * 00 IMPORT PARTIALS
+ * 01: GENERELT
+ * 02: LOADING
+ * 03: INDEX
+ * 04: OM 
+ * 05: PORTFOLIO
+ * 06: KONTAKT
+ * 07: ANIMATIONER
+ * 08: MEDIAQUERIES
+ * 09: DIVERSE
 */
 
 /*--------------IMPORT PARTIALS--------------*/
 @use 'partials/gallery.scss';
+@use 'partials/menu.scss';
 
 /*--------------GENERELT--------------*/
 *,
@@ -109,198 +111,9 @@ footer p {
   padding-left: 2rem;
   margin-bottom: 2rem;
 }
-
-/*--------------MENU--------------*/
-.desk {
-  display: none;
+.year {
+  letter-spacing: 3px;
 }
-
-nav {
-  width: 100%;
-  height: 60px;
-  text-align: center;
-  position: fixed;
-  background-color: white;
-  top: 0.5rem;
-  left: 0;
-  z-index: 2;
-}
-
-.desk {
-  z-index: 2;
-  border-bottom: 1px solid black;
-}
-
-.streg {
-  width: 100%;
-  height: 60px;
-  position: fixed;
-  top: 1rem;
-  border-bottom: 1px solid black;
-  pointer-events: none;
-  z-index: 12;
-}
-
-nav .burger_wrap {
-  z-index: 11;
-}
-
-.mobile_menu,
-.desk_menu {
-  display: inline-block;
-  font-size: 1.1rem;
-  margin: 0;
-  top: 1.3rem;
-}
-
-.desk_menu {
-  font-size: 0.9rem;
-}
-
-.kryds2 {
-  position: absolute;
-  right: 2rem;
-}
-
-.navn {
-  text-align: center;
-  letter-spacing: 2px;
-  margin: 0;
-  padding: 1rem 0;
-  font-size: 1.35rem;
-  font-weight: 400;
-}
-
-.kryds1 {
-  position: absolute;
-  left: 2rem;
-}
-
-.desk_person,
-.desk_portfolio,
-.desk_punkt {
-  z-index: 13;
-}
-
-.person,
-.desk_person {
-  position: absolute;
-  text-align: right;
-  right: 0;
-  letter-spacing: 2px;
-  padding: 2.3rem 2rem 2.3rem 2rem;
-  top: -1rem;
-}
-
-.desk_portfolio,
-.portfolio {
-  left: 0rem;
-  padding: 2.3rem 2rem 2.3rem 2rem;
-  top: -1rem;
-  position: absolute;
-  letter-spacing: 2px;
-}
-
-.kryds1,
-.kryds2 {
-  top: 0.2rem;
-  transform: scale(0);
-}
-
-.home,
-.desk_home {
-  margin: 0 auto;
-  padding-top: 0.6rem;
-}
-
-.desk_home,
-.home {
-  width: 100px;
-}
-
-.burger1,
-.burger2 {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  z-index: 9;
-  background-color: white;
-  margin-top: 60px;
-}
-
-.burger2 {
-  right: -100vw;
-}
-
-.burger1 {
-  right: 100vw;
-  text-align: left;
-}
-
-.right {
-  text-align: right;
-}
-
-ul {
-  margin-top: 10vh;
-  padding: 0;
-}
-
-nav li {
-  color: black;
-  padding: 1rem 2rem;
-  list-style: none;
-  font-size: 1.8rem;
-  line-height: 3rem;
-  letter-spacing: 2px;
-}
-
-.desk_right li,
-.desk_left li {
-  display: inline;
-  font-size: 0.9rem;
-  //height: 60px;
-  letter-spacing: 2px;
-}
-
-.desk_right,
-.desk_left {
-  position: fixed;
-  height: 60px;
-  top: 0.4rem;
-  margin-top: 0;
-}
-
-.desk_right {
-  right: 0rem;
-}
-
-.desk_left {
-  left: 0rem;
-}
-
-.kryds1 img,
-.kryds2 img {
-  padding: 0.5rem;
-  width: 3.5rem;
-  height: 3.5rem;
-}
-
-.kryds1 {
-  left: 3rem;
-}
-
-.kryds2 {
-  right: 3rem;
-}
-
-.home img,
-.desk_home img {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
 /*--------------LOADING--------------*/
 
 #scrollbar {
@@ -360,8 +173,6 @@ nav li {
 }
 
 #ninja {
-  /* position: absolute;
-    top: 27vh; */
   width: 100%;
   height: 100vh;
 }
@@ -379,7 +190,7 @@ nav li {
   width: 100%;
 }
 
-/*--------------INDEX/OM--------------*/
+/*--------------OM--------------*/
 
 .om {
   width: 100%;
@@ -389,11 +200,7 @@ nav li {
   padding-top: 80px;
 }
 
-.year {
-  letter-spacing: 3px;
-}
-
-/*--------------INDEX/PORTFOLIO--------------*/
+/*--------------PORTFOLIO--------------*/
 
 .portfolioet {
   width: 100%;
@@ -518,9 +325,6 @@ nav li {
 .projekt_popup::-webkit-scrollbar,
 .beskrivelse_wrapper::-webkit-scrollbar {
   display: none;
-  /*width: 0px;
-    background: rgba(228, 204, 200, 1);
-    -webkit-box-shadow: inset 0 0 6px rgb(228, 204, 200);*/
 }
 
 .info,
@@ -568,7 +372,7 @@ nav li {
   display: none;
 }
 
-.live {
+.link {
   padding: 2rem;
   font-size: 1rem;
   font-weight: 600;
@@ -621,7 +425,7 @@ nav li {
   left: 0rem;
 }
 
-/*--------------INDEX/CONTACT--------------*/
+/*---------------KONTAKT---------------*/
 
 .contact {
   width: 100%;
@@ -639,7 +443,6 @@ nav li {
   padding: 0 2rem;
 }
 
-/*--------------INDEX/CV-CONTACT-OLD STUFF--------------*/
 .contact,
 .cv {
   width: 100%;
@@ -818,12 +621,6 @@ nav li {
   }
 }
 
-@media (min-width: 501px) {
-  .mobile_menu {
-    font-size: 0.9rem;
-  }
-}
-
 @media (min-width: 650px) {
   .portfolio_liste {
     grid-template-columns: repeat(3, 1fr);
@@ -862,32 +659,6 @@ nav li {
 }
 
 @media (min-width: 700px) {
-  .mobile {
-    display: none;
-  }
-
-  .desk {
-    display: block;
-  }
-
-  .desk li {
-    padding: 0 0 0 2rem;
-  }
-
-  .home_left {
-    transition: 1.5s;
-    transform: translateX(23vw);
-  }
-
-  .home_right {
-    transition: 1.5s;
-    transform: translateX(-23vw);
-  }
-
-  nav {
-    top: 0;
-  }
-
   .portfolioet,
   .person,
   .cv,
@@ -913,18 +684,6 @@ nav li {
 }
 
 @media (min-width: 900px) {
-  .desk li {
-    padding: 2rem 2rem;
-  }
-
-  .home_left {
-    transform: translateX(23vw);
-  }
-
-  .home_right {
-    transform: translateX(-23vw);
-  }
-
   .enlarge {
     transition: 1.5s;
     width: 40vw;

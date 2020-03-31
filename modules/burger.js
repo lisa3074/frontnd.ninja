@@ -1,15 +1,15 @@
 export function burgerMenu() {
   console.log("burgerMenu");
-  let person = document.querySelector(".person");
-  let portfolio = document.querySelector(".portfolio");
-  let burger1 = document.querySelector(".burger1");
-  let burger2 = document.querySelector(".burger2");
-  let kryds1 = document.querySelector(".kryds1");
-  let kryds2 = document.querySelector(".kryds2");
-  let home = document.querySelector(".home");
-  let streg = document.querySelector(".streg");
-  let cv = document.querySelector(".cv");
-  let contact = document.querySelector(".contact");
+  const person = document.querySelector(".person");
+  const portfolio = document.querySelector(".portfolio");
+  const burger1 = document.querySelector(".burger1");
+  const burger2 = document.querySelector(".burger2");
+  const kryds1 = document.querySelector(".kryds1");
+  const kryds2 = document.querySelector(".kryds2");
+  const home = document.querySelector(".home");
+  const streg = document.querySelector(".streg");
+  const cv = document.querySelector(".cv");
+  const contact = document.querySelector(".contact");
 
   person.addEventListener("click", function() {
     person.classList.remove("scale_up");
