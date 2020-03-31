@@ -31,7 +31,7 @@ function countJSON() {
 }
 
 function displayPortfolio() {
-  console.log("hentPortfolio");
+  console.log("displayPortfolio");
   // const portfolioList = document.querySelector(".portfolio_liste");
   const portfolioGridA = document.querySelector(".above");
   const portfolioGridB = document.querySelector(".below");
@@ -75,10 +75,17 @@ function displayPortfolio() {
           checkType(project, singlePicInfo, projectList);
         });
         portfolioGridB.appendChild(klon);
+        if (count < 4 || count == 4) {
+          document.querySelector(".right_arrow").classList.add("none");
+          document.querySelector(".left_arrow").classList.add("none");
+        } else {
+          document.querySelector(".right_arrow").classList.remove("none");
+          document.querySelector(".left_arrow").classList.add("none");
+        }
+        countLength();
       }
     }
   });
-  countLength();
 }
 
 function displayProjectInfo(project, projectList) {
@@ -149,11 +156,8 @@ export function filtrering() {
     knap.addEventListener("click", function() {
       filter = this.dataset.kategori;
       console.log(filter);
-      setTimeout(function() {
-        displayPortfolio();
-        galleryStart();
-        resetGridPositions();
-      }, 500);
+      displayPortfolio();
+      resetGridPositions();
     });
   });
 }
@@ -161,10 +165,10 @@ export function filtrering() {
 let gridPositionA;
 let gridPositionB;
 export function galleryStart() {
-  console.log("galleryStart");
+  console.log("||galleryStart");
   gridPositionA = 0;
   gridPositionB = 0;
-  console.log(gridPositionA + gridPositionB);
+  console.log(gridPositionA + " " + gridPositionB);
   console.log("start");
   document.querySelector(".right_arrow").addEventListener("click", function() {
     moveStuffR();
@@ -175,10 +179,12 @@ export function galleryStart() {
 }
 
 function moveStuffR() {
+  console.log("||moveStuffR");
   gridPositionA += -40;
   gridPositionB += 40;
   console.log("right");
   document.querySelectorAll(".itemA").forEach(item => {
+    //item.style.transform = `translateX(40vw);`;
     item.style.setProperty("--positionA", gridPositionA);
     console.log(gridPositionA);
   });
@@ -188,7 +194,9 @@ function moveStuffR() {
   });
   pointerEvents();
 }
+
 function moveStuffL() {
+  console.log("||moveStuffL");
   gridPositionA += 40;
   gridPositionB += -40;
   console.log("left");
@@ -204,9 +212,12 @@ function moveStuffL() {
 }
 
 function countLength() {
-  console.log("countLength");
+  console.log("||countLength");
   if (count % 2 == 0) {
-    gridLength = (count / 2) * 40;
+    let gridfirst = count / 2;
+    console.log("gridFirst" + " " + gridfirst);
+    gridLength = Math.round(gridfirst) * 40;
+    //gridLength = (count / 2) * 40;
     console.log("gridLength" + " " + gridLength);
   } else {
     let gridfirst = count / 2;
@@ -218,7 +229,7 @@ function countLength() {
 }
 
 function setLength() {
-  console.log("setLength");
+  console.log("||setLength");
   translate = gridLength - 80;
 
   console.log(translate);
@@ -231,7 +242,7 @@ function setLength() {
 }
 
 function pointerEvents() {
-  console.log("pointerEvents");
+  console.log("||pointerEvents");
   console.log(translate);
   if (gridPositionA == "-" + translate) {
     document.querySelector(".right_arrow").classList.add("none");
@@ -246,6 +257,7 @@ function pointerEvents() {
 }
 
 function resetGridPositions() {
+  console.log("||resetGridPositions");
   gridPositionA = 0;
   gridPositionB = 0;
 }

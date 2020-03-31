@@ -3,6 +3,8 @@ import "@babel/polyfill";
 import { galleryStart } from "./modules/portfolio";
 import { burgerMenu } from "./modules/burger";
 import { menuPunkterDesk } from "./modules/deskNavigation";
+import { clickPortfolio } from "./modules/deskNavigation";
+import { clickHome } from "./modules/deskNavigation";
 import { deskMenu } from "./modules/deskNavigation";
 import { loadPortfolio, loadProjectInfo } from "./modules/portfolio";
 import { filtrering } from "./modules/portfolio";
@@ -47,7 +49,7 @@ function displayYear() {
 
 function displayScrollbar() {
   position = container.scrollTop / (container.scrollHeight - container.clientHeight);
-  //console.log("position" + position);
+  // console.log("position" + position);
   scrollBar.style.setProperty("--position", position);
 }
 
@@ -61,5 +63,13 @@ function isAboutVisible() {
   }
   if (position > "0.6") {
     document.querySelector("#om").classList = "fade_out_slow om";
+  }
+  if (position > "0.7") {
+    //console.log("over7");
+    //document.querySelector("#web_productions").textContent = "[web_productions]";
+    // clickPortfolio();
+  }
+  if (position < "0.6") {
+    //clickHome();
   }
 }
