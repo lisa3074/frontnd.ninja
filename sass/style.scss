@@ -14,6 +14,7 @@
 /*--------------IMPORT PARTIALS--------------*/
 @use 'partials/gallery.scss';
 @use 'partials/menu.scss';
+@use 'partials/cv.scss';
 
 /*--------------GENERELT--------------*/
 *,
@@ -606,13 +607,13 @@ figure {
 }
 
 .fade_out {
-  transition: 2s;
+  transition: 0.5s;
   opacity: 0;
   z-index: -1;
 }
 
 .fade_in {
-  transition: 2s;
+  transition: 0.5s;
   opacity: 1;
   z-index: 15;
 }

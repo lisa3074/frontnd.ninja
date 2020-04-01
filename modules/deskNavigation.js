@@ -117,7 +117,7 @@ function clickHome() {
   setTimeout(function() {
     deskPerson.classList = "desk_person desk_menu fade_in alm_punkt";
     deskPortfolio.classList = "desk_portfolio desk_menu fade_in alm_punkt";
-  }, 700);
+  }, 400);
   desk.classList.remove("height_up_down");
   index.offsetHeight;
   desk.classList.add("height_up_down");
@@ -139,7 +139,7 @@ function clickPerson() {
   deskHome.classList = "desk_home home_right";
   setTimeout(function() {
     deskPerson.classList = "fade_out desk_person desk_menu alm_punkt";
-  }, 800);
+  }, 500);
   deskLeft.classList = "desk_left fade_out";
   desk.classList.add("height_up_down");
   deskRLi.forEach(RPunkt => {
@@ -148,7 +148,7 @@ function clickPerson() {
   setTimeout(function() {
     deskRight.classList = "desk_right fade_in";
     deskPortfolio.classList.add("fade_in");
-  }, 1500);
+  }, 800);
   document.querySelector(".om").scrollIntoView({
     behavior: "smooth",
     block: "start"
@@ -166,7 +166,7 @@ function clickPortfolio() {
   deskHome.classList = "desk_home home_left";
   setTimeout(function() {
     deskPortfolio.classList = "desk_menu desk_portfolio fade_out alm_punkt";
-  }, 800);
+  }, 500);
   deskRight.classList = "desk_right fade_out";
 
   deskRLi.forEach(RPunkt => {
@@ -175,7 +175,7 @@ function clickPortfolio() {
   setTimeout(function() {
     deskLeft.classList = "desk_left fade_in";
     deskPerson.classList = "desk_person desk_menu fade_in alm_punkt";
-  }, 1500);
+  }, 800);
   desk.classList.remove("height_up_down");
   index.offsetHeight;
   desk.classList.add("height_up_down");

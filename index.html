@@ -185,24 +185,36 @@
 
     <!--POPUP CV-->
     <div class="cv hide">
-      <h1>[ c v ]</h1>
-      <ol class="fade_out">
-        <li>Uddannelse</li>
-        <li>Certifikater</li>
-        <li>Skills i: (evt. animeret infografik)</li>
-        <ol>
-          <li>photoshop</li>
-          <li>indesign</li>
-          <li>illustrator</li>
-          <li>html</li>
-          <li>css</li>
-          <li>javascript</li>
-        </ol>
-        <li>billede</li>
-        <li>Jobs</li>
-        <li>Sprog (også gerne animeret infografik) - forstå, læse, tale, skrive</li>
-        <li></li>
-      </ol>
+      <div class="submenu_wrapper">
+        <div class="submenu_container">
+        <h1>[<span class="cv_headings">education</span>]</h1>
+        <img class="submenu_arrow down rotate_arrow" src="/static/billeder/next.png" alt="next">
+      </div>
+        <div class="arrow_container">
+        <img class="submenu_arrow side" src="/static/billeder/next.png" alt="next">
+      </div>
+      <nav class="cv_nav_mobile hide">
+        <ul>
+          <li id="education" class="sub_cv"><a href="#edu">education</a>
+          <li id="experience" class="sub_cv"><a href="#exp">experience</a></li>
+          <li id="tech" class="sub_cv"><a href="#tec">tech</a></li>
+          <li id="software" class="sub_cv"> <a href="#soft">software</a></li>
+          <li id="other" class="sub_cv"> <a href="#oth">other</a></li>
+          <li id="language" class="sub_cv"><a href="#lan">language</a></li>          
+        </ul>
+      </nav>
+      <nav class="cv_nav_desk hide"></nav>
+    </div>
+      <article class="grid_cv">
+        <div id="edu" class="grid_section education">education</div>
+        <div id="exp" class="grid_section experience">experience</div>
+        <div id="tec" class="grid_section tech">technologies</div>
+        <div id="soft" class="grid_section software">software</div>
+        <div id="oth" class="grid_section other">other</div>
+        <div id="lan" class="grid_section language">language</div>
+      </article>
+     
+    
     </div>
 
     <footer>

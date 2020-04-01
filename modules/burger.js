@@ -111,20 +111,20 @@ export function burgerMenu() {
   document.querySelector(".cv_punkt").addEventListener("click", function() {
     document.querySelector(".cv").classList = "cv";
     setTimeout(function() {
-      document.querySelector(".cv ol").classList = "fade_in";
+      document.querySelector(".cv ol").classList = ":slow";
     }, 500);
     document.querySelector(".contact").classList = "contact hide";
-    document.querySelector(".skriv_tekst").classList = "fade_out skriv_tekst";
+    document.querySelector(".skriv_tekst").classList = "fade_out_slow skriv_tekst";
     dry();
   });
   //mobil
   document.querySelector(".contact_punkt").addEventListener("click", function() {
     document.querySelector(".contact").classList = "contact";
     setTimeout(function() {
-      document.querySelector(".skriv_tekst").classList = "fade_in skriv_tekst";
+      document.querySelector(".skriv_tekst").classList = "fade_in_slow skriv_tekst";
     }, 500);
     document.querySelector(".cv").classList = "cv hide";
-    document.querySelector(".cv ol").classList = "fade_out";
+    document.querySelector(".cv ol").classList = "fade_out_slow";
     dry();
   });
   //mobil

@@ -7,6 +7,7 @@ import { subMenu } from "./modules/deskNavigation";
 import { loadPortfolio, loadProjectInfo } from "./modules/portfolio";
 import { filtrering } from "./modules/portfolio";
 import { delegateBox } from "./modules/infoBox";
+import { delegatenCv } from "./modules/cv";
 
 const index = document.querySelector(".index");
 let position = 0;
@@ -31,6 +32,7 @@ function mainDelegation() {
   galleryStart();
   displayYear();
   delegateBox();
+  delegatenCv();
   container.addEventListener("scroll", displayScrollbar);
   container.addEventListener("scroll", invertColors);
   container.addEventListener("scroll", isAboutVisible);
