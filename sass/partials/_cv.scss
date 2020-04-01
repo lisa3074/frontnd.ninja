@@ -5,7 +5,7 @@
   object-fit: contain;
 }
 .side {
-  margin-left: 3em;
+  margin: 1.2rem 3rem;
 }
 .submenu_wrapper {
   width: 100%;
@@ -33,11 +33,11 @@
 }
 
 .arrow_container {
-  display: flex;
+  /*   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   width: 15px;
-  justify-items: flex-end;
+  justify-items: flex-end; */
 }
 
 .grid_cv {
@@ -53,7 +53,8 @@
 
 .grid_section {
   scroll-snap-align: start;
-  //transform: translateX(calc(var(--currPos) * 1vw));
+  transition: 1s;
+  transform: translateX(calc(var(--currPos) * 1vw));
 }
 
 #go {
@@ -109,5 +110,21 @@
   }
   .side {
     width: 1vw;
+  }
+}
+@media (max-height: 400px) {
+  .grid_cv {
+    margin: 3rem auto;
+  }
+  .side {
+    margin-top: 1.5rem;
+  }
+
+  .submenu_container,
+  .arrow_container {
+    height: 5rem;
+  }
+  .submenu_container {
+    width: 85vw;
   }
 }

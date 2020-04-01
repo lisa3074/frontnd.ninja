@@ -177,13 +177,6 @@ footer p {
   padding-top: 4rem;
 }
 
-.logo {
-  width: 100%;
-
-  height: auto;
-  object-fit: cover;
-}
-
 .prov {
   position: absolute;
   top: 100vh;
@@ -203,7 +196,7 @@ footer p {
   font-family: "Montserrat", sans-serif;
   color: #dbaba2;
   letter-spacing: 3px;
-  max-width: 25ch;
+  max-width: 27ch;
   line-height: 2rem;
 }
 
@@ -217,14 +210,14 @@ footer p {
 .logo {
   flex-basis: 300px;
   flex-grow: 2;
-  height: calc(59vh - 75px);
-  width: auto;
+  width: 100%;
+  height: calc(60.1vh - 75px);
   object-fit: cover;
 }
 
 .line {
   height: 2px;
-  width: 80px;
+  width: 18vw;
   border-top: 2px solid #285d67;
   margin-left: 2rem;
 }
@@ -242,20 +235,21 @@ footer p {
 #om {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+
   //background-color: #dfebdf;
 }
 
-.profile_pic,
+.picture_om,
 .profile_text {
-  flex-basis: 300px;
+  flex-basis: 400px;
   flex-grow: 1;
 }
 .profile_pic {
-  width: 45vw;
+  width: 100%;
   height: auto;
 }
 figure {
+  width: 100%;
   margin: 2rem 0 0;
   padding: 0;
 }
@@ -686,6 +680,10 @@ figure {
   filter: invert(1);
 }
 
+.color_green {
+  filter: hue-rotate(120deg) brightness(110%) contrast(90%) saturate(30%);
+}
+
 //INDEX
 
 .bgcolor {
@@ -727,6 +725,27 @@ figure {
   .titel {
     font-size: 2rem;
   }
+
+  //INDEX
+  .index_position {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .intro_heading {
+    flex-basis: 200px;
+    flex-grow: 1;
+    margin-top: 0rem;
+  }
+
+  .logo {
+    flex-basis: 500px;
+    flex-grow: 1;
+    width: auto;
+    height: 52vh;
+    object-fit: cover;
+  }
 }
 
 @media (min-width: 650px) {
@@ -739,10 +758,6 @@ figure {
     height: 100%;
     object-fit: cover;
     filter: brightness(65%) contrast(100%) sepia(0.9) hue-rotate(320deg) saturate(40%) brightness(125%) contrast(120%);
-  }
-
-  .color_green {
-    filter: hue-rotate(120deg) brightness(110%) contrast(90%) saturate(30%);
   }
 
   .hojde {
@@ -786,65 +801,19 @@ figure {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(1rem, 20vw);
   }
-  //INDEX
-  .index_position {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column-reverse;
-    align-items: flex-end;
-    padding-top: 4rem;
-    //height: calc(100vh - 75px);
-  }
-
-  .logo {
-    width: 60%;
-
-    height: auto;
-    object-fit: cover;
-  }
-
-  .prov {
-    position: absolute;
-    top: 100vh;
-    width: 100%;
-  }
-
-  .navn {
-    font-family: "Libre Baskerville", serif;
-    color: #dbaba2;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    font-size: 2rem;
-    margin-bottom: 0.7rem;
-  }
-
-  .ninja {
-    font-family: "Montserrat", sans-serif;
-    color: #dbaba2;
-    letter-spacing: 3px;
-    max-width: 25ch;
-    line-height: 2rem;
-  }
 
   .intro_heading {
-    flex-basis: 100px;
+    flex-basis: 500px;
     flex-grow: 1;
-    margin-top: 2rem;
+    height: 25vh;
   }
 
   .logo {
-    flex-basis: 200px;
+    flex-basis: 500px;
     flex-grow: 1;
-  }
-
-  .line {
-    height: 2px;
-    width: 80px;
-    border-top: 2px solid #285d67;
-    margin-left: 2rem;
+    width: 100%;
+    height: 68.5vh;
+    object-fit: cover;
   }
 }
 
@@ -857,12 +826,39 @@ figure {
     transition: 1.5s;
     width: 50vw;
   }
+
+  //INDEX
+  .index_position {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+
+  .logo {
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+  }
+  .line {
+    width: 10vw;
+  }
 }
 
 @media (min-width: 900px) {
   .enlarge {
     transition: 1.5s;
     width: 40vw;
+  }
+  .intro_heading {
+    width: 39%;
+    margin-left: 2rem;
+  }
+  .navn {
+    font-size: 2.5rem;
+  }
+
+  .ninja {
+    font-size: 1.5rem;
+    line-height: 2.3rem;
   }
 }
 
@@ -872,11 +868,62 @@ figure {
     width: 35vw;
   }
 }
+@media (min-width: 1100px) {
+  .intro_heading {
+    width: 42%;
+    margin-left: 2rem;
+  }
+  .navn {
+    font-size: 3rem;
+  }
+
+  .ninja {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+}
 
 @media (min-width: 1300px) {
   .projekt_billede_liste {
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: minmax(1rem, 15vw);
+  }
+
+  .intro_heading {
+    margin-top: 2rem;
+  }
+
+  .navn {
+    font-size: 3rem;
+  }
+
+  .ninja {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1300px) {
+  .logo {
+    max-height: 100vh;
+  }
+}
+
+@media (min-width: 1500px) {
+  .intro_heading {
+    width: 30%;
+  }
+  .line {
+    width: 6vw;
+  }
+}
+
+@media (max-height: 400px) {
+  .desk_right {
+    top: 0.5rem;
+    right: 2rem;
+  }
+  .desk_left {
+    top: 0.7rem;
   }
 }
 

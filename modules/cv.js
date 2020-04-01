@@ -2,8 +2,9 @@ let currPos;
 export function delegatenCv() {
   console.log("cvDelegation");
   currPos = 0;
+  backToSkip();
   document.querySelector(".submenu_container").addEventListener("click", changeHeading);
-  document.querySelector(".side").addEventListener("click", skip);
+  //document.querySelector(".side").addEventListener("click", skip);
 }
 
 function changeHeading() {
@@ -20,20 +21,28 @@ function changeHeading() {
   });
 }
 
+function backToSkip() {
+  console.log("BackToSkip");
+  document.querySelector(".side").addEventListener("click", skip);
+}
+
 function skip() {
   console.log("skip");
-  if (currPos <= 500) {
-    console.log("<= 500");
-    document.querySelectorAll(".grid_section").forEach(section => {
-      // section.style.setProperty("----currPos", currPos + "vw");
-      section.style.transform = `translateX(${currPos}vw)`;
-    });
-    console.log(currPos);
-    currPos += -100;
-  } else {
+  if (currPos == -500) {
     currPos = 0;
-    //  delegatenCv();
+    move();
+  } else {
+    console.log("<= 500");
+    currPos += -100;
+    move();
+    console.log(currPos);
+    backToSkip();
   }
+}
 
-  // document.querySelector(".grid_cv").scrollTo(100, 0);
+function move() {
+  document.querySelectorAll(".grid_section").forEach(section => {
+    //section.style.transform = `translateX(${currPos}vw)`;
+    section.style.setProperty("--currPos", currPos);
+  });
 }

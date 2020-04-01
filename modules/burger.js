@@ -110,9 +110,6 @@ export function burgerMenu() {
   //mobil
   document.querySelector(".cv_punkt").addEventListener("click", function() {
     document.querySelector(".cv").classList = "cv";
-    setTimeout(function() {
-      document.querySelector(".cv ol").classList = ":slow";
-    }, 500);
     document.querySelector(".contact").classList = "contact hide";
     document.querySelector(".skriv_tekst").classList = "fade_out_slow skriv_tekst";
     dry();
