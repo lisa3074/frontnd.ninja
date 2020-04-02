@@ -15,6 +15,7 @@
 @use 'partials/gallery.scss';
 @use 'partials/menu.scss';
 @use 'partials/cv.scss';
+@use 'partials/sideMenu.scss';
 
 /*--------------GENERELT--------------*/
 *,
@@ -86,9 +87,9 @@ h3 {
   color: #dbaba2;
 }
 
-body::-webkit-scrollbar,
-body::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-track {
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track {
   width: 0rem;
 }
 
@@ -171,7 +172,7 @@ footer p {
 
 .index_position {
   width: 100%;
-  height: calc(100% - 20px);
+  height: 100%;
   z-index: 0;
   display: block;
   padding-top: 4rem;
@@ -222,6 +223,14 @@ footer p {
   margin-left: 2rem;
 }
 
+.pil_ned {
+  font-size: 4rem;
+  width: 100%;
+  text-align: center;
+  color: #285d67;
+  margin-top: 1.5rem;
+}
+
 /*--------------OM--------------*/
 
 .om {
@@ -229,7 +238,7 @@ footer p {
   height: auto;
   min-height: 96vh;
   background-color: white;
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
 #om {
@@ -718,6 +727,23 @@ figure {
     color: #285d67;
   }
 }
+.pulse {
+  animation: pulse 1s ease-in-out infinite forwards;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1) translateY(-5.5rem);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05) translateY(-5.5rem);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1) translateY(-5.5rem);
+  }
+}
 
 /*--------------MEDIAQUERIES--------------*/
 
@@ -782,6 +808,15 @@ figure {
   .enlarge {
     transition: 1.5s;
     width: 75vw;
+  }
+
+  .pil_ned {
+    font-size: 6rem;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-5.5rem);
+    color: #285d67;
+    margin-top: 0;
   }
 }
 

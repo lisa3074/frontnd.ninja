@@ -8,6 +8,7 @@ import { loadPortfolio, loadProjectInfo } from "./modules/portfolio";
 import { filtrering } from "./modules/portfolio";
 import { delegateBox } from "./modules/infoBox";
 import { delegatenCv } from "./modules/cv";
+import { delegateSideMenu } from "./modules/sideMenu";
 
 const index = document.querySelector(".index");
 let position = 0;
@@ -33,6 +34,9 @@ function mainDelegation() {
   displayYear();
   delegateBox();
   delegatenCv();
+  delegateSideMenu();
+
+  document.querySelector(".pil_ned").addEventListener("click", clickPil);
   container.addEventListener("scroll", displayScrollbar);
   container.addEventListener("scroll", invertColors);
   container.addEventListener("scroll", isAboutVisible);
@@ -60,6 +64,31 @@ function isAboutVisible() {
   }
   if (position > "0.1") {
     document.querySelector("#om").classList = "fade_in_slow om";
+  }
+}
+3;
+function clickPil() {
+  console.log("clickPil");
+  const clicked = document.querySelector(".clicked");
+  const pil = document.querySelector(".pil_ned");
+  document.querySelector(".pil_ned").classList.add("clicked");
+  if (clicked) {
+    console.log("clicked");
+    document.querySelector("#om").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  } else {
+    console.log("clicked");
+    setTimeout(() => {
+      document.querySelector("#om").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 1100);
+
+    pil.classList.add("clicked");
+    invertColors();
   }
 }
 

@@ -50,7 +50,6 @@ export function subMenu() {
       document.querySelector(".contact").classList = "contact hide";
       document.querySelector(".cv").classList = "cv";
       document.querySelector(".portfolioet").classList = "portfolioet hide";
-      document.querySelector(".cv ol").classList = "";
     }, 500);
   });
 
