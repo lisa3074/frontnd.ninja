@@ -177,15 +177,38 @@
     </section>
 
     <!--POPUP CONTACT-->
-    <div class="contact hide">
+    <section class="contact hide">
       <h1>[ c o n t a c t ]</h1>
       <p class="skriv_tekst fade_out">
         Should your email by any chance not open up, then you can contact me by filling out this form. I will get back to you ASAP.
       </p>
-    </div>
+
+      <!-- action="javascript:;" onsubmit="return validateForm(this)" -->
+      <form id="contact_form" action="mail.php" class="form" method="POST">
+        <select id="select" name="subject" method="post">
+          <option value="option1">Why do you want to contact me?</option>
+          <option value="option1">I wan't to hear more</option>
+          <option value="option2">I wan't to have coffe and discuss options</option>
+          <option value="option3">I want to connect</option>
+          <option value="option4">There's a bug on your site</option>
+          <option value="option5">None of the above</option>
+        </select>
+        <br />
+        <input type="text" placeholder="Name *" name="firstname" class="fnavn input" required />
+        <br />
+        <input type="email" name="email" placeholder="Email *" class="mail input" required />
+        <br />
+        <textarea name="message" rows="5" cols="20" class="besked input" placeholder="Message *" required></textarea><br />
+        <p>* Mandatory</p>
+        <input type="submit" value="SEND" class="send" />
+        <input type="reset" value="RESET" class="send" />
+      </form>
+      <p class="error"></p>
+      <p class="hidden_subject"></p>
+    </section>
 
     <!--POPUP CV-->
-    <div class="cv hide">
+    <section class="cv hide">
       <div class="submenu_wrapper">
         <div class="submenu_container">
           <h1>[<span class="cv_headings">education</span>]</h1>
@@ -259,7 +282,7 @@
         <div id="oth" class="grid_section other">other</div>
         <div id="lan" class="grid_section language">language</div>
       </article>
-    </div>
+    </section>
 
     <footer>
       <p>© f r o n t n d . n i n j a &nbsp;&nbsp;&nbsp;<span class="year">2 0 2 0</span>.</p>
@@ -269,7 +292,6 @@
         <div id="scrollbar"></div>
       </div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>

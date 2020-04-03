@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", mainDelegation);
 function mainDelegation() {
   console.log("mainDelegation");
   //Alle sider fader ind ved load
-  setTimeout(function() {
+  setTimeout(function () {
     index.classList.add("smooth_in");
   }, 500);
   delegateMenu();
@@ -36,12 +36,14 @@ function mainDelegation() {
   delegatenCv();
   delegateSideMenu();
 
+  document.querySelector("#subject").addEventListener("change", subject);
+
   document.querySelector(".pil_ned").addEventListener("click", clickPil);
   container.addEventListener("scroll", displayScrollbar);
   container.addEventListener("scroll", invertColors);
   container.addEventListener("scroll", isAboutVisible);
   scrollBar.style.setProperty("--position", position);
-  document.querySelector(".enkelt").addEventListener("click", function() {
+  document.querySelector(".enkelt").addEventListener("click", function () {
     document.querySelector(".et_billede").src = "";
   });
 }
@@ -76,14 +78,14 @@ function clickPil() {
     console.log("clicked");
     document.querySelector("#om").scrollIntoView({
       behavior: "smooth",
-      block: "start"
+      block: "start",
     });
   } else {
     console.log("clicked");
     setTimeout(() => {
       document.querySelector("#om").scrollIntoView({
         behavior: "smooth",
-        block: "start"
+        block: "start",
       });
     }, 1100);
 
@@ -106,4 +108,8 @@ function invertColors() {
     document.querySelector(".colored").classList.remove("fade_out_quick2");
     document.querySelector(".colored").classList.add("fade_in_quick2");
   }, 800);
+}
+
+function subject() {
+  console.log("subject");
 }

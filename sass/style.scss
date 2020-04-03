@@ -16,6 +16,7 @@
 @use 'partials/menu.scss';
 @use 'partials/cv.scss';
 @use 'partials/sideMenu.scss';
+@use 'partials/contact.scss';
 
 /*--------------GENERELT--------------*/
 *,
@@ -65,8 +66,12 @@ a {
 .desk_home,
 .desk_portfolio,
 li,
-.luk .portfolio_klonen,
-.luk {
+.luk,
+.portfolio_klonen,
+.pil_ned,
+.left_arrow,
+.right_arrow,
+.projektbillede_wrapper {
   cursor: pointer;
 }
 
@@ -91,11 +96,21 @@ h3 {
 ::-webkit-scrollbar-thumb,
 ::-webkit-scrollbar-track {
   width: 0rem;
+  height: 0;
+  visibility: hidden;
+}
+
+* {
+  scrollbar-width: none;
 }
 
 ::selection,
 ::-moz-selection {
   background: #ddc9c7;
+}
+.beskrivelse::selection,
+.beskrivelse::-moz-selection {
+  background: #285d67;
 }
 
 header {

@@ -1,0 +1,51 @@
+.form {
+  padding: 0 2rem;
+}
+
+.fnavn,
+.mail {
+  height: 3rem;
+  padding: 1rem 0;
+}
+.contact input,
+.besked,
+select,
+option {
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  outline-style: none;
+}
+
+input.fnavn,
+input.mail,
+textarea.besked {
+  background-color: #f0dcd9;
+  opacity: 0.9;
+  width: 50%;
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+
+.contact textarea {
+  padding-top: 1rem;
+}
+
+.send {
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 0.2rem 1.5rem;
+  background-color: #efece7;
+  opacity: 0.9;
+}
+
+.error {
+  padding-left: 2rem;
+  color: rgb(159, 75, 75);
+}
+
+.hidden_subject {
+  visibility: hidden;
+}
