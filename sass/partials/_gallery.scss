@@ -18,7 +18,7 @@
 /* The grid itself (used on both slides) */
 .grid_pictures {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 40vw);
+  grid-template-columns: repeat(auto-fill, 80vw);
   grid-template-rows: 30vh;
   height: 30vh;
   margin: 0 auto;
@@ -69,6 +69,14 @@
 }
 
 @media (min-width: 500px) {
+  .grid_pictures {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 40vw);
+    grid-template-rows: 30vh;
+    height: 30vh;
+    margin: 0 auto;
+  }
+
   .right_arrow img,
   .left_arrow img {
     height: 7vw;

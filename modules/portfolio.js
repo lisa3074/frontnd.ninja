@@ -82,18 +82,35 @@ function displayPortfolio() {
   hideArrows();
 }
 function hideArrows() {
-  if (count < 4 || count == 4) {
-    document.querySelector(".right_arrow").classList.add("none");
-    document.querySelector(".left_arrow").classList.add("none");
-    document.querySelector(".left_arrow").classList.add("greyed_out");
-    document.querySelector(".right_arrow").classList.add("greyed_out");
+  if (innerWidth < 500) {
+    if (count < 2 || count == 2) {
+      addDisabled();
+    } else {
+      removeDisabled();
+    }
   } else {
-    document.querySelector(".right_arrow").classList.remove("none");
-    document.querySelector(".right_arrow").classList.remove("greyed_out");
-    document.querySelector(".left_arrow").classList.add("none");
-    document.querySelector(".left_arrow").classList.add("greyed_out");
+    if (count < 4 || count == 4) {
+      addDisabled();
+    } else {
+      removeDisabled();
+    }
   }
 }
+
+function addDisabled() {
+  document.querySelector(".right_arrow").classList.add("none");
+  document.querySelector(".left_arrow").classList.add("none");
+  document.querySelector(".left_arrow").classList.add("greyed_out");
+  document.querySelector(".right_arrow").classList.add("greyed_out");
+}
+
+function removeDisabled() {
+  document.querySelector(".right_arrow").classList.remove("none");
+  document.querySelector(".right_arrow").classList.remove("greyed_out");
+  document.querySelector(".left_arrow").classList.add("none");
+  document.querySelector(".left_arrow").classList.add("greyed_out");
+}
+
 function displayProjectInfo(project, projectList) {
   console.log("projektListe");
   const singlePicTemplate = document.querySelector(".portfolio_single_skabelon");
@@ -188,8 +205,13 @@ export function galleryStart() {
 
 function moveStuffR() {
   console.log("||moveStuffR");
-  gridPositionA += -40;
-  gridPositionB += 40;
+  if (innerWidth < 500) {
+    gridPositionA += -80;
+    gridPositionB += 80;
+  } else {
+    gridPositionA += -40;
+    gridPositionB += 40;
+  }
   console.log("right");
   document.querySelectorAll(".itemA").forEach(item => {
     //item.style.transform = `translateX(40vw);`;
@@ -205,8 +227,13 @@ function moveStuffR() {
 
 function moveStuffL() {
   console.log("||moveStuffL");
-  gridPositionA += 40;
-  gridPositionB += -40;
+  if (innerWidth < 500) {
+    gridPositionA += 80;
+    gridPositionB += -80;
+  } else {
+    gridPositionA += 40;
+    gridPositionB += -40;
+  }
   console.log("left");
   document.querySelectorAll(".itemA").forEach(item => {
     item.style.setProperty("--positionA", gridPositionA);
@@ -218,20 +245,39 @@ function moveStuffL() {
   });
   pointerEvents();
 }
+function checkInnerWidth() {
+  if (innerWidth < 500) {
+  } else {
+  }
+}
 
 function countLength() {
   console.log("||countLength");
-  if (count % 2 == 0) {
-    let gridfirst = count / 2;
-    console.log("gridFirst" + " " + gridfirst);
-    gridLength = Math.round(gridfirst) * 40;
-    //gridLength = (count / 2) * 40;
-    console.log("gridLength" + " " + gridLength);
+  if (innerWidth < 500) {
+    if (count % 2 == 0) {
+      let gridfirst = count / 2;
+      console.log("gridFirst" + " " + gridfirst);
+      gridLength = Math.round(gridfirst) * 80;
+      console.log("gridLength" + " " + gridLength);
+    } else {
+      let gridfirst = count / 2;
+      console.log("gridFirst" + " " + gridfirst);
+      gridLength = Math.round(gridfirst) * 80;
+      console.log("gridLength" + " " + gridLength);
+    }
   } else {
-    let gridfirst = count / 2;
-    console.log("gridFirst" + " " + gridfirst);
-    gridLength = Math.round(gridfirst) * 40;
-    console.log("gridLength" + " " + gridLength);
+    if (count % 2 == 0) {
+      let gridfirst = count / 2;
+      console.log("gridFirst" + " " + gridfirst);
+      gridLength = Math.round(gridfirst) * 40;
+      //gridLength = (count / 2) * 40;
+      console.log("gridLength" + " " + gridLength);
+    } else {
+      let gridfirst = count / 2;
+      console.log("gridFirst" + " " + gridfirst);
+      gridLength = Math.round(gridfirst) * 40;
+      console.log("gridLength" + " " + gridLength);
+    }
   }
   hideArrows();
   setLength();

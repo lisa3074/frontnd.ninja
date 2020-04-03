@@ -212,7 +212,7 @@ footer p {
   flex-basis: 300px;
   flex-grow: 2;
   width: 100%;
-  height: calc(60.1vh - 75px);
+  height: calc(61.5vh - 75px);
   object-fit: cover;
 }
 
@@ -223,12 +223,13 @@ footer p {
   margin-left: 2rem;
 }
 
-.pil_ned {
-  font-size: 4rem;
+.pil_wrapper {
   width: 100%;
   text-align: center;
-  color: #285d67;
-  margin-top: 1.5rem;
+}
+.pil_ned {
+  width: 4rem;
+  margin-top: 2rem;
 }
 
 /*--------------OM--------------*/
@@ -246,6 +247,11 @@ footer p {
   flex-wrap: wrap;
 
   //background-color: #dfebdf;
+}
+
+.aspiring {
+  width: 100%;
+  padding: 0 2rem;
 }
 
 .picture_om,
@@ -412,7 +418,7 @@ figure {
 }
 
 .beskrivelse_wrapper {
-  cursor: url("/static/billeder/info_brackets_font_light_pil.png"), auto;
+  cursor: url("/static/billeder/dotthei1.png"), auto;
   overflow-x: hidden;
 }
 
@@ -811,12 +817,8 @@ figure {
   }
 
   .pil_ned {
-    font-size: 6rem;
-    width: 100%;
-    text-align: center;
-    transform: translateY(-5.5rem);
-    color: #285d67;
-    margin-top: 0;
+    width: 6rem;
+    margin-top: 1rem;
   }
 }
 

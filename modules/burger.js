@@ -88,7 +88,7 @@ export function burgerMenu() {
       });
   });
 
-  document.querySelectorAll(".burger1 li").forEach(li => {
+  document.querySelectorAll(".burger1 li .contact_punkt").forEach(li => {
     li.addEventListener("click", function() {
       kryds1.classList = "kryds1 scale_down";
       kryds2.classList = "kryds2 scale_down";
@@ -99,6 +99,7 @@ export function burgerMenu() {
       streg.classList = "streg height60px";
     });
   });
+
   document.querySelector(".graphics").addEventListener("click", function() {
     document.querySelector(".kategori").textContent = "[ g r a p h i c s ]";
   });
@@ -121,7 +122,6 @@ export function burgerMenu() {
       document.querySelector(".skriv_tekst").classList = "fade_in_slow skriv_tekst";
     }, 500);
     document.querySelector(".cv").classList = "cv hide";
-    document.querySelector(".cv ol").classList = "fade_out_slow";
     dry();
   });
   //mobil
