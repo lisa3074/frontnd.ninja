@@ -8,6 +8,10 @@ export function delegateSideMenu() {
 function setIcons() {
   console.log("setIcons");
   itemNum = 0;
+  document.querySelector(".hamburger-1").classList.toggle("hamburger-11");
+  document.querySelector(".hamburger-2").classList.toggle("hamburger-22");
+  document.querySelector(".hamburger-3").classList.toggle("hamburger-33");
+
   document.querySelectorAll(".menu-item").forEach(item => {
     item.classList.toggle("move_it");
     itemNum++;

@@ -1,33 +1,9 @@
 //@import "compass/css3";
 
 //vars
-$fg: rgb(255, 255, 255);
-$pi: 3.14;
 
 //config
-$menu-items: 4;
-$open-distance: 105px;
-$opening-angle: $pi * 2;
-
-%goo {
-  filter: url("#shadowed-goo");
-  // debug
-  //background:rgba(255,0,0,0.2);
-}
-%ball {
-  background: $fg;
-  //border-radius: 100%;
-  width: 6rem;
-  height: 80px;
-  margin-left: -40px;
-  position: absolute;
-  top: 20px;
-  color: #285d67;
-  text-align: center;
-  line-height: 80px;
-  transform: translate3d(-20px, 0, 0);
-  transition: transform ease-out 200ms;
-}
+$menu-items: 6;
 
 .menu-item .fa,
 .menu-item .fas {
@@ -41,7 +17,17 @@ $opening-angle: $pi * 2;
   display: none;
 }
 .menu-item {
-  @extend %ball;
+  background: rgb(255, 255, 255);
+  width: 6rem;
+  height: 80px;
+  margin-left: -40px;
+  position: absolute;
+  top: 20px;
+  color: #285d67;
+  text-align: center;
+  line-height: 80px;
+  transform: translate3d(-20px, 0, 0);
+  transition: transform ease-out 200ms;
   padding-top: 0.5rem;
 }
 .hamburger {
@@ -58,35 +44,35 @@ $opening-angle: $pi * 2;
   margin-top: -$height/2;
   transition: transform 200ms;
 }
-$hamburger-spacing: 8px;
+
 .hamburger-1 {
-  transform: translate3d(0, -$hamburger-spacing, 0);
+  transform: translate3d(0, -8px, 0);
 }
 .hamburger-2 {
   transform: translate3d(0, 0, 0);
 }
 .hamburger-3 {
-  transform: translate3d(0, $hamburger-spacing, 0);
+  transform: translate3d(0, 8px, 0);
   width: 1rem;
 }
-.menu-open:checked + .menu-open-button {
-  .hamburger-1 {
-    transform: translate3d(0, -7px, 0) rotate(45deg);
-    width: 1.3rem;
-    background-color: #dbaba2;
-  }
-  .hamburger-2 {
-    transform: translate3d(3px, 0, 0) scale(0.1, 1);
-    background-color: #dbaba200;
-  }
-  .hamburger-3 {
-    transform: translate3d(0, 7px, 0) rotate(-45deg);
-    width: 1.3rem;
-    background-color: #dbaba2;
-  }
+
+//VED KLIK
+.hamburger-11 {
+  transform: translate3d(0, -7px, 0) rotate(45deg);
+  width: 1.3rem;
+  background-color: #dbaba2;
 }
+.hamburger-22 {
+  transform: translate3d(3px, 0, 0) scale(0.1, 1);
+  background-color: #dbaba200;
+}
+.hamburger-33 {
+  transform: translate3d(0, 7px, 0) rotate(-45deg);
+  width: 1.3rem;
+  background-color: #dbaba2;
+}
+
 .sideMenu {
-  @extend %goo;
   $width: 0;
   $height: 150px;
   position: absolute;
@@ -107,7 +93,7 @@ $hamburger-spacing: 8px;
     background: white;
     color: #dbaba2;
   }
-  @for $i from 1 through $menu-items {
+  @for $i from 1 through 6 {
     &:nth-child(#{$i + 2}) {
       transition-duration: 180ms;
     }
@@ -115,7 +101,17 @@ $hamburger-spacing: 8px;
 }
 
 .menu-open-button {
-  @extend %ball;
+  background: rgb(255, 255, 255);
+  width: 6rem;
+  height: 80px;
+  margin-left: -40px;
+  position: absolute;
+  top: 20px;
+  color: #285d67;
+  text-align: center;
+  line-height: 80px;
+  transform: translate3d(-20px, 0, 0);
+  transition: transform ease-out 200ms;
   z-index: 2;
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition-duration: 400ms;
