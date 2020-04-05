@@ -14,6 +14,7 @@ const index = document.querySelector(".index");
 let position = 0;
 const container = document.querySelector("body");
 const scrollBar = document.querySelector("#scrollbar");
+let vh = window.innerHeight * 0.01;
 
 window.addEventListener("DOMContentLoaded", mainDelegation);
 
@@ -35,8 +36,8 @@ function mainDelegation() {
   delegateBox();
   delegatenCv();
   delegateSideMenu();
-
-  document.querySelector("#subject").addEventListener("change", subject);
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+  // document.querySelector("#subject").addEventListener("change", subject);
 
   document.querySelector(".pil_ned").addEventListener("click", clickPil);
   container.addEventListener("scroll", displayScrollbar);
