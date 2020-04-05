@@ -14,7 +14,6 @@ const index = document.querySelector(".index");
 let position = 0;
 const container = document.querySelector("body");
 const scrollBar = document.querySelector("#scrollbar");
-let vh = window.innerHeight * 0.01;
 
 window.addEventListener("DOMContentLoaded", mainDelegation);
 
@@ -36,9 +35,14 @@ function mainDelegation() {
   delegateBox();
   delegatenCv();
   delegateSideMenu();
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-  // document.querySelector("#subject").addEventListener("change", subject);
+  setHeight();
 
+  document.querySelector("#select").addEventListener("change", function () {
+    const subjecktChosen = event.target.value;
+    subject(subjecktChosen);
+  });
+
+  window.addEventListener("resize", setHeight);
   document.querySelector(".pil_ned").addEventListener("click", clickPil);
   container.addEventListener("scroll", displayScrollbar);
   container.addEventListener("scroll", invertColors);
@@ -47,6 +51,13 @@ function mainDelegation() {
   document.querySelector(".enkelt").addEventListener("click", function () {
     document.querySelector(".et_billede").src = "";
   });
+}
+
+function setHeight() {
+  console.log("setHeight");
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+  console.log(vh);
 }
 
 function displayYear() {
@@ -96,6 +107,7 @@ function clickPil() {
 }
 
 function invertColors() {
+  container.removeEventListener("scroll", invertColors);
   document.querySelector(".bw").classList.remove("fade_in_quick2");
   document.querySelector(".bw").classList.add("fade_out_quick2");
   setTimeout(() => {
@@ -109,4 +121,9 @@ function invertColors() {
     document.querySelector(".colored").classList.remove("fade_out_quick2");
     document.querySelector(".colored").classList.add("fade_in_quick2");
   }, 800);
+}
+
+function subject(subjectChosen) {
+  console.log("subject");
+  document.querySelector(".select").value = subjectChosen;
 }
