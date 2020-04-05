@@ -59,7 +59,7 @@
   scroll-snap-align: start;
   transition: 1s;
   transform: translateX(calc(var(--currPos) * 1vw));
-  overflow-x: scroll;
+  overflow: scroll;
 }
 
 #go {
