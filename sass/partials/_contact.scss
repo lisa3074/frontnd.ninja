@@ -24,7 +24,7 @@ input.mail,
 textarea.besked {
   background-color: #f0dcd9;
   opacity: 0.9;
-  width: 50%;
+  width: 100%;
   padding: 0 1rem;
   font-size: 1rem;
 }
@@ -48,4 +48,36 @@ textarea.besked {
 
 .hidden_subject {
   visibility: hidden;
+}
+
+.select {
+  visibility: hidden;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+}
+select {
+  margin: 1rem 0 0 0;
+}
+
+@media (min-width: 650px) {
+  input.fnavn,
+  input.mail,
+  textarea.besked {
+    width: 75%;
+  }
+}
+@media (min-width: 1000px) {
+  input.fnavn,
+  input.mail,
+  textarea.besked {
+    width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  input.fnavn,
+  input.mail,
+  textarea.besked {
+    width: 50%;
+  }
 }

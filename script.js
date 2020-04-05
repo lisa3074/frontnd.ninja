@@ -36,8 +36,11 @@ function mainDelegation() {
   delegatenCv();
   delegateSideMenu();
 
-  document.querySelector("#subject").addEventListener("change", subject);
-
+  document.querySelector("#select").addEventListener("change", function () {
+    const subjecktChosen = event.target.value;
+    subject(subjecktChosen);
+  });
+  window.addEventListener("resize", setHeight);
   document.querySelector(".pil_ned").addEventListener("click", clickPil);
   container.addEventListener("scroll", displayScrollbar);
   container.addEventListener("scroll", invertColors);
@@ -46,6 +49,13 @@ function mainDelegation() {
   document.querySelector(".enkelt").addEventListener("click", function () {
     document.querySelector(".et_billede").src = "";
   });
+}
+
+function setHeight() {
+  console.log("setHeight");
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+  console.log(vh);
 }
 
 function displayYear() {
@@ -110,6 +120,7 @@ function invertColors() {
   }, 800);
 }
 
-function subject() {
+function subject(subjecktChosen) {
   console.log("subject");
+  document.querySelector(".select").value = subjecktChosen;
 }

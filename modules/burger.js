@@ -11,7 +11,7 @@ export function burgerMenu() {
   const cv = document.querySelector(".cv");
   const contact = document.querySelector(".contact");
 
-  person.addEventListener("click", function() {
+  person.addEventListener("click", function () {
     person.classList.remove("scale_up");
     person.classList.add("scale_down");
     burger2.classList.add("transition_right");
@@ -26,11 +26,11 @@ export function burgerMenu() {
     streg.classList.remove("height60px");
     document.querySelector("#om").scrollIntoView({
       behavior: "smooth",
-      block: "start"
+      block: "start",
     });
   });
 
-  kryds2.addEventListener("click", function() {
+  kryds2.addEventListener("click", function () {
     burger2.classList.add("transition_right_back");
     burger2.classList.remove("transition_right");
     kryds2.classList.remove("scale_up");
@@ -42,7 +42,7 @@ export function burgerMenu() {
     streg.classList.add("height60px");
   });
 
-  portfolio.addEventListener("click", function() {
+  portfolio.addEventListener("click", function () {
     document.querySelector("#portfolioet").classList.remove("hide");
     portfolio.classList = "scale_down portfolio mobile_menu";
     burger1.classList = "transition_left burger1";
@@ -55,12 +55,12 @@ export function burgerMenu() {
     contact.classList = "contact fade_out_quick";
     document.querySelector("#portfolioet").scrollIntoView({
       behavior: "smooth",
-      block: "start"
+      block: "start",
     });
     document.querySelector(".kategori").textContent = "[ w e b _ p r o d u c t i o n s ]";
   });
 
-  kryds1.addEventListener("click", function() {
+  kryds1.addEventListener("click", function () {
     burger1.classList.add("transition_left_back");
     burger1.classList.remove("transition_left");
     kryds1.classList.remove("scale_up");
@@ -72,7 +72,7 @@ export function burgerMenu() {
     streg.classList.add("height60px");
   });
 
-  home.addEventListener("click", function() {
+  home.addEventListener("click", function () {
     kryds1.classList = "kryds1 scale_down";
     kryds2.classList = "kryds2 scale_down";
     burger1.classList = "transition_left_back burger1";
@@ -84,12 +84,12 @@ export function burgerMenu() {
       (document.querySelector(".cv").classList = "cv fade_out_quick"),
       document.querySelector(".scroll_to").scrollIntoView({
         behavior: "smooth",
-        block: "start"
+        block: "start",
       });
   });
 
-  document.querySelectorAll(".burger1 li .contact_punkt").forEach(li => {
-    li.addEventListener("click", function() {
+  document.querySelectorAll(".contact_punkt, .cv_punkt, .me_punkt, .graphics, .old_mobile, .web").forEach((li) => {
+    li.addEventListener("click", function () {
       kryds1.classList = "kryds1 scale_down";
       kryds2.classList = "kryds2 scale_down";
       burger1.classList.add("transition_left_back");
@@ -100,37 +100,37 @@ export function burgerMenu() {
     });
   });
 
-  document.querySelector(".graphics").addEventListener("click", function() {
+  document.querySelector(".graphics").addEventListener("click", function () {
     document.querySelector(".kategori").textContent = "[ g r a p h i c s ]";
   });
 
-  document.querySelector(".old_mobile").addEventListener("click", function() {
+  document.querySelector(".old_mobile").addEventListener("click", function () {
     document.querySelector(".kategori").textContent = "[ o l d _ s t u f f ]";
   });
 
   //mobil
-  document.querySelector(".cv_punkt").addEventListener("click", function() {
+  document.querySelector(".cv_punkt").addEventListener("click", function () {
     document.querySelector(".cv").classList = "cv";
     document.querySelector(".contact").classList = "contact hide";
     document.querySelector(".skriv_tekst").classList = "fade_out_slow skriv_tekst";
     dry();
   });
   //mobil
-  document.querySelector(".contact_punkt").addEventListener("click", function() {
+  document.querySelector(".contact_punkt").addEventListener("click", function () {
     document.querySelector(".contact").classList = "contact";
-    setTimeout(function() {
+    setTimeout(function () {
       document.querySelector(".skriv_tekst").classList = "fade_in_slow skriv_tekst";
     }, 500);
     document.querySelector(".cv").classList = "cv hide";
     dry();
   });
   //mobil
-  document.querySelector(".me_punkt").addEventListener("click", function() {
+  document.querySelector(".me_punkt").addEventListener("click", function () {
     document.querySelector(".om").scrollIntoView({
       behavior: "smooth",
-      block: "start"
+      block: "start",
     });
-    setTimeout(function() {
+    setTimeout(function () {
       document.querySelector(".cv").classList = "cv hide";
       document.querySelector(".contact").classList = "contact hide";
     }, 300);

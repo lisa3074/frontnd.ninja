@@ -158,8 +158,10 @@
         <div class="luk enkelt">
           <img src="static/billeder/luk_u_ring.svg" alt="luk" />
         </div>
-        <img src="" alt="" class="et_billede" />
-        <p class="beskriv"></p>
+        <figure class="singleBillede">
+          <img src="" alt="" class="et_billede" />
+          <figcaption class="beskriv"></figcaption>
+        </figure>
       </article>
       <!--  <article class="portfolio_liste"></article> -->
       <article class="grid_container looking_glass">
@@ -185,15 +187,16 @@
 
       <!-- action="javascript:;" onsubmit="return validateForm(this)" -->
       <form id="contact_form" action="mail.php" class="form" method="POST">
-        <select id="select" name="subject" method="post">
-          <option value="option1">Why do you want to contact me?</option>
-          <option value="option1">I wan't to hear more</option>
-          <option value="option2">I wan't to have coffe and discuss options</option>
-          <option value="option3">I want to connect</option>
-          <option value="option4">There's a bug on your site</option>
-          <option value="option5">None of the above</option>
+        <select id="select" name="selectOption" method="post">
+          <option value="why" selected>Why do you want to contact me?</option>
+          <option value="I wan't to hear more">I wan't to hear more</option>
+          <option value="I wan't to have coffe and discuss options">I wan't to have coffe and discuss options</option>
+          <option value="I want to connect">I want to connect</option>
+          <option value="There's a bug on your site">There's a bug on your site</option>
+          <option value="None of the above">None of the above</option>
         </select>
         <br />
+        <input type="text" name="select" class="select" /><br />
         <input type="text" placeholder="Name *" name="firstname" class="fnavn input" required />
         <br />
         <input type="email" name="email" placeholder="Email *" class="mail input" required />
@@ -204,7 +207,6 @@
         <input type="reset" value="RESET" class="send" />
       </form>
       <p class="error"></p>
-      <p class="hidden_subject"></p>
     </section>
 
     <!--POPUP CV-->
