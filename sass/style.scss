@@ -75,7 +75,8 @@ li,
 .pil_ned,
 .left_arrow,
 .right_arrow,
-.projektbillede_wrapper {
+.projektbillede_wrapper,
+.cv_link {
   cursor: pointer;
 }
 
@@ -209,7 +210,7 @@ _:future,
 
 .navn {
   font-family: "Libre Baskerville", serif;
-  color: #dbaba2;
+  color: #4a4a4a;
   font-weight: 400;
   letter-spacing: 0.5px;
   font-size: 2rem;
@@ -218,7 +219,7 @@ _:future,
 
 .ninja {
   font-family: "Montserrat", sans-serif;
-  color: #dbaba2;
+  color: #4a4a4a;
   letter-spacing: 3px;
   max-width: 27ch;
   line-height: 2rem;
@@ -257,49 +258,61 @@ _:future,
   width: 4rem;
   margin-top: 2rem;
 }
-
+.green_bgcolor {
+  background-color: #daeade;
+}
 /*--------------OM--------------*/
 
 .om {
   width: 100%;
   height: auto;
-  min-height: 96vh;
   background-color: white;
   margin-top: 100vh;
   margin-top: calc(var(--vh, 1vh) * 100);
-  padding-top: 60px;
+  padding: 60px 0 2rem;
 }
 
 #om {
   display: flex;
   flex-wrap: wrap;
-
-  //background-color: #dfebdf;
 }
 
 .aspiring {
   width: 100%;
   padding: 0 2rem;
 }
-
 .picture_om,
 .profile_text {
   flex-basis: 400px;
-  flex-grow: 1;
+  flex-grow: 2;
+}
+
+.picture_om {
+  max-height: 750px;
 }
 .profile_pic {
   width: 100%;
-  height: auto;
-  max-height: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 figure {
   width: 100%;
   margin: 0;
-  padding: 2rem 0 0;
+  padding: 1rem 0 0;
 }
 
 .profile_text p {
   line-height: 1.2rem;
+}
+
+.profile_text {
+  max-width: 70ch;
+}
+
+.cv_link {
+  font-family: "Libre Baskerville", serif;
+  color: #dbaba2;
+  font-size: 1rem;
 }
 
 /*--------------PORTFOLIO--------------*/
@@ -732,6 +745,9 @@ figure {
 .color_green {
   filter: hue-rotate(120deg) brightness(110%) contrast(90%) saturate(30%);
 }
+.color_greeny {
+  filter: hue-rotate(100deg) brightness(120%) contrast(120%) saturate(30%);
+}
 
 //INDEX
 
@@ -741,15 +757,16 @@ figure {
 
 @keyframes bgcolor {
   0% {
-    background-color: #fff;
+    background-color: #daeade;
   }
   50% {
-    background-color: #fff;
+    background-color: #daeade;
   }
   100% {
     background-color: #ffd5cd;
   }
 }
+
 .textcolor {
   transition: 2s;
   color: #285d67;
@@ -758,10 +775,10 @@ figure {
 
 @keyframes textcolor {
   0% {
-    color: #dbaba2;
+    color: #4a4a4a;
   }
   50% {
-    color: #dbaba2;
+    color: #4a4a4a;
   }
   100% {
     color: #285d67;
@@ -988,6 +1005,10 @@ figure {
   .et_billede {
     padding: 4rem 4rem;
   }
+
+  figure {
+    padding: 6.5rem 0 0;
+  }
 }
 //IPAD PRO
 @media (max-device-width: 1370px) and (orientation: landscape) {
@@ -1022,7 +1043,7 @@ figure {
     width: 40vw;
   }
   .intro_heading {
-    width: 100%;
+    width: 50%;
     height: 15%;
     margin-left: 2rem;
   }

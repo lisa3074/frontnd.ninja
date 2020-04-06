@@ -17,7 +17,7 @@
         <div class="hojde">
           <p class="titel_klonen"></p>
         </div>
-        <img src="" alt="" class="pic color" />
+        <img src="" alt="" class="pic" />
       </div>
     </template>
 
@@ -26,7 +26,7 @@
         <div class="hojde">
           <p class="titel_klonen"></p>
         </div>
-        <img src="" alt="" class="pic color" />
+        <img src="" alt="" class="pic" />
       </div>
     </template>
 
@@ -61,7 +61,8 @@
           <ul>
             <li class="web filter" data-kategori="web_productions">web_productions</li>
             <li class="graphics filter" data-kategori="graphics">graphics</li>
-            <li class="old_mobile filter" data-kategori="old_stuff">old_stuff</li>
+            <!-- IKKE SYNLIG -->
+            <li class="old_mobile filter none hidden_subject" data-kategori="old_stuff">old_stuff</li>
           </ul>
         </div>
         <div class="burger2">
@@ -94,7 +95,8 @@
               <!--SORTERING PÅ INDEXSIDEN-->
               <li id="web_productions" class="alm_punkt filter" data-kategori="web_productions">web_productions</li>
               <li id="graphics" class="alm_punkt filter" data-kategori="graphics">graphics</li>
-              <li id="old_stuff" class="alm_punkt filter" data-kategori="old_stuff">old_stuff</li>
+              <!-- IKKE SYNLIG -->
+              <li id="old_stuff" class="alm_punkt filter none hidden_subject" data-kategori="old_stuff">old_stuff</li>
             </ul>
           </div>
         </div>
@@ -102,13 +104,13 @@
     </header>
 
     <div class="scroll_to"></div>
-    <section class="index_position">
+    <section class="index_position green_bgcolor">
       <div class="intro_heading">
         <h1 class="navn">lisa søndergaard</h1>
         <div class="line"></div>
         <h2 class="ninja">aspiring frontnd.ninja at your service</h2>
       </div>
-      <img class="logo bw fade_in_back" src="/static/billeder/lisa_desat.jpg" alt="Splash-image - Lisa Søndergaards portfolio" />
+      <img class="logo bw fade_in_back color_green" src="/static/billeder/lisa.jpg" alt="Splash-image - Lisa Søndergaards portfolio" />
       <img class="logo colored fade_out_back hide" src="/static/billeder/lisa.jpg" alt="Splash-image - Lisa Søndergaards portfolio" />
       <div class="pil_wrapper">
         <img src="/static/billeder/pil_ned_rund.svg" class="pil_ned pulse" />
@@ -118,14 +120,26 @@
     <section class="om fade_out_quick" id="om">
       <article class="profile_text">
         <h1>[ p e r s o n ]</h1>
-        <h2 class="aspiring">aspiring frontend ninja at your service</h2>
-        <p>Who am I and what are my core values, work ethics, dreams and ambitions?</p>
+        <h2 class="aspiring">My name is Lisa and if you’re reading this paragraph, then you found my portfolio. I study multimedia design at KEA, an education that focuses on enhancing digital skills in many areas.</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem dolor sed viverra ipsum nunc aliquet bibendum. In nibh mauris cursus mattis molestie a iaculis at erat. Mauris pharetra et ultrices neque ornare aenean. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Commodo ullamcorper a lacus vestibulum sed arcu. Cursus metus aliquam eleifend mi. Proin sagittis nisl rhoncus mattis rhoncus urna neque. Volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Justo eget magna fermentum iaculis eu non diam phasellus. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Penatibus et magnis dis parturient montes nascetur ridiculus mus mauris. Quis blandit turpis cursus in hac habitasse platea dictumst. Ut diam quam nulla porttitor massa id neque aliquam. Proin sed libero enim sed. Vitae purus faucibus ornare suspendisse. Proin fermentum leo vel orci porta. Placerat orci
+          During my 2 ½ semester I’ve come into contact with video production, sound editing, designing digital graphics, drawing illustrations, website production, game creation, animations and programming. 
+          And that’s just on the creative side. SEO, iterative testing methods and agile work processes like SCRUM and Design Sprint has also been on the curriculum.</p>
+          <p>  On the 3rd semester we were to pick an elective to create our professional profile. For me there were no doubts: I wanted to program and design user interfaces, so I chose the profile frontend design. 
+         To me there is nothing more rewarding than to see a design being built from skratch through code.</p>
+        <p>In my professional life I am meticulous, thorough, and a bit of a perfectionist, but also encouraging, helpful and resourceful when it comes to being a teamplayer.
+          This is something that comes in handy in my study job as a tutor in multimedia design. <br>Structure is important to me. 
+          I am the person with several handwritten lists on my desk, so I can keep track of the tasks even if there's already a scrum board for the team. 
+          And I find it a little more satisfying than I should, when I can cross off an item! 
+        <p>
+          On the social side, I find it very important to connect with my co-workers and to socialize without it necessarily being in relation to the job. Maybe over a beer or two when a project is done.    
         </p>
+        <p>My ambition is to take the PBA in web development at KEA after my last semester of multimedia design. 
+          This is actually why I started on multimedia design in the first place, and I can’t wait to get an even more detailed look into the world of coding languages and web development.</p>
+      </p>
+      <p>You can skip through my cv <span class="cv_link">here</span>.</p>
       </article>
       <figure class="picture_om">
-        <img class="profile_pic color_green" src="/static/billeder/lisa.jpg" alt="Lisa Bianca Henning Søndergaard" />
+        <img class="profile_pic color_greeny" src="/static/billeder/wooden_arrows.jpg" alt="Photo by Jungwoo Hong on Unsplash" />
       </figure>
     </section>
 
@@ -151,6 +165,7 @@
         </div>
         <h1 class="titel"></h1>
         <div class="projekt_billede_liste"></div>
+       
       </article>
       <!---POPUP ENKELT BILLEDE-->
       <article class="single fade_out">

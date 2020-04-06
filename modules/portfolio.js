@@ -45,7 +45,7 @@ function displayPortfolio() {
   portfolioGridB.innerHTML = "";
   count = 0;
 
-  portfolio.forEach(project => {
+  portfolio.forEach((project) => {
     if (project.kategori == filter || filter == "alle") {
       count++;
 
@@ -56,7 +56,7 @@ function displayPortfolio() {
         klon.querySelector("img").src = project.thumbnail.guid;
         klon.querySelector(".titel_klonen").textContent = project.titel;
         klon.querySelector(".itemA").setAttribute("class", "pr" + count + " portfolio_klonen itemA");
-        klon.firstElementChild.addEventListener("click", function() {
+        klon.firstElementChild.addEventListener("click", function () {
           singlePicInfo.textContent = "";
           projectList.innerHTML = "";
           checkType(project, singlePicInfo, projectList);
@@ -69,7 +69,7 @@ function displayPortfolio() {
         klon.querySelector("img").src = project.thumbnail.guid;
         klon.querySelector(".titel_klonen").textContent = project.titel;
         klon.querySelector(".itemB").setAttribute("class", "pr" + count + " portfolio_klonen itemB");
-        klon.firstElementChild.addEventListener("click", function() {
+        klon.firstElementChild.addEventListener("click", function () {
           singlePicInfo.textContent = "";
           projectList.innerHTML = "";
           checkType(project, singlePicInfo, projectList);
@@ -115,7 +115,7 @@ function displayProjectInfo(project, projectList) {
   console.log("projektListe");
   const singlePicTemplate = document.querySelector(".portfolio_single_skabelon");
   projectList.innerHTML = "";
-  projectInfo.forEach(billede => {
+  projectInfo.forEach((billede) => {
     console.log("projektbilleder");
     if (project.sorteringstitel == billede.sorteringstitel) {
       const klon = singlePicTemplate.cloneNode(true).content;
@@ -133,7 +133,7 @@ function checkType(project, singlePicInfo, projectList) {
     document.querySelector(".single").classList = "single fade_in_quick";
     document.querySelector(".et_billede").src = project.billede.guid;
     singlePicInfo.textContent = project.beskrivelse;
-    document.querySelector(".enkelt").addEventListener("click", function() {
+    document.querySelector(".enkelt").addEventListener("click", function () {
       document.querySelector(".single").classList = "single fade_out_quick";
     });
   } else {
@@ -147,11 +147,11 @@ function checkType(project, singlePicInfo, projectList) {
 }
 
 function listen(klon, billede) {
-  klon.firstElementChild.addEventListener("click", function() {
+  klon.firstElementChild.addEventListener("click", function () {
     document.querySelector(".single").classList = "single fade_in_quick";
     document.querySelector(".et_billede").src = billede.billede.guid;
   });
-  document.querySelector(".enkelt").addEventListener("click", function() {
+  document.querySelector(".enkelt").addEventListener("click", function () {
     document.querySelector(".single").classList = "single fade_out_quick";
   });
 }
@@ -166,8 +166,8 @@ function checkLink(project) {
     link.classList.add("a");
     link.href = project.link;
     link.textContent = "link to website";
-    document.querySelector(".tilbage").addEventListener("mouseover", function() {
-      setTimeout(function() {
+    document.querySelector(".tilbage").addEventListener("mouseover", function () {
+      setTimeout(function () {
         link.classList = "link a fade_out_quick";
       }, 300);
     });
@@ -175,8 +175,8 @@ function checkLink(project) {
 }
 
 export function filtrering() {
-  document.querySelectorAll(".filter").forEach(knap => {
-    knap.addEventListener("click", function() {
+  document.querySelectorAll(".filter").forEach((knap) => {
+    knap.addEventListener("click", function () {
       filter = this.dataset.kategori;
       console.log(filter);
       setTimeout(() => {
@@ -195,10 +195,10 @@ export function galleryStart() {
   gridPositionB = 0;
   console.log(gridPositionA + " " + gridPositionB);
   console.log("start");
-  document.querySelector(".right_arrow").addEventListener("click", function() {
+  document.querySelector(".right_arrow").addEventListener("click", function () {
     moveStuffR();
   });
-  document.querySelector(".left_arrow").addEventListener("click", function() {
+  document.querySelector(".left_arrow").addEventListener("click", function () {
     moveStuffL();
   });
 }
@@ -206,19 +206,19 @@ export function galleryStart() {
 function moveStuffR() {
   console.log("||moveStuffR");
   if (innerWidth < 500) {
-    gridPositionA += -80;
-    gridPositionB += 80;
+    gridPositionA += -100;
+    gridPositionB += 100;
   } else {
     gridPositionA += -40;
     gridPositionB += 40;
   }
   console.log("right");
-  document.querySelectorAll(".itemA").forEach(item => {
+  document.querySelectorAll(".itemA").forEach((item) => {
     //item.style.transform = `translateX(40vw);`;
     item.style.setProperty("--positionA", gridPositionA);
     console.log(gridPositionA);
   });
-  document.querySelectorAll(".itemB").forEach(item => {
+  document.querySelectorAll(".itemB").forEach((item) => {
     item.style.setProperty("--positionB", gridPositionB);
     console.log(gridPositionB);
   });
@@ -228,18 +228,18 @@ function moveStuffR() {
 function moveStuffL() {
   console.log("||moveStuffL");
   if (innerWidth < 500) {
-    gridPositionA += 80;
-    gridPositionB += -80;
+    gridPositionA += 100;
+    gridPositionB += -100;
   } else {
     gridPositionA += 40;
     gridPositionB += -40;
   }
   console.log("left");
-  document.querySelectorAll(".itemA").forEach(item => {
+  document.querySelectorAll(".itemA").forEach((item) => {
     item.style.setProperty("--positionA", gridPositionA);
     console.log(gridPositionA);
   });
-  document.querySelectorAll(".itemB").forEach(item => {
+  document.querySelectorAll(".itemB").forEach((item) => {
     item.style.setProperty("--positionB", gridPositionB);
     console.log(gridPositionB);
   });
@@ -257,12 +257,12 @@ function countLength() {
     if (count % 2 == 0) {
       let gridfirst = count / 2;
       console.log("gridFirst" + " " + gridfirst);
-      gridLength = Math.round(gridfirst) * 80;
+      gridLength = Math.round(gridfirst) * 100;
       console.log("gridLength" + " " + gridLength);
     } else {
       let gridfirst = count / 2;
       console.log("gridFirst" + " " + gridfirst);
-      gridLength = Math.round(gridfirst) * 80;
+      gridLength = Math.round(gridfirst) * 100;
       console.log("gridLength" + " " + gridLength);
     }
   } else {
@@ -285,7 +285,11 @@ function countLength() {
 
 function setLength() {
   console.log("||setLength");
-  translate = gridLength - 80;
+  if (innerWidth <= 500) {
+    translate = gridLength - 100;
+  } else {
+    translate = gridLength - 80;
+  }
 
   console.log(translate);
   console.log(gridLength);

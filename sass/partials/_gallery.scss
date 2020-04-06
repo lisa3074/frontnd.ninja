@@ -1,14 +1,14 @@
 /* The looking-glass */
 .grid_container {
-  width: 80vw;
-  height: 60vh;
+  width: 100vw;
+  height: 50vh;
   margin: 0 auto;
   overflow: hidden;
 }
 
 /* The div that slides the upper grid */
 .background_above {
-  height: 30vh;
+  height: 25vh;
 }
 
 /* The div that slides the lower grid */
@@ -18,9 +18,9 @@
 /* The grid itself (used on both slides) */
 .grid_pictures {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 80vw);
-  grid-template-rows: 30vh;
-  height: 30vh;
+  grid-template-columns: repeat(auto-fill, 100vw);
+  grid-template-rows: 25vh;
+  height: 25vh;
   margin: 0 auto;
 }
 
@@ -69,6 +69,16 @@
 }
 
 @media (min-width: 500px) {
+  .background_above {
+    height: 30vh;
+  }
+  .background_below {
+    height: 30vh;
+  }
+  .grid_container {
+    width: 80vw;
+    height: 60vh;
+  }
   .grid_pictures {
     display: grid;
     grid-template-columns: repeat(auto-fill, 40vw);

@@ -1,25 +1,27 @@
 const desk = document.querySelector(".desk");
 const index = document.querySelector(".index");
-let almPunkter = document.querySelectorAll(".alm_punkt");
-let deskPerson = document.querySelector(".desk_person");
-let deskPortfolio = document.querySelector(".desk_portfolio");
-let deskHome = document.querySelector(".desk_home");
-let deskRight = document.querySelector(".desk_right");
-let cv = document.querySelector(".cv");
-let contact = document.querySelector(".contact");
-let deskLeft = document.querySelector(".desk_left");
-let deskRLi = document.querySelectorAll(".desk_right li");
+const almPunkter = document.querySelectorAll(".alm_punkt");
+const deskPerson = document.querySelector(".desk_person");
+const deskPortfolio = document.querySelector(".desk_portfolio");
+const deskHome = document.querySelector(".desk_home");
+const deskRight = document.querySelector(".desk_right");
+const cv = document.querySelector(".cv");
+const cvLink = document.querySelector(".cv_link");
+const contact = document.querySelector(".contact");
+const deskLeft = document.querySelector(".desk_left");
+const deskRLi = document.querySelectorAll(".desk_right li");
+
 export function delegateMenu() {
   // let menuPunkter = document.querySelectorAll(".desk_punkt");
   //Ryd op
-  deskHome.removeEventListener("click", function() {});
-  deskPortfolio.removeEventListener("click", function() {});
-  deskPerson.removeEventListener("click", function() {});
+  deskHome.removeEventListener("click", function () {});
+  deskPortfolio.removeEventListener("click", function () {});
+  deskPerson.removeEventListener("click", function () {});
 
   console.log("menuPunkterDesk");
-  almPunkter.forEach(alm => {
-    alm.addEventListener("click", function() {
-      almPunkter.forEach(alm => {
+  almPunkter.forEach((alm) => {
+    alm.addEventListener("click", function () {
+      almPunkter.forEach((alm) => {
         let idAttDiff = alm.getAttribute("id");
         alm.textContent = idAttDiff;
       });
@@ -32,29 +34,32 @@ export function delegateMenu() {
   });
   deskHome.addEventListener("click", clickHome);
   deskPerson.addEventListener("click", clickPerson);
+  cvLink.addEventListener("click", clickPerson);
   deskPortfolio.addEventListener("click", clickPortfolio);
 }
 
 export function subMenu() {
   console.log("deskMenu");
-  deskHome.addEventListener("click", function() {
-    almPunkter.forEach(alm => {
+  deskHome.addEventListener("click", function () {
+    almPunkter.forEach((alm) => {
       let idAttDiff = alm.getAttribute("id");
       alm.textContent = idAttDiff;
       console.log(idAttDiff);
     });
   });
 
-  document.querySelector("#cv").addEventListener("click", function() {
-    setTimeout(function() {
-      document.querySelector(".contact").classList = "contact hide";
-      document.querySelector(".cv").classList = "cv";
-      document.querySelector(".portfolioet").classList = "portfolioet hide";
-    }, 500);
+  document.querySelectorAll("#cv, .cv_link").forEach((link) => {
+    link.addEventListener("click", function () {
+      setTimeout(function () {
+        document.querySelector(".contact").classList = "contact hide";
+        document.querySelector(".cv").classList = "cv";
+        document.querySelector(".portfolioet").classList = "portfolioet hide";
+      }, 500);
+    });
   });
 
-  document.querySelector("#contact").addEventListener("click", function() {
-    setTimeout(function() {
+  document.querySelector("#contact").addEventListener("click", function () {
+    setTimeout(function () {
       document.querySelector(".cv").classList = "cv hide";
       document.querySelector(".contact").classList = "contact";
       document.querySelector(".portfolioet").classList = "portfolioet hide";
@@ -62,38 +67,38 @@ export function subMenu() {
     }, 500);
   });
 
-  document.querySelector("#me").addEventListener("click", function() {
-    setTimeout(function() {
+  document.querySelector("#me").addEventListener("click", function () {
+    setTimeout(function () {
       document.querySelector(".cv").classList = "cv hide";
       document.querySelector(".contact").classList = "contact hide";
       document.querySelector(".portfolioet").classList = "portfolioet hide";
     }, 500);
     document.querySelector(".om").scrollIntoView({
       behavior: "smooth",
-      block: "start"
+      block: "start",
     });
   });
 
-  document.querySelector("#graphics").addEventListener("click", function() {
+  document.querySelector("#graphics").addEventListener("click", function () {
     document.querySelector(".portfolioet").scrollIntoView({
       behavior: "smooth",
-      block: "start"
+      block: "start",
     });
     document.querySelector(".tell").textContent = "Here you can have a look at the graphics I've produced since february 2019.";
   });
 
-  document.querySelector("#web_productions").addEventListener("click", function() {
+  document.querySelector("#web_productions").addEventListener("click", function () {
     document.querySelector(".portfolioet").scrollIntoView({
       behavior: "smooth",
-      block: "start"
+      block: "start",
     });
     document.querySelector(".tell").textContent = "Web productions include websites and games. This is my favorite part of multimedia design, as I am a bit of a nerd when it comes to code";
   });
 
-  document.querySelector("#old_stuff").addEventListener("click", function() {
+  document.querySelector("#old_stuff").addEventListener("click", function () {
     document.querySelector(".portfolioet").scrollIntoView({
       behavior: "smooth",
-      block: "start"
+      block: "start",
     });
     document.querySelector(".tell").textContent = "This is the part of my portfolio, where I have selected some of my old stuff from before I started studying multimedia design";
   });
@@ -110,10 +115,10 @@ function clickHome() {
   deskRight.classList = "fade_out desk_right";
   deskLeft.classList = "fade_out desk_left";
 
-  deskRLi.forEach(RPunkt => {
+  deskRLi.forEach((RPunkt) => {
     RPunkt.classList.remove("desk_punkt");
   });
-  setTimeout(function() {
+  setTimeout(function () {
     deskPerson.classList = "desk_person desk_menu fade_in alm_punkt";
     deskPortfolio.classList = "desk_portfolio desk_menu fade_in alm_punkt";
   }, 400);
@@ -122,7 +127,7 @@ function clickHome() {
   desk.classList.add("height_up_down");
   document.querySelector(".scroll_to").scrollIntoView({
     behavior: "smooth",
-    block: "start"
+    block: "start",
   });
 }
 
@@ -136,21 +141,21 @@ function clickPerson() {
   cv.classList = "cv hide";
   contact.classList = "contact hide";
   deskHome.classList = "desk_home home_right";
-  setTimeout(function() {
+  setTimeout(function () {
     deskPerson.classList = "fade_out desk_person desk_menu alm_punkt";
   }, 500);
   deskLeft.classList = "desk_left fade_out";
   desk.classList.add("height_up_down");
-  deskRLi.forEach(RPunkt => {
+  deskRLi.forEach((RPunkt) => {
     RPunkt.classList.add("desk_punkt");
   });
-  setTimeout(function() {
+  setTimeout(function () {
     deskRight.classList = "desk_right fade_in";
     deskPortfolio.classList.add("fade_in");
   }, 800);
   document.querySelector(".om").scrollIntoView({
     behavior: "smooth",
-    block: "start"
+    block: "start",
   });
 }
 
@@ -163,15 +168,15 @@ function clickPortfolio() {
   contact.classList = "contact hide";
 
   deskHome.classList = "desk_home home_left";
-  setTimeout(function() {
+  setTimeout(function () {
     deskPortfolio.classList = "desk_menu desk_portfolio fade_out alm_punkt";
   }, 500);
   deskRight.classList = "desk_right fade_out";
 
-  deskRLi.forEach(RPunkt => {
+  deskRLi.forEach((RPunkt) => {
     RPunkt.classList.remove("desk_punkt");
   });
-  setTimeout(function() {
+  setTimeout(function () {
     deskLeft.classList = "desk_left fade_in";
     deskPerson.classList = "desk_person desk_menu fade_in alm_punkt";
   }, 800);
@@ -180,6 +185,6 @@ function clickPortfolio() {
   desk.classList.add("height_up_down");
   document.querySelector(".portfolioet").scrollIntoView({
     behavior: "smooth",
-    block: "start"
+    block: "start",
   });
 }
