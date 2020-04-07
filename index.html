@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -113,30 +113,26 @@
       <img class="logo bw fade_in_back color_green" src="/static/billeder/lisa.jpg" alt="Splash-image - Lisa Søndergaards portfolio" />
       <img class="logo colored fade_out_back hide" src="/static/billeder/lisa.jpg" alt="Splash-image - Lisa Søndergaards portfolio" />
       <div class="pil_wrapper">
-        <img src="/static/billeder/pil_ned_rund.svg" class="pil_ned pulse" />
+        <img src="/static/billeder/pil_ned_rund.svg" class="pil_ned pulse" alt="pil" />
       </div>
     </section>
 
     <section class="om fade_out_quick" id="om">
       <article class="profile_text">
         <h1>[ p e r s o n ]</h1>
-        <h2 class="aspiring">My name is Lisa and if you’re reading this paragraph, then you found my portfolio. I study multimedia design at KEA, an education that focuses on enhancing digital skills in many areas.</h2>
+        <h2 class="aspiring">My name is Lisa and if you’re reading this paragraph, then you found my portfolio. I'm a student in multimedia design at KEA, an education that focuses on enhancing digital skills in many areas.</h2>
         <p>
-          During my 2 ½ semester I’ve come into contact with video production, sound editing, designing digital graphics, drawing illustrations, website production, game creation, animations and programming. 
-          And that’s just on the creative side. SEO, iterative testing methods and agile work processes like SCRUM and Design Sprint has also been on the curriculum.</p>
-          <p>  On the 3rd semester we were to pick an elective to create our professional profile. For me there were no doubts: I wanted to program and design user interfaces, so I chose the profile frontend design. 
-         To me there is nothing more rewarding than to see a design being built from skratch through code.</p>
-        <p>In my professional life I am meticulous, thorough, and a bit of a perfectionist, but also encouraging, helpful and resourceful when it comes to being a teamplayer.
-          This is something that comes in handy in my study job as a tutor in multimedia design. <br>Structure is important to me. 
-          I am the person with several handwritten lists on my desk, so I can keep track of the tasks even if there's already a scrum board for the team. 
-          And I find it a little more satisfying than I should, when I can cross off an item! 
-        <p>
-          On the social side, I find it very important to connect with my co-workers and to socialize without it necessarily being in relation to the job. Maybe over a beer or two when a project is done.    
+          During my 2 ½ semester I’ve come into contact with video production, sound editing, designing digital graphics, drawing illustrations, website production, game creation, animations and programming. And that’s just on the creative side. SEO, iterative testing methods and agile work processes like SCRUM and Design Sprint has also been on the curriculum.
         </p>
-        <p>My ambition is to take the PBA in web development at KEA after my last semester of multimedia design. 
-          This is actually why I started on multimedia design in the first place, and I can’t wait to get an even more detailed look into the world of coding languages and web development.</p>
-      </p>
-      <p>You can skip through my cv <span class="cv_link">here</span>.</p>
+        <p>For the 3rd semester we were to pick an elective to create our professional profile. For me there were no doubts: I wanted to primarily program and secondly design user interfaces, so I chose the profile <span class="italic">frontend design</span>. To me there is nothing more rewarding than to see a design being built from skratch through code.</p>
+        <p>In my professional life I am meticulous, thorough, and a bit of a perfectionist, but also encouraging, helpful and resourceful when it comes to being a teamplayer. This is something that comes in handy in my student job as a tutor in multimedia design. <br />Structure is important to me. You know the person who's always got with several handwritten lists their my desk, so they can keep track of the tasks even if there's already a scrum board for the team. That's me. And I find it a little more satisfying than I should, when I can cross off an item!</p>
+
+        <p>
+          On the social side, I find it very important to connect with my co-workers and to socialize without it necessarily being in relation to the job. Maybe while drinking a beer or two when a project is done.
+        </p>
+        <p>My ambition is to apply for the bahelor programme in web development at KEA after my last semester of multimedia design. This is actually why I started at KEA in the first place, and I can’t wait to get an even more detailed look into the world of coding languages and web development.</p>
+
+        <p>You can skip through my cv <span class="cv_link">here</span>.</p>
       </article>
       <figure class="picture_om">
         <img class="profile_pic color_greeny" src="/static/billeder/wooden_arrows.jpg" alt="Photo by Jungwoo Hong on Unsplash" />
@@ -165,7 +161,6 @@
         </div>
         <h1 class="titel"></h1>
         <div class="projekt_billede_liste"></div>
-       
       </article>
       <!---POPUP ENKELT BILLEDE-->
       <article class="single fade_out">
@@ -174,8 +169,9 @@
         </div>
         <figure class="singleBillede">
           <img src="" alt="" class="et_billede" />
-          <figcaption class="beskriv"></figcaption>
+          <!-- <figcaption class="beskriv"></figcaption> -->
         </figure>
+        <p class="beskriv"></p>
       </article>
       <!--  <article class="portfolio_liste"></article> -->
       <article class="grid_container looking_glass">
@@ -187,40 +183,48 @@
         </div>
       </article>
       <div class="arrow_wrapper">
-        <div class="left_arrow"><img src="/static/billeder/back.png" alt="next" /></div>
-        <div class="right_arrow"><img src="/static/billeder/next.png" alt="back" /></div>
+        <div class="left_arrow"><img src="/static/billeder/pil_hojre.svg" alt="next" /></div>
+        <div class="right_arrow"><img src="/static/billeder/pil_venstre.svg" alt="back" /></div>
       </div>
     </section>
 
     <!--POPUP CONTACT-->
     <section class="contact hide">
       <h1>[ c o n t a c t ]</h1>
-      <p class="skriv_tekst fade_out">
-        Should your email by any chance not open up, then you can contact me by filling out this form. I will get back to you ASAP.
-      </p>
+      <div class="flex">
+        <figure class="contact_pic">
+          <img class="contact_color" src="static/billeder/hello5.jpg" alt="Hello" />
+        </figure>
+        <div class="contact_wrapper">
+          <p class="skriv_tekst fade_out">
+            Should your email by any chance not open up, then you can contact me by filling out this form. I will get back to you ASAP.
+          </p>
 
-      <!-- action="javascript:;" onsubmit="return validateForm(this)" -->
-      <form id="contact_form" action="mail.php" class="form" method="POST">
-        <select id="select" name="selectOption" method="post">
-          <option value="why" selected>Why do you want to contact me?</option>
-          <option value="I wan't to hear more">I wan't to hear more</option>
-          <option value="I wan't to have coffe and discuss options">I wan't to have coffe and discuss options</option>
-          <option value="I want to connect">I want to connect</option>
-          <option value="There's a bug on your site">There's a bug on your site</option>
-          <option value="None of the above">None of the above</option>
-        </select>
-        <br />
-        <input type="text" name="select" class="select" /><br />
-        <input type="text" placeholder="Name *" name="firstname" class="fnavn input" required />
-        <br />
-        <input type="email" name="email" placeholder="Email *" class="mail input" required />
-        <br />
-        <textarea name="message" rows="5" cols="20" class="besked input" placeholder="Message *" required></textarea><br />
-        <p>* Mandatory</p>
-        <input type="submit" value="SEND" class="send" />
-        <input type="reset" value="RESET" class="send" />
-      </form>
-      <p class="error"></p>
+          <!-- action="javascript:;" onsubmit="return validateForm(this)" -->
+          <form id="contact_form" action="mail.php" class="form" method="POST">
+            <!--  method="post" er fjerne fra select pga validation -->
+            <select id="select" name="selectOption">
+              <option value="why" selected>Why do you want to contact me?</option>
+              <option value="I wan't to hear more">I wan't to hear more</option>
+              <option value="I wan't to have coffe and discuss options">I wan't to have coffe and discuss options</option>
+              <option value="I want to connect">I want to connect</option>
+              <option value="There's a bug on your site">There's a bug on your site</option>
+              <option value="None of the above">None of the above</option>
+            </select>
+            <br />
+            <input type="text" name="select" class="select" /><br />
+            <input type="text" placeholder="Name *" name="firstname" class="fnavn input" required />
+            <br />
+            <input type="email" name="email" placeholder="Email *" class="mail input" required />
+            <br />
+            <textarea name="message" rows="5" cols="20" class="besked input" placeholder="Message *" required></textarea><br />
+            <p>* Mandatory</p>
+            <input type="submit" value="SEND" class="send" />
+            <input type="reset" value="RESET" class="send" />
+          </form>
+          <p class="error"></p>
+        </div>
+      </div>
     </section>
 
     <!--POPUP CV-->
@@ -228,21 +232,21 @@
       <div class="submenu_wrapper">
         <div class="submenu_container">
           <h1>[<span class="cv_headings">education</span>]</h1>
-          <img class="submenu_arrow down" src="/static/billeder/down.png" alt="next" />
+          <!-- <img class="submenu_arrow down" src="/static/billeder/down.png" alt="next" /> -->
         </div>
-        <div class="arrow_container">
+        <!--  <div class="arrow_container">
           <img class="submenu_arrow side" src="/static/billeder/next.png" alt="next" />
         </div>
-
+ -->
         <nav class="sideMenu">
-          <input type="checkbox" class="menu-open" name="menu-open" id="menu-open" />
+          <input type="checkbox" class="menu-open big" name="menu-open" id="menu-open" />
           <label class="menu-open-button" for="menu-open">
             <span class="hamburger hamburger-1"></span>
             <span class="hamburger hamburger-2"></span>
             <span class="hamburger hamburger-3"></span>
           </label>
 
-          <a href="#edu" id="i1" class="menu-item">
+          <a href="#" id="i1" class="menu-item">
             <div id="education" class="sub_cv">
               <i class="fa fa-graduation-cap">
                 <span class="icon_txt">education</span>
@@ -250,7 +254,7 @@
             </div>
           </a>
 
-          <a href="#exp" id="i2" class="menu-item">
+          <a href="#" id="i2" class="menu-item">
             <div id="experience" class="sub_cv">
               <i class="fas fa fa-briefcase">
                 <span class="icon_txt">experience</span>
@@ -258,7 +262,7 @@
             </div>
           </a>
 
-          <a href="#tec" id="i3" class="menu-item">
+          <a href="#" id="i3" class="menu-item">
             <div id="tech" class="sub_cv">
               <i class="fas fa fa-cogs">
                 <span class="icon_txt">technology</span>
@@ -266,21 +270,21 @@
             </div>
           </a>
 
-          <a href="#soft" id="i4" class="menu-item">
+          <a href="#" id="i4" class="menu-item">
             <div id="software" class="sub_cv">
               <i class="fas fa fa-window-restore">
                 <span class="icon_txt">software</span>
               </i>
             </div>
           </a>
-          <a href="#oth" id="i5" class="menu-item">
+          <a href="#" id="i5" class="menu-item">
             <div id="volunteer" class="sub_cv">
               <i class="fas fa fa-hands-helping">
                 <span class="icon_txt">volunteer</span>
               </i>
             </div>
           </a>
-          <a href="#lan" id="i6" class="menu-item">
+          <a href="#" id="i6" class="menu-item">
             <div id="language" class="sub_cv">
               <i class="fas fa fa-globe">
                 <span class="icon_txt">language</span>
@@ -288,15 +292,153 @@
             </div>
           </a>
         </nav>
-        <nav class="cv_nav_desk hide"></nav>
       </div>
       <article class="grid_cv">
-        <div id="edu" class="grid_section education">education</div>
-        <div id="exp" class="grid_section experience">experience</div>
-        <div id="tec" class="grid_section tech">technologies</div>
-        <div id="soft" class="grid_section software">software</div>
-        <div id="oth" class="grid_section other">other</div>
-        <div id="lan" class="grid_section language">language</div>
+        <div id="edu" class="grid_section education">
+          <h2 class="noMargin">Multimedia design</h2>
+          <p>
+            Academy profession degree (AP)<br />
+            KEA - Copenhagen School of Design and Technology - 2019 - 2021<br />
+            Professional profile: Front-end design/development
+          </p>
+
+          <h2>EUX Business</h2>
+          <p>
+            Secondary education<br />
+            Skive College 2017 - 2019<br />
+            Profile: IT and business economics
+          </p>
+
+          <h2>Event Management</h2>
+          <p>
+            Single course, Academy course<br />
+            Erhvervsakademi Dania - 2012 - 2012
+          </p>
+
+          <h2>Event coordinator</h2>
+          <p>
+            Secondary education<br />
+            CPH WEST - 2011 - 2012
+          </p>
+
+          <h2>Makeup artist</h2>
+          <p>
+            Creative education<br />
+            Fagskolen for dekorativ kosmetik - 2008 - 2009<br />
+            Professional profile: Beauty makeup
+          </p>
+        </div>
+        <div id="exp" class="grid_section experience">
+          <h2 class="noMargin">Tutor in multimedia design</h2>
+          <p>
+            KEA - Copenhagen School of Design and Technology - 2020 - Current <br />
+            Helping and coaching other multimedia students with issues related to code / rest API / git ect.
+          </p>
+
+          <h2>Owner of beauty/wellness salon</h2>
+          <p>
+            HaarStraa / S:HE Copenhagen - 2013 - 2019<br />
+            S: HE Copenhagen was a wellness and beauty salon that housed 4 other small beauty / wellness companies. HaarStraa was a sub-brand.<br />
+            Main responsibilities: Concept and brand development, management, graphic design, web design, social media management, administration, budgets, customer relations, strategi and business analysis.
+          </p>
+
+          <h2>Event coordinator intern</h2>
+          <p>
+            Rust ApS - 2012 - 2013 <br />
+            I got the task to create a new concept for Thursday concerts, and then being the manager each Thursday evening / night while the club was live. I had the responsibility for staff, musicians, customer disputes, and general operation.<br />
+            Responsibilities: Concept development, public relations, online media, social media marketing, graphic design, club and staff management, concert pre-/production, promotion, strategy development.
+          </p>
+
+          <h2>Freelance makeup artist</h2>
+          <p>
+            By Lisa Bianca - 2008 - 2012 <br />
+            As a makeup artist I did runway shows, music videos and weddings.
+          </p>
+
+          <h2>Youth care and teaching assistant</h2>
+          <p>
+            In Fredericia, Odense and Copenhagen (various locations) - 2002 - 2010 <br />
+            Mainly with a musical focus: Music teacher in various primary schools, director of song and choir in youth musicals, additional educational work with children and young people.
+          </p>
+        </div>
+        <div id="tec" class="grid_section tech">
+          <h2 class="noMargin">Spent most og my time on</h2>
+          <ul class="tech_list">
+            <li>HTML</li>
+            <li>HTML5</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+
+          <h2>Worked a lot with</h2>
+          <ul class="tech_list">
+            <li>Wordpress rest API</li>
+            <li>JSON</li>
+            <li>git</li>
+            <li>SVG</li>
+          </ul>
+
+          <h2>Fairly new</h2>
+          <ul class="tech_list">
+            <li>Parcel.js</li>
+            <li>SCSS/SASS</li>
+            <li>npm</li>
+            <li>Node modules</li>
+          </ul>
+        </div>
+
+        <div id="soft" class="grid_section software">
+          <h2 class="noMargin">Graphics</h2>
+          <ul class="tech_list">
+            <li>Adobe Photoshop</li>
+            <li>Adobe Indesign</li>
+            <li>Adobe Illustrator</li>
+          </ul>
+          <h2>Video & sound</h2>
+          <ul class="tech_list">
+            <li>Premier Pro</li>
+            <li>Adobe Audition</li>
+            <li>Logic pro</li>
+          </ul>
+          <h2>Wireframing & mockups</h2>
+          <ul class="tech_list">
+            <li>Adobe XD</li>
+            <li>Invision Studio</li>
+          </ul>
+          <h2>Coding editors</h2>
+          <ul class="tech_list">
+            <li>Brackets</li>
+            <li>Visual Studio code</li>
+          </ul>
+          <h2>Communication & other</h2>
+          <ul class="tech_list">
+            <li>Slack</li>
+            <li>Teams</li>
+            <li>cPanel</li>
+            <li>Screaming frog</li>
+          </ul>
+        </div>
+        <div id="oth" class="grid_section other">
+          <h2 class="noMargin">Board chairwoman</h2>
+          <p>Housing cooperative Rørholmsgade 15 a / b - 2018 - Current Responsibilities: Budget planning and general operations.</p>
+
+          <h2>Singer/songwriter</h2>
+          <p>Lisa Vegas - 2003 - 2009 Responsibilities: Songwriting, web design, graphic design, music production, event planning, booking, promotion.</p>
+
+          <h2>Member of the board</h2>
+          <p>Rytmisk Musik Forening Fredericia (RMF) - 2008 - 2009 Responsibilities: Booking of artists, member surveys, administration, concert production, organization planning.</p>
+
+          <h2>Booker</h2>
+          <p>Kulturmilitzen 2001 - 2003 Responsibilities: Booking of artists, pre-production and concert production.</p>
+        </div>
+        <div id="lan" class="grid_section language">
+          <h2 class="noMargin">Danish</h2>
+          <p>(native language)</p>
+          <h2>English</h2>
+          <p>(read, write, speak)</p>
+          <h2>German</h2>
+          <p>(read)</p>
+        </div>
       </article>
     </section>
 

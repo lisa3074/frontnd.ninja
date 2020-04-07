@@ -76,7 +76,7 @@ $menu-items: 6;
   $width: 0;
   $height: 150px;
   position: absolute;
-  top: 4rem;
+  top: 0rem;
   left: auto;
   right: 3.5rem;
 
@@ -121,11 +121,11 @@ $menu-items: 6;
 .menu-open-button:hover {
   transform: scale(1.1, 1.1) translate3d(0, 0, 0);
   .hamburger {
-    //background-color: #dbaba2;
     background-color: #dbaba2;
   }
 }
-.menu-open:checked + .menu-open-button {
+//.menu-open:checked + .menu-open-button
+.big {
   transition-timing-function: linear;
   transition-duration: 200ms;
   transform: scale(0.8, 0.8) translate3d(0, 0, 0);
@@ -153,7 +153,7 @@ $menu-items: 6;
     transition: 0.5s;
     opacity: 0;
     top: 0.5rem;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.931);
   }
   .move_it {
     transition-duration: (calc(50ms * var(--count)));

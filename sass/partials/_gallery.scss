@@ -5,7 +5,6 @@
   margin: 0 auto;
   overflow: hidden;
 }
-
 /* The div that slides the upper grid */
 .background_above {
   height: 25vh;
@@ -50,16 +49,23 @@
 /* The divs that control which way the grid slides */
 .right_arrow img,
 .left_arrow img {
-  height: 12vw;
+  height: 5vw;
   width: auto;
   object-fit: contain;
 }
+
+.left_arrow img {
+  transform: rotate(90deg);
+}
+.right_arrow img {
+  transform: rotate((-90deg));
+}
 .right_arrow,
 .left_arrow {
-  height: 10vw;
-  width: 10vw;
+  height: 6vw;
+  width: auto;
   z-index: 0;
-  margin: 10vw 12vw;
+  margin: 10vw 8vw;
   text-align: center;
 }
 
@@ -69,68 +75,40 @@
 }
 
 @media (min-width: 500px) {
+  .portfolioet {
+    position: relative;
+  }
+
+  .arrow_wrapper {
+    position: absolute;
+    top: 7rem;
+    justify-content: flex-end;
+  }
   .background_above {
-    height: 30vh;
+    height: 34vh;
   }
   .background_below {
-    height: 30vh;
+    height: 34vh;
   }
   .grid_container {
-    width: 80vw;
-    height: 60vh;
+    width: 100vw;
+    height: 68vh;
   }
   .grid_pictures {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 40vw);
-    grid-template-rows: 30vh;
-    height: 30vh;
+    grid-template-columns: repeat(auto-fill, 50vw);
+    grid-template-rows: 34vh;
+    height: 34vh;
     margin: 0 auto;
   }
 
   .right_arrow img,
   .left_arrow img {
-    height: 7vw;
+    height: 1rem;
   }
   .right_arrow,
   .left_arrow {
-    height: 7vw;
-    width: 7vw;
-    margin: 5vw 7vw;
-  }
-}
-@media (min-width: 700px) {
-  .right_arrow img,
-  .left_arrow img {
-    height: 5vw;
-  }
-  .right_arrow,
-  .left_arrow {
-    height: 5vw;
-    width: 5vw;
-    margin: 5vw 5vw;
-  }
-}
-@media (min-width: 900px) {
-  .right_arrow img,
-  .left_arrow img {
-    height: 4vw;
-  }
-  .right_arrow,
-  .left_arrow {
-    height: 4vw;
-    width: 4vw;
-    margin: 4vw 4vw;
-  }
-}
-@media (min-width: 1100px) {
-  .right_arrow img,
-  .left_arrow img {
-    height: 3vw;
-  }
-  .right_arrow,
-  .left_arrow {
-    height: 5vw;
-    width: 5vw;
-    margin: 2vw 3vw;
+    margin: 2rem 2rem;
+    text-align: right;
   }
 }

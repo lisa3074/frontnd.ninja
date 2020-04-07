@@ -64,6 +64,7 @@ export function subMenu() {
       document.querySelector(".contact").classList = "contact";
       document.querySelector(".portfolioet").classList = "portfolioet hide";
       document.querySelector(".skriv_tekst").classList = "skriv_tekst";
+      document.querySelectorAll(".grid_section").forEach((section) => {});
     }, 500);
   });
 

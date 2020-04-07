@@ -1,9 +1,16 @@
+.cv {
+  position: fixed;
+  top: 60px;
+  overflow: scroll;
+}
+
 .submenu_arrow {
   width: 15px;
   height: auto;
   margin-left: 1rem;
   object-fit: contain;
   display: none;
+  position: fixed;
 }
 .side {
   position: absolute;
@@ -22,6 +29,9 @@
   height: 5rem;
   align-content: flex-start;
   background-color: #fff;
+  position: fixed;
+  top: 60px;
+  z-index: 5;
 }
 
 .submenu_container {
@@ -42,7 +52,9 @@
   font-size: 1.5rem;
   letter-spacing: 4px;
 }
-
+.cv h1 {
+  margin-top: 2rem;
+}
 .grid_cv {
   display: grid;
   grid-template-columns: repeat(6, 100%);
@@ -52,7 +64,7 @@
   overflow-y: scroll;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  margin-top: 2rem;
+  padding-top: 6rem;
 }
 
 .grid_section {
@@ -60,6 +72,8 @@
   transition: 1s;
   transform: translateX(calc(var(--currPos) * 1vw));
   overflow: scroll;
+  overflow-y: scroll;
+  position: relative;
 }
 
 #go {
@@ -83,11 +97,49 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
 }
+.cv p {
+  padding-left: 2rem;
+}
+
+.tech_list {
+  padding-left: 2rem;
+  margin: 0 0 2rem;
+}
+.tech_list li {
+  font-size: 0.8rem;
+  letter-spacing: 0px;
+  list-style: disc;
+  list-style-position: inside;
+  line-height: 1.2rem;
+}
+
+.cv h2 {
+  margin: 2rem 0 0.2rem;
+}
+
+.cv p {
+  margin-top: 0;
+  max-width: 65ch;
+  line-height: 1.2rem;
+  padding-right: 2rem;
+}
+
+.cv .noMargin {
+  margin-top: 0rem;
+}
+
+.scroll {
+  overflow: scroll;
+}
 
 @media (min-width: 700px) {
   .down,
   .side {
     display: none;
+  }
+
+  .cv .noMargin {
+    margin-top: 1rem;
   }
 
   .cv h1 {

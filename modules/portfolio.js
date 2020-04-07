@@ -54,6 +54,7 @@ function displayPortfolio() {
         console.log("Even" + " " + count);
         const klon = portfolioTemplateA.cloneNode(true).content;
         klon.querySelector("img").src = project.thumbnail.guid;
+        klon.querySelector("img").alt = project.titel;
         klon.querySelector(".titel_klonen").textContent = project.titel;
         klon.querySelector(".itemA").setAttribute("class", "pr" + count + " portfolio_klonen itemA");
         klon.firstElementChild.addEventListener("click", function () {
@@ -67,6 +68,7 @@ function displayPortfolio() {
         console.log("Odd" + " " + count);
         const klon = portfolioTemplateB.cloneNode(true).content;
         klon.querySelector("img").src = project.thumbnail.guid;
+        klon.querySelector("img").alt = project.titel;
         klon.querySelector(".titel_klonen").textContent = project.titel;
         klon.querySelector(".itemB").setAttribute("class", "pr" + count + " portfolio_klonen itemB");
         klon.firstElementChild.addEventListener("click", function () {
@@ -209,8 +211,8 @@ function moveStuffR() {
     gridPositionA += -100;
     gridPositionB += 100;
   } else {
-    gridPositionA += -40;
-    gridPositionB += 40;
+    gridPositionA += -50;
+    gridPositionB += 50;
   }
   console.log("right");
   document.querySelectorAll(".itemA").forEach((item) => {
@@ -231,8 +233,8 @@ function moveStuffL() {
     gridPositionA += 100;
     gridPositionB += -100;
   } else {
-    gridPositionA += 40;
-    gridPositionB += -40;
+    gridPositionA += 50;
+    gridPositionB += -50;
   }
   console.log("left");
   document.querySelectorAll(".itemA").forEach((item) => {
@@ -269,13 +271,13 @@ function countLength() {
     if (count % 2 == 0) {
       let gridfirst = count / 2;
       console.log("gridFirst" + " " + gridfirst);
-      gridLength = Math.round(gridfirst) * 40;
+      gridLength = Math.round(gridfirst) * 50;
       //gridLength = (count / 2) * 40;
       console.log("gridLength" + " " + gridLength);
     } else {
       let gridfirst = count / 2;
       console.log("gridFirst" + " " + gridfirst);
-      gridLength = Math.round(gridfirst) * 40;
+      gridLength = Math.round(gridfirst) * 50;
       console.log("gridLength" + " " + gridLength);
     }
   }
@@ -288,7 +290,7 @@ function setLength() {
   if (innerWidth <= 500) {
     translate = gridLength - 100;
   } else {
-    translate = gridLength - 80;
+    translate = gridLength - 100;
   }
 
   console.log(translate);
