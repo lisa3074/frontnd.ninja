@@ -28,7 +28,7 @@
   flex-wrap: nowrap;
   height: 5rem;
   align-content: flex-start;
-  background-color: #fff;
+  //background-color: #fff;
   position: fixed;
   top: 60px;
   z-index: 5;
@@ -61,19 +61,28 @@
   grid-template-rows: 100%;
   height: calc(100vh - 75px);
   margin: 0 auto;
-  overflow-y: scroll;
+  //overflow-y: scroll;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding-top: 6rem;
+  position: relative;
+  top: 0;
+  //margin-top: 6rem;
+}
+
+.grid_section h1 {
+  margin-bottom: 2.5rem;
 }
 
 .grid_section {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   transition: 1s;
   transform: translateX(calc(var(--currPos) * 1vw));
   overflow: scroll;
-  overflow-y: scroll;
+  //overflow-y: scroll;
   position: relative;
+  top: 0px;
+  margin-top: 1.1rem;
+  height: calc(100vh - 75px);
 }
 
 #go {
@@ -133,53 +142,36 @@
 }
 
 @media (min-width: 700px) {
-  .down,
-  .side {
-    display: none;
-  }
-
   .cv .noMargin {
-    margin-top: 1rem;
+    margin-top: 0rem;
+  }
+  .grid_section {
+    margin-top: 0;
   }
 
   .cv h1 {
     font-size: 3.5vw;
     width: 16vw;
   }
-  .side {
-    width: 2vw;
-  }
 }
 @media (min-width: 900px) {
   .cv h1 {
     font-size: 3vw;
-  }
-  .side {
-    width: 1.7vw;
   }
 }
 @media (min-width: 1100px) {
   .cv h1 {
     font-size: 2.5vw;
   }
-  .side {
-    width: 1.3vw;
-  }
 }
 @media (min-width: 1300px) {
   .cv h1 {
     font-size: 2vw;
   }
-  .side {
-    width: 1vw;
-  }
 }
 @media (max-height: 400px) {
   .grid_cv {
     margin: 3rem auto;
-  }
-  .side {
-    margin-top: 1.5rem;
   }
 
   .submenu_container,
@@ -188,16 +180,5 @@
   }
   .submenu_container {
     width: 85vw;
-  }
-}
-
-@media (min-height: 650px) {
-  .down {
-    margin-top: 0.5rem;
-  }
-}
-@media (min-height: 750px) {
-  .down {
-    margin-top: 0rem;
   }
 }

@@ -33,8 +33,18 @@
     <!--Læser projektbillederne ind i singleview, som passer til det projekt der er klikket på-->
     <template class="portfolio_single_skabelon">
       <div class="projektbillede_wrapper">
+        <h1 class="titel">Prøve</h1>
         <img src="" alt="" class="pic" />
-        <p class="enkelt_beskrivelse"></p>
+        <h2 class="project_video_text">
+          The campaign video
+        </h2 class="website_text">
+        <video class="projektvideo" poster="" controls src="" alt=""></video>
+        <h2>
+          The project recorded on video
+        </h2>
+        <video class="website" controls src="" alt=""></video>
+        <h2 class="iframe_txt">Try it out!</h2>
+        <iframe src=""></iframe>
       </div>
     </template>
 
@@ -147,17 +157,19 @@
 
       <h3 class="kategori"></h3>
 
-      <!---POPUP SINGLE-->
+      <!---POPUP PROJEKT-->
       <article class="hide projekt_popup">
         <div class="luk">
           <img src="static/billeder/luk_u_ring.svg" alt="luk" />
         </div>
         <div class="beskrivelse_wrapper">
           <h1 class="overskrift_beskriv">Overskrift</h1>
+          <h2 class="semester"></h2>
           <img src="static/billeder/dotthei3.svg" alt="info" class="info" />
           <img src="static/billeder/tilbage.svg" alt="info" class="tilbage hide" />
           <p class="beskrivelse"></p>
-          <a href="" target="_blank" rel="noreferrer" class="link a">link to website</a>
+          <a href="" target="_blank" rel="noreferrer" class="link a">link to website</a><br><br><br>
+          <a href="" target="_blank" rel="noreferrer" class="documentation" download>download documentation</a>
         </div>
         <h1 class="titel"></h1>
         <div class="projekt_billede_liste"></div>
@@ -231,7 +243,7 @@
     <section class="cv hide">
       <div class="submenu_wrapper">
         <div class="submenu_container">
-          <h1>[<span class="cv_headings">education</span>]</h1>
+          <!--     <h1>[<span class="cv_headings">education</span>]</h1> -->
           <!-- <img class="submenu_arrow down" src="/static/billeder/down.png" alt="next" /> -->
         </div>
         <!--  <div class="arrow_container">
@@ -246,56 +258,57 @@
             <span class="hamburger hamburger-3"></span>
           </label>
 
-          <a href="#" id="i1" class="menu-item">
-            <div id="education" class="sub_cv">
-              <i class="fa fa-graduation-cap">
-                <span class="icon_txt">education</span>
-              </i>
-            </div>
-          </a>
+          <!--  <a href="" id="i1" class="menu-item"> -->
+          <div id="education" class="sub_cv menu-item">
+            <i class="fa fa-graduation-cap">
+              <span class="icon_txt">education</span>
+            </i>
+          </div>
+          <!--         </a> -->
 
-          <a href="#" id="i2" class="menu-item">
-            <div id="experience" class="sub_cv">
-              <i class="fas fa fa-briefcase">
-                <span class="icon_txt">experience</span>
-              </i>
-            </div>
-          </a>
+          <!-- <a href="" id="i2" class="menu-item"> -->
+          <div id="experience" class="sub_cv menu-item">
+            <i class="fas fa fa-briefcase">
+              <span class="icon_txt">experience</span>
+            </i>
+          </div>
+          <!--    </a> -->
 
-          <a href="#" id="i3" class="menu-item">
-            <div id="tech" class="sub_cv">
-              <i class="fas fa fa-cogs">
-                <span class="icon_txt">technology</span>
-              </i>
-            </div>
-          </a>
+          <!--     <a href="" id="i3" class="menu-item"> -->
+          <div id="tech" class="sub_cv menu-item">
+            <i class="fas fa fa-cogs">
+              <span class="icon_txt">technology</span>
+            </i>
+          </div>
+          <!--    </a> -->
 
-          <a href="#" id="i4" class="menu-item">
-            <div id="software" class="sub_cv">
-              <i class="fas fa fa-window-restore">
-                <span class="icon_txt">software</span>
-              </i>
-            </div>
-          </a>
-          <a href="#" id="i5" class="menu-item">
-            <div id="volunteer" class="sub_cv">
-              <i class="fas fa fa-hands-helping">
-                <span class="icon_txt">volunteer</span>
-              </i>
-            </div>
-          </a>
-          <a href="#" id="i6" class="menu-item">
-            <div id="language" class="sub_cv">
-              <i class="fas fa fa-globe">
-                <span class="icon_txt">language</span>
-              </i>
-            </div>
-          </a>
+          <!--         <a href="" id="i4" class="menu-item"> -->
+          <div id="software" class="sub_cv menu-item">
+            <i class="fas fa fa-window-restore">
+              <span class="icon_txt">software</span>
+            </i>
+          </div>
+          <!--     </a> -->
+          <!--        <a href="" id="i5" class="menu-item"> -->
+          <div id="volunteer" class="sub_cv menu-item">
+            <i class="fas fa fa-hands-helping">
+              <span class="icon_txt">volunteer</span>
+            </i>
+          </div>
+          <!--      </a> -->
+          <!--    <a href="" id="i6" class="menu-item"> -->
+          <div id="language" class="sub_cv menu-item">
+            <i class="fas fa fa-globe">
+              <span class="icon_txt">language</span>
+            </i>
+          </div>
+          <!--    </a> -->
         </nav>
       </div>
       <article class="grid_cv">
         <div id="edu" class="grid_section education">
-          <h2 class="noMargin">Multimedia design</h2>
+          <h1>[education]</h1>
+          <h2 class="noMargin" id="back">Multimedia design</h2>
           <p>
             Academy profession degree (AP)<br />
             KEA - Copenhagen School of Design and Technology - 2019 - 2021<br />
@@ -329,6 +342,7 @@
           </p>
         </div>
         <div id="exp" class="grid_section experience">
+          <h1>[experience]</h1>
           <h2 class="noMargin">Tutor in multimedia design</h2>
           <p>
             KEA - Copenhagen School of Design and Technology - 2020 - Current <br />
@@ -362,6 +376,7 @@
           </p>
         </div>
         <div id="tec" class="grid_section tech">
+          <h1>[technology]</h1>
           <h2 class="noMargin">Spent most og my time on</h2>
           <ul class="tech_list">
             <li>HTML</li>
@@ -388,6 +403,7 @@
         </div>
 
         <div id="soft" class="grid_section software">
+          <h1>[software]</h1>
           <h2 class="noMargin">Graphics</h2>
           <ul class="tech_list">
             <li>Adobe Photoshop</li>
@@ -419,6 +435,7 @@
           </ul>
         </div>
         <div id="oth" class="grid_section other">
+          <h1>[volunteer]</h1>
           <h2 class="noMargin">Board chairwoman</h2>
           <p>Housing cooperative Rørholmsgade 15 a / b - 2018 - Current Responsibilities: Budget planning and general operations.</p>
 
@@ -432,6 +449,7 @@
           <p>Kulturmilitzen 2001 - 2003 Responsibilities: Booking of artists, pre-production and concert production.</p>
         </div>
         <div id="lan" class="grid_section language">
+          <h1>[language]</h1>
           <h2 class="noMargin">Danish</h2>
           <p>(native language)</p>
           <h2>English</h2>

@@ -53,9 +53,9 @@ function displayPortfolio() {
         console.log("Even Number");
         console.log("Even" + " " + count);
         const klon = portfolioTemplateA.cloneNode(true).content;
-        klon.querySelector("img").src = project.thumbnail.guid;
+        screenSize(project, klon);
         klon.querySelector("img").alt = project.titel;
-        klon.querySelector(".titel_klonen").textContent = project.titel;
+        klon.querySelector(".titel_klonen").textContent = project.titel + " - " + project.semester;
         klon.querySelector(".itemA").setAttribute("class", "pr" + count + " portfolio_klonen itemA");
         klon.firstElementChild.addEventListener("click", function () {
           singlePicInfo.textContent = "";
@@ -67,9 +67,9 @@ function displayPortfolio() {
         console.log("Odd Number");
         console.log("Odd" + " " + count);
         const klon = portfolioTemplateB.cloneNode(true).content;
-        klon.querySelector("img").src = project.thumbnail.guid;
+        screenSize(project, klon);
         klon.querySelector("img").alt = project.titel;
-        klon.querySelector(".titel_klonen").textContent = project.titel;
+        klon.querySelector(".titel_klonen").textContent = project.titel + " - " + project.semester;
         klon.querySelector(".itemB").setAttribute("class", "pr" + count + " portfolio_klonen itemB");
         klon.firstElementChild.addEventListener("click", function () {
           singlePicInfo.textContent = "";
@@ -83,6 +83,19 @@ function displayPortfolio() {
   });
   hideArrows();
 }
+
+function screenSize(project, klon) {
+  if (innerWidth <= 800) {
+    klon.querySelector("img").src = project.thumbnail_lille.guid;
+  } else if (innerWidth <= 1050) {
+    klon.querySelector("img").src = project.thumbnail_medium.guid;
+  } else if (innerWidth <= 1400) {
+    klon.querySelector("img").src = project.thumbnail_stor.guid;
+  } else {
+    klon.querySelector("img").src = project.thumbnail_xstor.guid;
+  }
+}
+
 function hideArrows() {
   if (innerWidth < 500) {
     if (count < 2 || count == 2) {
@@ -113,23 +126,6 @@ function removeDisabled() {
   document.querySelector(".left_arrow").classList.add("greyed_out");
 }
 
-function displayProjectInfo(project, projectList) {
-  console.log("projektListe");
-  const singlePicTemplate = document.querySelector(".portfolio_single_skabelon");
-  projectList.innerHTML = "";
-  projectInfo.forEach((billede) => {
-    console.log("projektbilleder");
-    if (project.sorteringstitel == billede.sorteringstitel) {
-      const klon = singlePicTemplate.cloneNode(true).content;
-      klon.querySelector("img").src = billede.billede.guid;
-      klon.querySelector(".enkelt_beskrivelse").textContent = billede.beskrivelse;
-      checkLink(project);
-      listen(klon, billede);
-      projectList.appendChild(klon);
-    }
-  });
-}
-
 function checkType(project, singlePicInfo, projectList) {
   if (project.sorter == 2) {
     document.querySelector(".single").classList = "single fade_in_quick";
@@ -142,17 +138,73 @@ function checkType(project, singlePicInfo, projectList) {
     console.log("clone 1 clicked m beskrivelse");
     document.querySelector(".projekt_popup").classList = "projekt_popup";
     document.querySelector(".beskrivelse").textContent = project.beskrivelse;
-    document.querySelector(".titel").textContent = project.titel;
     document.querySelector(".overskrift_beskriv").textContent = project.titel;
-    displayProjectInfo(project, projectList);
+    document.querySelector(".semester").textContent = project.semester;
+    if (project.dokumentation == "") {
+      console.log("no doku");
+      document.querySelector(".documentation").classList.add("hide");
+    } else {
+      console.log("doku!!");
+      document.querySelector(".documentation").href = project.dokumentation.guid;
+    }
+    const singlePicTemplate = document.querySelector(".portfolio_single_skabelon");
+    projectList.innerHTML = "";
+    console.log("projektbilleder");
+    const klon = singlePicTemplate.cloneNode(true).content;
+    const billede = klon.querySelector("img");
+    klon.querySelector(".website").src = project.video.guid;
+    if (project.projektvideo == "") {
+      console.log("no video");
+      klon.querySelector(".projektvideo").classList.add("hide");
+      klon.querySelector(".project_video_text").classList.add("hide");
+    } else {
+      klon.querySelector(".projektvideo").src = project.projektvideo.guid;
+      klon.querySelector(".projektvideo").poster = project.videoposter.guid;
+    }
+    klon.querySelector(".titel").textContent = project.titel;
+    if (innerWidth >= 880) {
+      if (project.embed == 1) {
+        klon.querySelector("iframe").src = project.embedlink;
+      } else {
+        klon.querySelector("iframe").classList.add("hide");
+        klon.querySelector(".iframe_txt").classList.add("hide");
+      }
+    } else {
+      klon.querySelector("iframe").classList.add("hide");
+      klon.querySelector(".iframe_txt").classList.add("hide");
+    }
+    projectSize(project, billede);
+    checkLink(project);
+    listen(klon, project);
+    projectList.appendChild(klon);
+  }
+  document.querySelector(".luk").addEventListener("click", function () {
+    console.log("luk");
+    document.querySelector("iframe").src = "";
+  });
+}
+function projectSize(project, billede) {
+  console.log("projectSize");
+  if (innerWidth <= 400) {
+    billede.src = project.projektbillede_xlille.guid;
+  } else if (innerWidth <= 800) {
+    billede.src = project.projektbillede_lille.guid;
+  } else if (innerWidth <= 1050) {
+    billede.src = project.projektbillede_medium.guid;
+  } else if (innerWidth <= 1400) {
+    billede.src = project.projektbillede_stor.guid;
+  } else {
+    billede.src = project.projektbillede_xstor.guid;
   }
 }
 
-function listen(klon, billede) {
-  klon.firstElementChild.addEventListener("click", function () {
+function listen(klon, project) {
+  klon.querySelector("img").addEventListener("click", function () {
+    const billede = document.querySelector(".et_billede");
     document.querySelector(".single").classList = "single fade_in_quick";
-    document.querySelector(".et_billede").src = billede.billede.guid;
+    projectSize(project, billede);
   });
+
   document.querySelector(".enkelt").addEventListener("click", function () {
     document.querySelector(".single").classList = "single fade_out_quick";
   });

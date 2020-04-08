@@ -5,9 +5,11 @@ export function delegatenCv() {
   currPos = 0;
   pos = 0;
   backToSkip();
-  document.querySelector(".menu-open-button").addEventListener("click", changeHeading);
-  document.querySelectorAll("#contact, #cv, #person, #me, #portfolio, .desk_home").forEach((punkt) => {
+  //document.querySelector(".menu-open-button").addEventListener("click", changeHeading);
+
+  document.querySelectorAll("#cv, .cv_punkt, .cv_link, #contact, #person, #me, #portfolio, .desk_home, .person, web, .graphics, .contact_punkt, .me_punkt").forEach((punkt) => {
     punkt.addEventListener("click", reset);
+    punkt.addEventListener("touchstart", reset);
   });
   setPosition();
 }
@@ -15,35 +17,44 @@ export function delegatenCv() {
 function reset() {
   console.log("reset");
   document.querySelectorAll(".grid_section").forEach((section) => {
+    document.querySelector("#back").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
     section.style.setProperty("--currPos", 0);
-    document.querySelector(".cv_headings").textContent = "education";
+    //document.querySelector(".cv_headings").textContent = "education";
   });
 }
-
 function setPosition() {
   console.log("setPosition");
   document.querySelector("#education").addEventListener("click", function () {
+    reset();
     pos = 0;
     move();
   });
   document.querySelector("#experience").addEventListener("click", function () {
+    reset();
     pos = 100;
     console.log(currPos);
     move();
   });
   document.querySelector("#tech").addEventListener("click", function () {
+    reset();
     pos = 200;
     move();
   });
   document.querySelector("#software").addEventListener("click", function () {
+    reset();
     pos = 300;
     move();
   });
   document.querySelector("#volunteer").addEventListener("click", function () {
+    reset();
     pos = 400;
     move();
   });
   document.querySelector("#language").addEventListener("click", function () {
+    reset();
     pos = 500;
     move();
   });
@@ -71,20 +82,6 @@ function changeHeading() {
 function backToSkip() {
   console.log("BackToSkip");
   /*  document.querySelector(".side").addEventListener("click", skip); */
-}
-
-function skip() {
-  console.log("skip");
-  if (currPos == -500) {
-    currPos = 0;
-    move();
-  } else {
-    console.log("<= 500");
-    currPos += -100;
-    move();
-    console.log(currPos);
-    backToSkip();
-  }
 }
 
 function move() {

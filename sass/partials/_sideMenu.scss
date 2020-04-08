@@ -18,15 +18,15 @@ $menu-items: 6;
 }
 .menu-item {
   background: rgb(255, 255, 255);
-  width: 6rem;
   height: 80px;
   margin-left: -40px;
   position: absolute;
+  width: 5rem;
   top: 20px;
   color: #285d67;
   text-align: center;
   line-height: 80px;
-  transform: translate3d(-20px, 0, 0);
+  transform: translate3d(-10px, 0, 0);
   transition: transform ease-out 200ms;
   padding-top: 0.5rem;
 }
@@ -38,8 +38,8 @@ $menu-items: 6;
   background: #285d67;
   display: block;
   position: absolute;
-  top: 30%;
-  left: 50%;
+  top: 20%;
+  left: 45%;
   margin-left: -$width/2;
   margin-top: -$height/2;
   transition: transform 200ms;
@@ -74,12 +74,12 @@ $menu-items: 6;
 
 .sideMenu {
   $width: 0;
-  $height: 150px;
+  $height: 50px;
   position: absolute;
   top: 0rem;
   left: auto;
   right: 3.5rem;
-
+  width: 2rem;
   padding-top: 20px;
   width: $width;
   height: $height;
@@ -106,7 +106,7 @@ $menu-items: 6;
   height: 80px;
   margin-left: -40px;
   position: absolute;
-  top: 20px;
+  top: 30px;
   color: #285d67;
   text-align: center;
   line-height: 80px;
@@ -154,23 +154,28 @@ $menu-items: 6;
     opacity: 0;
     top: 0.5rem;
     background-color: rgba(255, 255, 255, 0.931);
+    left: 1rem;
   }
   .move_it {
     transition-duration: (calc(50ms * var(--count)));
     transform: translate3d(0, calc(80px * var(--count)), 0);
     opacity: 1;
   }
-
   .sideMenu {
-    right: 5rem;
+    top: 0.4rem;
+    right: 4rem;
+  }
+  .hamburger {
+    top: 25%;
   }
   .menu-open-button {
+    height: 30px;
     margin-left: -25px;
   }
 
-  .hamburger {
+  /* .hamburger {
     top: 30%;
-  }
+  } */
   .menu-open-button:hover {
     transform: scale(1.1, 1.1) translate3d(0, 0, 0);
     .hamburger {
@@ -181,10 +186,19 @@ $menu-items: 6;
 
 @media (max-width: 500px) {
   .sideMenu {
-    right: 4.5rem;
+    right: 3.5rem;
+    top: 1.7rem;
   }
   .hamburger {
-    top: 45%;
+    top: 25%;
+  }
+  .menu-open-button {
+    height: 35px;
+  }
+}
+@media (max-width: 700px) {
+  .sideMenu {
+    top: 1.7rem;
   }
 }
 
@@ -200,7 +214,7 @@ $menu-items: 6;
 
   .sideMenu {
     right: 0rem;
-    width: 25vw;
+    width: 5rem;
   }
 
   .cv .icon_txt {
