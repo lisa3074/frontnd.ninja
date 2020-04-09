@@ -154,12 +154,13 @@ function displayProject(project, projectList) {
     document.querySelector(".documentation").href = project.dokumentation.guid;
   }
   klon.querySelector(".website").src = project.video.guid;
+  klon.querySelector(".website").poster = project.videoposter.guid;
   if (project.projektvideo == "") {
     klon.querySelector(".projektvideo").classList.add("hide");
     klon.querySelector(".project_video_text").classList.add("hide");
   } else {
     klon.querySelector(".projektvideo").src = project.projektvideo.guid;
-    klon.querySelector(".projektvideo").poster = project.videoposter.guid;
+    klon.querySelector(".projektvideo").poster = project.projektvideo_poster.guid;
   }
   klon.querySelector(".titel").textContent = project.titel;
   if (innerWidth >= 880) {

@@ -59,7 +59,7 @@ export function burgerMenu() {
       block: "start",
     });
     document.querySelector(".kategori").textContent = "[ w e b _ p r o d u c t i o n s ]";
-    document.querySelector(".tell").textContent = " This portfolio and the list of projects is an ongoing process. Check in one in a while, and maybe you'll see new and exciting stuff from time to time.";
+    document.querySelector(".tell").textContent = "This portfolio and the list of projects is an ongoing process. Check in one in a while, and maybe you'll see some new and exciting stuff.";
   });
 
   kryds1.addEventListener("click", function () {
@@ -104,11 +104,11 @@ export function burgerMenu() {
 
   document.querySelector(".graphics").addEventListener("click", function () {
     document.querySelector(".kategori").textContent = "[ g r a p h i c s ]";
-    document.querySelector(".tell").textContent = "Here you can have a look at the graphics I've produced since february 2019.";
+    document.querySelector(".tell").textContent = "Graphics includes illustrations, photos and everything in between.";
   });
   document.querySelector(".web").addEventListener("click", function () {
     document.querySelector(".kategori").textContent = "[  w e b _ p r o d u c t i o n s ]";
-    document.querySelector(".tell").textContent = "Web productions include websites and games. This is my favorite part of multimedia design, as I am a bit of a nerd when it comes to code";
+    document.querySelector(".tell").textContent = "Web productions include websites, mini-games and animations.";
   });
 
   document.querySelector(".old_mobile").addEventListener("click", function () {

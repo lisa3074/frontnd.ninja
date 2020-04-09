@@ -41,7 +41,9 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: sans-serif;
+  font-family: "Montserrat";
+  font-weight: 400;
   color: black;
   font-size: 0.8rem;
   //overflow-x: hidden;
@@ -75,9 +77,9 @@ li,
 .pil_ned,
 .left_arrow,
 .right_arrow,
-.projektbillede_wrapper,
 .cv_link,
-.documentation {
+.documentation,
+.pic {
   cursor: pointer;
 }
 
@@ -88,14 +90,19 @@ h1 {
 }
 
 h2 {
-  font-family: "Libre Baskerville", serif;
+  font-family: serif;
+  font-family: "Libre Baskerville";
+  font-style: italic;
   padding: 0 2rem;
   color: #dbaba2;
+  font-weight: 400;
 }
 h3 {
-  font-family: "Montserrat", sans-serif;
+  font-family: sans-serif;
+  font-family: "Montserrat";
   padding-left: 2rem;
   color: #dbaba2;
+  font-weight: 400;
 }
 
 ::-webkit-scrollbar,
@@ -210,20 +217,25 @@ _:future,
 } */
 
 .navn {
-  font-family: "Libre Baskerville", serif;
+  font-family: serif;
+  font-family: "Libre Baskerville";
   color: #4a4a4a;
   font-weight: 400;
+  font-style: italic;
   letter-spacing: 0.5px;
   font-size: 2rem;
   margin-bottom: 0.7rem;
 }
 
 .ninja {
-  font-family: "Montserrat", sans-serif;
+  font-family: sans-serif;
+  font-family: "Montserrat";
   color: #4a4a4a;
+  font-weight: 400;
   letter-spacing: 3px;
   max-width: 27ch;
   line-height: 2rem;
+  font-style: normal;
 }
 
 .intro_heading {
@@ -313,7 +325,10 @@ figure {
 }
 
 .cv_link {
-  font-family: "Libre Baskerville", serif;
+  font-family: serif;
+  font-family: "Libre Baskerville";
+  font-weight: 400;
+  font-style: italic;
   color: #dbaba2;
   font-size: 1rem;
 }
@@ -360,10 +375,10 @@ figure {
 }
 
 iframe {
-  width: 70vw;
+  width: 100%;
   height: 57vw;
-  max-width: 985px;
-  max-height: 802px;
+  max-width: 1200px;
+  max-height: 977px;
   min-width: 740px;
   min-height: 603px;
   border: none;
@@ -381,7 +396,7 @@ iframe {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
-  justify-content: center;
+  // align-items: center;
 }
 
 .projektbillede_wrapper img {
@@ -397,7 +412,8 @@ iframe {
   color: #285d67;
 }
 .projektbillede_wrapper video {
-  max-width: 100%;
+  width: 100%;
+  max-width: 1200px;
   margin-bottom: 2rem;
 }
 
@@ -986,6 +1002,13 @@ iframe {
     width: 100%;
     height: 73vh;
     object-fit: cover;
+  }
+}
+
+@media (max-width: 890px) {
+  iframe,
+  .iframe_txt {
+    display: none;
   }
 }
 

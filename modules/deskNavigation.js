@@ -85,7 +85,7 @@ export function subMenu() {
       behavior: "smooth",
       block: "start",
     });
-    document.querySelector(".tell").textContent = "Here you can have a look at the graphics I've produced since february 2019.";
+    document.querySelector(".tell").textContent = "Graphics includes illustrations, photos and everything in between.";
   });
 
   document.querySelector("#web_productions").addEventListener("click", function () {
@@ -93,7 +93,7 @@ export function subMenu() {
       behavior: "smooth",
       block: "start",
     });
-    document.querySelector(".tell").textContent = "Web productions include websites and games. This is my favorite part of multimedia design, as I am a bit of a nerd when it comes to code";
+    document.querySelector(".tell").textContent = "Web productions include websites, mini-games and animations.";
   });
 
   document.querySelector("#old_stuff").addEventListener("click", function () {
