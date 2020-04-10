@@ -36,7 +36,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="static/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="static/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="static/favicons/favicon-16x16.png">
-    <link rel="manifest" href="static/favicons/manifest.json">
+    <link rel="manifesto" href="static/favicons/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="static/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -151,8 +151,13 @@
         <div class="line"></div>
         <h2 class="ninja">aspiring frontnd.ninja at your service</h2>
       </div>
-      <img class="logo bw fade_in_back color_green" src="/static/billeder/lisa.jpg" alt="Splash-image - Lisa Søndergaards portfolio" />
-      <img class="logo colored fade_out_back hide" src="/static/billeder/lisa.jpg" alt="Splash-image - Lisa Søndergaards portfolio" />
+      <picture class="splash">
+        <source type="image/webp" srcset="static/billeder/lisa_xstor.webp">
+        <source type="image/jp2" srcset="static/billeder/lisa_xstor.jp2">
+        <source type="image/jpeg" srcset="static/billeder/lisa_xstor.jpg">
+        <img src="/static/billeder/lisa_xstor.jpg" class="splash_pic bw fade_in_back color_green" alt="Splash-image - Lisa Søndergaards portfolio">
+        <img src="/static/billeder/lisa_xstor.jpg" class="splash_pic colored fade_out_back hide" alt="Splash-image - Lisa Søndergaards portfolio">
+      </picture>
       <div class="pil_wrapper">
         <img src="/static/billeder/pil_ned_rund.svg" class="pil_ned pulse" alt="pil" />
       </div>
@@ -166,7 +171,7 @@
           During my 2 ½ semester I’ve come into contact with video production, sound editing, designing digital graphics, drawing illustrations, website production, UI design, game creation, animations and programming. And that’s just on the creative side. SEO, UX, iterative testing methods and agile work processes like SCRUM and Design Sprint has also been on the curriculum.
         </p>
         <p>For the 3rd semester we were to pick an elective to create our professional profile. For me there were no doubts: I wanted to primarily program and secondly design user interfaces, so I chose the profile <span class="italic">frontend design</span>. To me there is nothing more rewarding than to see a design being built from skratch through code.</p>
-        <p>In my professional life I am meticulous, thorough, and a bit of a perfectionist, but also encouraging, helpful and resourceful when it comes to being a teamplayer. This is something that comes in handy in my student job as a tutor in multimedia design. <br />Structure is important to me. You know the person who's always got with several handwritten lists their my desk, so they can keep track of the tasks even if there's already a scrum board for the team. That's me. And I find it a little more satisfying than I should, when I can cross off an item!</p>
+        <p>In my professional life I am meticulous, thorough, and a bit of a perfectionist, but also encouraging, helpful and resourceful when it comes to being a teamplayer. This is something that comes in handy in my student job as a tutor in multimedia design. <br />Structure is important to me -you know the person who's always got several handwritten lists on their desk, so they can keep track of the tasks even if there's already a scrum board for the team? That's me. And I find it a little more satisfying than I should, when I can cross off an item!</p>
 
         <p>
           On the social side, I find it very important to connect with my co-workers and to socialize without it necessarily being in relation to the job. Maybe while drinking a beer or two when a project is done.
@@ -176,7 +181,12 @@
         <p>You can skip through my cv <span class="cv_link">here</span>.</p>
       </article>
       <figure class="picture_om">
-        <img class="profile_pic color_greeny" src="/static/billeder/wooden_arrows.jpg" alt="Photo by Jungwoo Hong on Unsplash" />
+        <picture>
+          <source type="image/webp" srcset="static/billeder/wooden_arrows_xstor_lille.webp">
+          <source type="image/jp2" srcset="static/billeder/wooden_arrows_xstor_lille.jp2">
+          <source type="image/jpeg" srcset="static/billeder/wooden_arrows_xstor_lille.jpg">
+          <img src="static/billeder/wooden_arrows_xstor_lille.jpg" class="profile_pic color_greeny" alt="Photo by Jungwoo Hong on Unsplash">
+        </picture>
       </figure>
     </section>
 
@@ -238,7 +248,12 @@
       <h1>[ c o n t a c t ]</h1>
       <div class="flex">
         <figure class="contact_pic">
-          <img class="contact_color" src="static/billeder/hello5.jpg" alt="Hello" />
+          <picture class="hello">
+           <source type="image/webp" srcset="static/billeder/hellyeah.webp">
+          <!--   <source type="image/jp2" srcset="static/billeder/hellyeah.jp2"> -->
+            <source type="image/jpeg" srcset="static/billeder/hellyeah.jpg">
+            <img src="/static/billeder/hellyeah.jpg" class="contact_colorista" alt="Hello">
+            </picture>
         </figure>
         <div class="contact_wrapper">
           <p class="skriv_tekst fade_out">
@@ -269,6 +284,7 @@
           </form>
           <p class="error"></p>
         </div>
+       
       </div>
     </section>
 
