@@ -278,14 +278,19 @@ function galleryStart() {
 function moveStuffR() {
   console.log("||moveStuffR");
   finalGridLength = finalGridLength - 50;
-  if (finalGridLength > gridPositionB) {
-    console.log("mindre");
+  if (innerWidth < 500) {
     gridPositionA += -100;
     gridPositionB += 100;
   } else {
-    console.log("større");
-    gridPositionA += -50;
-    gridPositionB += 50;
+    if (finalGridLength > gridPositionB) {
+      console.log("mindre");
+      gridPositionA += -100;
+      gridPositionB += 100;
+    } else {
+      console.log("større");
+      gridPositionA += -50;
+      gridPositionB += 50;
+    }
   }
   console.log("final: " + finalGridLength + " position B: " + gridPositionB);
   console.log("right");
@@ -303,16 +308,21 @@ function moveStuffR() {
 function moveStuffL() {
   console.log("||moveStuffL");
   finalGridLength = finalGridLength - 100;
-  if (finalGridLength > gridPositionA) {
+  if (innerWidth < 500) {
     gridPositionA += 100;
     gridPositionB += -100;
   } else {
-    gridPositionA += 50;
-    gridPositionB += -50;
-  }
-  if (gridPositionA == 0) {
-    finalGridLength = resetLength;
-    console.log("reset");
+    if (finalGridLength > gridPositionA) {
+      gridPositionA += 100;
+      gridPositionB += -100;
+    } else {
+      gridPositionA += 50;
+      gridPositionB += -50;
+    }
+    if (gridPositionA == 0) {
+      finalGridLength = resetLength;
+      console.log("reset");
+    }
   }
   console.log("final: " + finalGridLength + " gridPositionA: " + gridPositionA);
 
