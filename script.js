@@ -1,6 +1,5 @@
 "use strict";
 import "@babel/polyfill";
-import { galleryStart } from "./modules/portfolio";
 import { burgerMenu } from "./modules/burger";
 import { delegateMenu } from "./modules/deskNavigation";
 import { subMenu } from "./modules/deskNavigation";
@@ -30,7 +29,7 @@ function mainDelegation() {
   loadProjectInfo();
   filtrering();
   isAboutVisible();
-  galleryStart();
+  //galleryStart();
   displayYear();
   delegateBox();
   delegatenCv();

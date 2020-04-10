@@ -7,6 +7,8 @@ let portfolio;
 let projectInfo;
 let gridLength;
 let translate;
+let finalGridLength;
+let resetLength;
 
 export async function loadPortfolio() {
   let response = await fetch(portfolioUrl);
@@ -81,6 +83,7 @@ function displayPortfolio() {
       }
     }
   });
+  galleryStart();
   hideArrows();
 }
 
@@ -259,32 +262,34 @@ export function filtrering() {
 
 let gridPositionA;
 let gridPositionB;
-export function galleryStart() {
+function galleryStart() {
   console.log("||galleryStart");
+  calculateMovement();
+  console.log("final :" + finalGridLength);
   gridPositionA = 0;
   gridPositionB = 0;
-  console.log(gridPositionA + " " + gridPositionB);
-  console.log("start");
-  document.querySelector(".right_arrow").addEventListener("click", function () {
-    moveStuffR();
-  });
-  document.querySelector(".left_arrow").addEventListener("click", function () {
-    moveStuffL();
-  });
+  finalGridLength = resetLength;
+
+  console.log("gridPositionA: " + gridPositionA + " gridPositionB: " + gridPositionB + " finalGridLength: " + finalGridLength);
+  document.querySelector(".right_arrow").addEventListener("click", moveStuffR);
+  document.querySelector(".left_arrow").addEventListener("click", moveStuffL);
 }
 
 function moveStuffR() {
   console.log("||moveStuffR");
-  if (innerWidth < 500) {
+  finalGridLength = finalGridLength - 50;
+  if (finalGridLength > gridPositionB) {
+    console.log("mindre");
     gridPositionA += -100;
     gridPositionB += 100;
   } else {
+    console.log("større");
     gridPositionA += -50;
     gridPositionB += 50;
   }
+  console.log("final: " + finalGridLength + " position B: " + gridPositionB);
   console.log("right");
   document.querySelectorAll(".itemA").forEach((item) => {
-    //item.style.transform = `translateX(40vw);`;
     item.style.setProperty("--positionA", gridPositionA);
     console.log(gridPositionA);
   });
@@ -297,13 +302,20 @@ function moveStuffR() {
 
 function moveStuffL() {
   console.log("||moveStuffL");
-  if (innerWidth < 500) {
+  finalGridLength = finalGridLength - 100;
+  if (finalGridLength > gridPositionA) {
     gridPositionA += 100;
     gridPositionB += -100;
   } else {
     gridPositionA += 50;
     gridPositionB += -50;
   }
+  if (gridPositionA == 0) {
+    finalGridLength = resetLength;
+    console.log("reset");
+  }
+  console.log("final: " + finalGridLength + " gridPositionA: " + gridPositionA);
+
   console.log("left");
   document.querySelectorAll(".itemA").forEach((item) => {
     item.style.setProperty("--positionA", gridPositionA);
@@ -314,11 +326,6 @@ function moveStuffL() {
     console.log(gridPositionB);
   });
   pointerEvents();
-}
-function checkInnerWidth() {
-  if (innerWidth < 500) {
-  } else {
-  }
 }
 
 function countLength() {
@@ -368,6 +375,20 @@ function setLength() {
   document.querySelector(".grid_pictures").style.width = gridLength + "vw";
   document.querySelector(".background_below").style.transform = "translateX(-" + translate + "vw)";
   document.querySelector(".background_above").style.transform = "translateX(0vw)";
+}
+
+function calculateMovement() {
+  if (gridLength % 100) {
+    console.log("ulige");
+    const midLength = gridLength / 100;
+    finalGridLength = (Math.round(midLength) - 1) * 100;
+    resetLength = finalGridLength;
+    console.log(finalGridLength);
+  } else {
+    console.log("lige");
+    finalGridLength = gridLength;
+    resetLength = finalGridLength;
+  }
 }
 
 function pointerEvents() {

@@ -33,12 +33,12 @@
 .itemB {
   //transform: translate(calc(-100% + var(--position) * 100%), 0);
   transform: translateX(calc(var(--positionB) * 1vw));
-  transition: 0.5s;
+  transition: 1.5s;
 }
 /* The css variable that calculates the movement og the upper grid */
 .itemA {
   transform: translateX(calc(0vw + var(--positionA) * 1vw));
-  transition: 0.5s;
+  transition: 1.5s;
 }
 .arrow_wrapper {
   display: flex;
