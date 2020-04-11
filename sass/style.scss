@@ -245,6 +245,7 @@ _:future,
   //height: calc(55vh - 75px);
   z-index: 1;
   pointer-events: none;
+  position: relative;
 }
 
 .logo {
@@ -257,8 +258,8 @@ _:future,
 
 .splash_pic {
   width: 100%;
-  height: 50%;
-  object-fit: cover;
+  height: 60%;
+  object-fit: contain;
   position: absolute;
   bottom: 0;
 }
@@ -911,17 +912,27 @@ iframe {
 }
 
 /*--------------MEDIAQUERIES--------------*/
-@media (max-width: 450px) and (max-height: 800px) {
-  .logo {
+
+@media (max-width: 450px) and (max-height: 600px) {
+  .splash_pic {
     width: 100%;
-    height: 65vh;
+    height: 55%;
+    object-fit: contain;
+    right: 0;
   }
 
   .intro_heading {
     height: auto;
+    position: relative;
   }
 }
-
+@media (max-width: 500px) {
+  .splash_pic {
+    position: relative;
+    bottom: 0;
+    height: 80%;
+  }
+}
 @media (min-width: 500px) {
   .titel {
     font-size: 2rem;
@@ -942,6 +953,7 @@ iframe {
   }
 
   .splash_pic {
+    object-fit: cover;
     width: 80%;
     height: 80%;
     right: 0;
