@@ -18,6 +18,42 @@
 @use 'partials/sideMenu.scss';
 @use 'partials/contact.scss';
 
+/*--------------EXPLORER--------------*/
+.explorer {
+  display: none;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .explorer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .explorer div {
+    margin: 30vh auto;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+  }
+
+  .explorer h2 {
+    padding: 0;
+  }
+  .explorer p {
+    font-size: 0.8rem;
+  }
+
+  .thanks {
+    font-size: 1.2rem;
+  }
+}
+
 /*--------------GENERELT--------------*/
 
 *,
