@@ -34,15 +34,12 @@ function countJSON() {
 
 function displayPortfolio() {
   console.log("displayPortfolio");
-  // const portfolioList = document.querySelector(".portfolio_liste");
   const portfolioGridA = document.querySelector(".above");
   const portfolioGridB = document.querySelector(".below");
-  //const portfolioTemplate = document.querySelector(".portfolio_skabelon");
   const portfolioTemplateA = document.querySelector(".portfolio_templateA");
   const portfolioTemplateB = document.querySelector(".portfolio_templateB");
   const projectList = document.querySelector(".projekt_billede_liste");
   const singlePicInfo = document.querySelector(".beskriv");
-  //portfolioList.innerHTML = "";
   portfolioGridA.innerHTML = "";
   portfolioGridB.innerHTML = "";
   count = 0;
@@ -156,8 +153,13 @@ function displayProject(project, projectList) {
   } else {
     document.querySelector(".documentation").href = project.dokumentation.guid;
   }
-  klon.querySelector(".website").src = project.video.guid;
-  klon.querySelector(".website").poster = project.videoposter.guid;
+  if (project.video == "") {
+    klon.querySelector(".website").classList.add("hide");
+    klon.querySelector(".website_text").classList.add("hide");
+  } else {
+    klon.querySelector(".website").src = project.video.guid;
+    klon.querySelector(".website").poster = project.videoposter.guid;
+  }
   if (project.projektvideo == "") {
     klon.querySelector(".projektvideo").classList.add("hide");
     klon.querySelector(".project_video_text").classList.add("hide");
