@@ -43,7 +43,8 @@ function displayPortfolio() {
   portfolioGridA.innerHTML = "";
   portfolioGridB.innerHTML = "";
   count = 0;
-
+  portfolio.sort((a, b) => a.date - b.date);
+  console.table(portfolio.sort((a, b) => a.date - b.date));
   portfolio.forEach((project) => {
     if (project.kategori == filter || filter == "alle") {
       count++;

@@ -1,6 +1,7 @@
 export function burgerMenu() {
   console.log("burgerMenu");
   const person = document.querySelector(".person");
+  const mePunkt = document.querySelectorAll(".me_punkt, .person");
   const portfolio = document.querySelector(".portfolio");
   const burger1 = document.querySelector(".burger1");
   const burger2 = document.querySelector(".burger2");
@@ -58,8 +59,10 @@ export function burgerMenu() {
       behavior: "smooth",
       block: "start",
     });
-    document.querySelector(".kategori").textContent = "[ w e b _ p r o d u c t i o n s ]";
-    document.querySelector(".tell").textContent = "This portfolio and the list of projects is an ongoing process. Check in one in a while, and maybe you'll see some new and exciting stuff.";
+    document.querySelector(".kategori").textContent =
+      "[ w e b _ p r o d u c t i o n s ]";
+    document.querySelector(".tell").textContent =
+      "This portfolio and the list of projects is an ongoing process. Check in one in a while, and maybe you'll see some new and exciting stuff.";
   });
 
   kryds1.addEventListener("click", function () {
@@ -82,33 +85,40 @@ export function burgerMenu() {
     person.classList = "person scale_up mobile_menu";
     portfolio.classList = "scale_up portfolio mobile_menu";
     streg.classList = "streg height60px";
-    (document.querySelector(".contact").classList = "contact fade_out_quick"),
-      (document.querySelector(".cv").classList = "cv fade_out_quick"),
-      document.querySelector(".scroll_to").scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-  });
-
-  document.querySelectorAll(".contact_punkt, .cv_punkt, .me_punkt, .graphics, .old_mobile, .web").forEach((li) => {
-    li.addEventListener("click", function () {
-      kryds1.classList = "kryds1 scale_down";
-      kryds2.classList = "kryds2 scale_down";
-      burger1.classList.add("transition_left_back");
-      burger2.classList.add("transition_right_back");
-      person.classList = "person scale_up mobile_menu";
-      portfolio.classList = "scale_up portfolio mobile_menu";
-      streg.classList = "streg height60px";
+    document.querySelector(".contact").classList = "contact fade_out_quick";
+    document.querySelector(".cv").classList = "cv fade_out_quick";
+    document.querySelector(".scroll_to").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
     });
   });
 
+  document
+    .querySelectorAll(
+      ".contact_punkt, .cv_punkt, .me_punkt, .graphics, .old_mobile, .web"
+    )
+    .forEach((li) => {
+      li.addEventListener("click", function () {
+        kryds1.classList = "kryds1 scale_down";
+        kryds2.classList = "kryds2 scale_down";
+        burger1.classList.add("transition_left_back");
+        burger2.classList.add("transition_right_back");
+        person.classList = "person scale_up mobile_menu";
+        portfolio.classList = "scale_up portfolio mobile_menu";
+        streg.classList = "streg height60px";
+      });
+    });
+
   document.querySelector(".graphics").addEventListener("click", function () {
     document.querySelector(".kategori").textContent = "[ g r a p h i c s ]";
-    document.querySelector(".tell").textContent = "Graphics includes illustrations, photos and everything in between.";
+    document.querySelector(".tell").textContent =
+      "Graphics includes illustrations, photos and everything in between.";
   });
   document.querySelector(".web").addEventListener("click", function () {
-    document.querySelector(".kategori").textContent = "[  w e b _ p r o d u c t i o n s ]";
-    document.querySelector(".tell").textContent = "Web productions include websites, mini-games and animations.";
+    document.querySelector(".kategori").textContent =
+      "[  w e b _ p r o d u c t i o n s ]";
+    document.querySelector(".tell").textContent =
+      "Web productions include websites, mini-games and animations.";
   });
 
   document.querySelector(".old_mobile").addEventListener("click", function () {
@@ -119,18 +129,22 @@ export function burgerMenu() {
   document.querySelector(".cv_punkt").addEventListener("click", function () {
     document.querySelector(".cv").classList = "cv";
     document.querySelector(".contact").classList = "contact hide";
-    document.querySelector(".skriv_tekst").classList = "fade_out_slow skriv_tekst";
+    document.querySelector(".skriv_tekst").classList =
+      "fade_out_slow skriv_tekst";
     dry();
   });
   //mobil
-  document.querySelector(".contact_punkt").addEventListener("click", function () {
-    document.querySelector(".contact").classList = "contact";
-    setTimeout(function () {
-      document.querySelector(".skriv_tekst").classList = "fade_in_slow skriv_tekst";
-    }, 500);
-    document.querySelector(".cv").classList = "cv hide";
-    dry();
-  });
+  document
+    .querySelector(".contact_punkt")
+    .addEventListener("click", function () {
+      document.querySelector(".contact").classList = "contact";
+      setTimeout(function () {
+        document.querySelector(".skriv_tekst").classList =
+          "fade_in_slow skriv_tekst";
+      }, 500);
+      document.querySelector(".cv").classList = "cv hide";
+      dry();
+    });
   //mobil
   document.querySelector(".me_punkt").addEventListener("click", function () {
     document.querySelector(".om").scrollIntoView({

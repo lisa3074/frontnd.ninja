@@ -65,7 +65,8 @@ function displayYear() {
 }
 
 function displayScrollbar() {
-  position = container.scrollTop / (container.scrollHeight - container.clientHeight);
+  position =
+    container.scrollTop / (container.scrollHeight - container.clientHeight);
   //console.log("position" + position);
   scrollBar.style.setProperty("--position", position);
 }
