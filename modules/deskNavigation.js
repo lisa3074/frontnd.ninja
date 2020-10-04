@@ -101,7 +101,8 @@ export function subMenu() {
       behavior: "smooth",
       block: "start",
     });
-    document.querySelector(".tell").textContent = "This is the part of my portfolio, where I have selected some of my old stuff from before I started studying multimedia design";
+    document.querySelector(".tell").textContent =
+      "This is the part of my portfolio, where I have selected some of my old stuff from before I started studying multimedia design";
   });
 }
 
@@ -161,6 +162,7 @@ function clickPerson() {
 }
 
 function clickPortfolio() {
+  console.log("clickPortfolio");
   document.querySelector(".portfolioet").classList = "portfolioet";
   document.querySelector(".contact").classList = "contact hide";
   document.querySelector(".cv").classList = "cv hide";

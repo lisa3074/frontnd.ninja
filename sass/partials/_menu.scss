@@ -40,6 +40,15 @@ nav .burger_wrap {
   top: 1.3rem;
 }
 
+a.linkPerson,
+a.linkPortfolio,
+a.linkPil {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  position: static;
+}
+
 .desk_menu {
   font-size: 0.9rem;
 }

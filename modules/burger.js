@@ -10,8 +10,19 @@ export function burgerMenu() {
   const streg = document.querySelector(".streg");
   const cv = document.querySelector(".cv");
   const contact = document.querySelector(".contact");
+  const innerWidth = window.innerWidth;
+
+  person.removeEventListener("click", function () {});
+  home.removeEventListener("click", function () {});
+  portfolio.removeEventListener("click", function () {});
+  kryds1.removeEventListener("click", function () {});
+  kryds2.removeEventListener("click", function () {});
+  kryds2.removeEventListener("click", function () {});
+  document.querySelector(".me_punkt").removeEventListener("click", function () {});
 
   person.addEventListener("click", function () {
+    let positionPx = document.querySelector("body").scrollTop;
+    console.log("positionPx" + positionPx);
     console.log("scroll function");
     person.classList.remove("scale_up");
     person.classList.add("scale_down");
@@ -25,10 +36,19 @@ export function burgerMenu() {
     portfolio.classList.add("scale_up");
     streg.classList.add("height100");
     streg.classList.remove("height60px");
-    document.querySelector(".om").scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+
+    if (innerWidth < 500) {
+      console.log("chrome");
+      document.querySelector(".linkPerson").setAttribute("href", true);
+      document.querySelector(".linkPerson").href = "#om";
+    } else {
+      console.log("not chrome");
+      /*   document.querySelector(".om").scrollIntoViewIfNeeded(false); */
+      document.querySelector(".om").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   });
 
   kryds2.addEventListener("click", function () {
@@ -58,10 +78,16 @@ export function burgerMenu() {
       cv.classList = "cv hide";
     }, 500);
     contact.classList = "contact fade_out_quick";
-    document.querySelector("#portfolioet").scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    if (innerWidth < 500) {
+      console.log("chrome");
+      document.querySelector(".linkPortfolio").setAttribute("href", true);
+      document.querySelector(".linkPortfolio").href = "#portfolioet";
+    } else {
+      document.querySelector(".portfolioet").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
     document.querySelector(".kategori").textContent = "[ w e b _ p r o d u c t i o n s ]";
     document.querySelector(".tell").textContent =
       "This portfolio and the list of projects is an ongoing process. Check in one in a while, and maybe you'll see some new and exciting stuff.";
@@ -92,6 +118,7 @@ export function burgerMenu() {
     setTimeout(() => {
       cv.classList = "cv hide";
     }, 500);
+
     document.querySelector(".scroll_to").scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -141,10 +168,13 @@ export function burgerMenu() {
   });
   //mobil
   document.querySelector(".me_punkt").addEventListener("click", function () {
-    document.querySelector(".om").scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    document.querySelector(".om").scrollIntoView(
+      {
+        behavior: "smooth",
+        block: "start",
+      },
+      true
+    );
     setTimeout(function () {
       document.querySelector(".cv").classList = "cv hide";
       document.querySelector(".contact").classList = "contact hide";

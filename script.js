@@ -13,6 +13,7 @@ const index = document.querySelector(".index");
 let position = 0;
 const container = document.querySelector("body");
 const scrollBar = document.querySelector("#scrollbar");
+const innerHwidth = window.innerWidth;
 
 window.addEventListener("DOMContentLoaded", mainDelegation);
 
@@ -35,6 +36,7 @@ function mainDelegation() {
   delegatenCv();
   delegateSideMenu();
   setHeight();
+  isBrowserChrome();
 
   document.querySelector("#select").addEventListener("change", function () {
     const subjecktChosen = event.target.value;
@@ -52,6 +54,13 @@ function mainDelegation() {
   });
 }
 
+function isBrowserChrome() {
+  if (innerWidth < 500) {
+    console.log("mobile");
+    document.querySelector(".linkPil").setAttribute("href", true);
+    document.querySelector(".linkPil").href = "#om";
+  }
+}
 function setHeight() {
   console.log("setHeight");
   let vh = window.innerHeight * 0.01;
@@ -66,17 +75,21 @@ function displayYear() {
 
 function displayScrollbar() {
   position = container.scrollTop / (container.scrollHeight - container.clientHeight);
-  //console.log("position" + position);
   scrollBar.style.setProperty("--position", position);
 }
 
 function isAboutVisible() {
   console.log("about");
-  if (position < "0.1") {
-    document.querySelector("#om").classList = "fade_out_slow om";
-  }
-  if (position > "0.1") {
+  var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  if (isIOS) {
     document.querySelector("#om").classList = "fade_in_slow om";
+  } else {
+    if (position < "0.1") {
+      document.querySelector("#om").classList = "fade_out_slow om";
+    }
+    if (position > "0.1") {
+      document.querySelector("#om").classList = "fade_in_slow om";
+    }
   }
 }
 3;
@@ -85,20 +98,25 @@ function clickPil() {
   const clicked = document.querySelector(".clicked");
   const pil = document.querySelector(".pil_ned");
   document.querySelector(".pil_ned").classList.add("clicked");
-  if (clicked) {
-    console.log("clicked");
-    document.querySelector("#om").scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  } else {
-    console.log("clicked");
-    setTimeout(() => {
+  if (innerWidth > 399) {
+    if (clicked) {
+      console.log("clicked");
+
+      console.log("not chrome");
       document.querySelector("#om").scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
-    }, 1100);
+    } else {
+      console.log("clicked");
+      setTimeout(() => {
+        console.log("not chrome");
+        document.querySelector("#om").scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 1100);
+    }
 
     pil.classList.add("clicked");
     invertColors();
