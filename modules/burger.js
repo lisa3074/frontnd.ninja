@@ -12,6 +12,7 @@ export function burgerMenu() {
   const contact = document.querySelector(".contact");
 
   person.addEventListener("click", function () {
+    console.log("scroll function");
     person.classList.remove("scale_up");
     person.classList.add("scale_down");
     burger2.classList.add("transition_right");
@@ -24,7 +25,7 @@ export function burgerMenu() {
     portfolio.classList.add("scale_up");
     streg.classList.add("height100");
     streg.classList.remove("height60px");
-    document.querySelector("#om").scrollIntoView({
+    document.querySelector(".om").scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
@@ -53,13 +54,17 @@ export function burgerMenu() {
     person.classList = "person scale_up mobile_menu";
     streg.classList = "streg height100";
     cv.classList = "cv fade_out_quick";
+    setTimeout(() => {
+      cv.classList = "cv hide";
+    }, 500);
     contact.classList = "contact fade_out_quick";
     document.querySelector("#portfolioet").scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
     document.querySelector(".kategori").textContent = "[ w e b _ p r o d u c t i o n s ]";
-    document.querySelector(".tell").textContent = "This portfolio and the list of projects is an ongoing process. Check in one in a while, and maybe you'll see some new and exciting stuff.";
+    document.querySelector(".tell").textContent =
+      "This portfolio and the list of projects is an ongoing process. Check in one in a while, and maybe you'll see some new and exciting stuff.";
   });
 
   kryds1.addEventListener("click", function () {
@@ -77,17 +82,20 @@ export function burgerMenu() {
   home.addEventListener("click", function () {
     kryds1.classList = "kryds1 scale_down";
     kryds2.classList = "kryds2 scale_down";
-    burger1.classList = "transition_left_back burger1";
-    burger2.classList = "transition_right_back burger2";
-    person.classList = "person scale_up mobile_menu";
-    portfolio.classList = "scale_up portfolio mobile_menu";
+    burger1.classList = "burger1 transition_left_back";
+    burger2.classList = "burger2 transition_right_back";
+    person.classList = "person mobile_menu scale_up";
+    portfolio.classList = "portfolio mobile_menu scale_up";
     streg.classList = "streg height60px";
-    (document.querySelector(".contact").classList = "contact fade_out_quick"),
-      (document.querySelector(".cv").classList = "cv fade_out_quick"),
-      document.querySelector(".scroll_to").scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    contact.classList = "contact fade_out_quick";
+    cv.classList = "cv fade_out_quick";
+    setTimeout(() => {
+      cv.classList = "cv hide";
+    }, 500);
+    document.querySelector(".scroll_to").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   });
 
   document.querySelectorAll(".contact_punkt, .cv_punkt, .me_punkt, .graphics, .old_mobile, .web").forEach((li) => {
