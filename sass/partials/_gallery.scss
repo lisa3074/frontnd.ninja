@@ -1,0 +1,114 @@
+/* The looking-glass */
+.grid_container {
+  width: 100vw;
+  height: 50vh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/* The div that slides the upper grid */
+.background_above {
+  height: 25vh;
+}
+
+/* The div that slides the lower grid */
+.background_below {
+  height: 25vh;
+}
+/* The grid itself (used on both slides) */
+.grid_pictures {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100vw);
+  grid-template-rows: 25vh;
+  height: 25vh;
+  margin: 0 auto;
+}
+
+/* The items in each of the two grid-rows */
+.itemA,
+.itemB {
+  width: 100%;
+  height: 100%;
+}
+/* The css variable that calculates the movement og the lower grid */
+.itemB {
+  //transform: translate(calc(-100% + var(--position) * 100%), 0);
+  transform: translateX(calc(var(--positionB) * 1vw));
+  transition: 1.5s;
+}
+/* The css variable that calculates the movement og the upper grid */
+.itemA {
+  transform: translateX(calc(0vw + var(--positionA) * 1vw));
+  transition: 1.5s;
+}
+.arrow_wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: center;
+}
+/* The divs that control which way the grid slides */
+.right_arrow img,
+.left_arrow img {
+  height: 5vw;
+  width: auto;
+  object-fit: contain;
+}
+
+.left_arrow img {
+  transform: rotate(90deg);
+}
+.right_arrow img {
+  transform: rotate((-90deg));
+}
+.right_arrow,
+.left_arrow {
+  height: 6vw;
+  width: auto;
+  z-index: 0;
+  margin: 10vw 8vw;
+  text-align: center;
+}
+
+/* For the aroows, when the slide is out of pictures */
+.none {
+  pointer-events: none;
+}
+
+@media (min-width: 500px) {
+  .portfolioet {
+    position: relative;
+  }
+
+  .arrow_wrapper {
+    position: absolute;
+    top: 7rem;
+    justify-content: flex-end;
+  }
+  .background_above {
+    height: 34vh;
+  }
+  .background_below {
+    height: 34vh;
+  }
+  .grid_container {
+    width: 100vw;
+    height: 68vh;
+  }
+  .grid_pictures {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 50vw);
+    grid-template-rows: 34vh;
+    height: 34vh;
+    margin: 0 auto;
+  }
+
+  .right_arrow img,
+  .left_arrow img {
+    height: 1rem;
+  }
+  .right_arrow,
+  .left_arrow {
+    margin: 2rem 2rem;
+    text-align: right;
+  }
+}

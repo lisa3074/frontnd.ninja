@@ -1,0 +1,232 @@
+//@import "compass/css3";
+
+//vars
+
+//config
+$menu-items: 6;
+
+.menu-item .fa,
+.menu-item .fas {
+  line-height: 22px;
+}
+
+.menu-item .icon_txt {
+  font-size: 0.7rem;
+}
+.menu-open {
+  display: none;
+}
+.menu-item {
+  background: rgb(255, 255, 255);
+  height: 80px;
+  margin-left: -40px;
+  position: absolute;
+  width: 5rem;
+  top: 20px;
+  color: #285d67;
+  text-align: center;
+  line-height: 80px;
+  transform: translate3d(-10px, 0, 0);
+  transition: transform ease-out 200ms;
+  padding-top: 0.5rem;
+}
+.hamburger {
+  $width: 1.7rem;
+  $height: 3px;
+  width: $width;
+  height: $height;
+  background: #285d67;
+  display: block;
+  position: absolute;
+  top: 20%;
+  left: 45%;
+  margin-left: -$width/2;
+  margin-top: -$height/2;
+  transition: transform 200ms;
+}
+
+.hamburger-1 {
+  transform: translate3d(0, -8px, 0);
+}
+.hamburger-2 {
+  transform: translate3d(0, 0, 0);
+}
+.hamburger-3 {
+  transform: translate3d(0, 8px, 0);
+  width: 1rem;
+}
+
+//VED KLIK
+.hamburger-11 {
+  transform: translate3d(0, -7px, 0) rotate(45deg);
+  width: 1.3rem;
+  background-color: #dbaba2;
+}
+.hamburger-22 {
+  transform: translate3d(3px, 0, 0) scale(0.1, 1);
+  background-color: #dbaba200;
+}
+.hamburger-33 {
+  transform: translate3d(0, 7px, 0) rotate(-45deg);
+  width: 1.3rem;
+  background-color: #dbaba2;
+}
+
+.sideMenu {
+  $width: 0;
+  $height: 50px;
+  position: absolute;
+  top: 0rem;
+  left: auto;
+  right: 3.5rem;
+  width: 2rem;
+  padding-top: 20px;
+  width: $width;
+  height: $height;
+  box-sizing: border-box;
+  font-size: 2rem;
+  text-align: left;
+}
+
+.menu-item {
+  &:hover {
+    background: white;
+    color: #dbaba2;
+  }
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i + 2}) {
+      transition-duration: 180ms;
+    }
+  }
+}
+
+.menu-open-button {
+  background: rgb(255, 255, 255);
+  width: 6rem;
+  height: 80px;
+  margin-left: -40px;
+  position: absolute;
+  top: 30px;
+  color: #285d67;
+  text-align: center;
+  line-height: 80px;
+  transform: translate3d(-20px, 0, 0);
+  transition: transform ease-out 200ms;
+  z-index: 2;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 400ms;
+  transform: scale(1, 1) translate3d(0, 0, 0);
+  cursor: pointer;
+}
+.menu-open-button:hover {
+  transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+  .hamburger {
+    background-color: #dbaba2;
+  }
+}
+//.menu-open:checked + .menu-open-button
+.big {
+  transition-timing-function: linear;
+  transition-duration: 200ms;
+  transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+}
+
+.move_it {
+  transition-duration: (calc(50ms * var(--count)));
+  transform: translate3d(calc(-120px * var(--count)), 0, 0);
+}
+@media (max-width: 1200px) {
+  .move_it {
+    transition-duration: (calc(50ms * var(--count)));
+    transform: translate3d(calc(-100px * var(--count)), 0, 0);
+  }
+
+  .sideMenu {
+    right: 3.5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  //NEDAD
+
+  .menu-item {
+    transition: 0.5s;
+    opacity: 0;
+    top: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.931);
+    left: 1rem;
+  }
+  .move_it {
+    transition-duration: (calc(50ms * var(--count)));
+    transform: translate3d(0, calc(80px * var(--count)), 0);
+    opacity: 1;
+  }
+  .sideMenu {
+    top: 0.4rem;
+    right: 4rem;
+  }
+  .hamburger {
+    top: 25%;
+  }
+  .menu-open-button {
+    height: 30px;
+    margin-left: -25px;
+  }
+
+  /* .hamburger {
+    top: 30%;
+  } */
+  .menu-open-button:hover {
+    transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+    .hamburger {
+      background-color: #285d67;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .sideMenu {
+    right: 3.5rem;
+    top: 1.7rem;
+  }
+  .hamburger {
+    top: 25%;
+  }
+  .menu-open-button {
+    height: 35px;
+  }
+}
+@media (max-width: 700px) {
+  .sideMenu {
+    top: 1.7rem;
+  }
+}
+
+@media (max-width: 800px) and (max-height: 650px) {
+  .cv .fas,
+  .cv .fab,
+  .cv .fa,
+  .sideMenu {
+    font-size: 1.5rem;
+    width: 20px;
+    text-align: center;
+  }
+
+  .sideMenu {
+    right: 0rem;
+    width: 5rem;
+  }
+
+  .cv .icon_txt {
+    font-size: 0.6rem;
+  }
+
+  .hamburger {
+    left: 20%;
+  }
+  .move_it {
+    transition-duration: (calc(50ms * var(--count)));
+    transform: translate3d(0, calc(70px * var(--count)), 0);
+    opacity: 1;
+  }
+}

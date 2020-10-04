@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163230739-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-163230739-1");
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="og:image" content="static/billeder/lisa_seo_img.jpg" />
+    <meta name="designer" content="Lisa Bianca Henning Søndergaard | iam@frontnd.ninja | www.frontnd.ninja" />
+    <meta name="description" content="This is the online portfolio of Lisa Søndergaard, student in Multimedia design at KEA and aspiring frontend developer." />
+    <meta name="keywords" content="animation, code, css, designer, digital design, front end, front end developer, git, graphic, design, html, interface, javascript, json, multimedia design, programming, ui, web design, wordpress, web development, lisa, lisa bianca, lisa søndergaard, webudvikling, frontend udvikling, frontend, frontend developer, copenhagen, denmark, frontend copenhagen, intern copenhagen, web copenhagen, web development copenhagen, web development københavn, københavn, webdesign københavn, web design copenhagen" />
+    <meta name="author" content="Lisa Søndergaard | Multimedia designer | future web developer" />
+    <title>Multimedia designer || Lisa Søndergaard || Online portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400i|Montserrat&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="sass/style.scss" />
+    <script src="https://kit.fontawesome.com/e4e4b829ef.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="57x57" href="static/favicons/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="static/favicons/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="static/favicons/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="static/favicons/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="static/favicons/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="static/favicons/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="static/favicons/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="static/favicons/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicons/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="static/favicons/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="static/favicons/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicons/favicon-16x16.png" />
+    <link rel="manifesto" href="static/favicons/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="static/favicons/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="google-site-verification" content="czKrArQIR7lPVjr3njevsvk4nlaSzqMXfObuCCcOhrA" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Portfolio || Lisa Søndergaard",
+            "item": "https://frontnd.ninja"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About me",
+            "item": "https://frontnd.ninja/#om"
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body class="index">
+    <template class="portfolio_templateA">
+      <div class="itemA">
+        <div class="hojde">
+          <p class="titel_klonen"></p>
+        </div>
+        <img src="" alt="" class="pic" />
+      </div>
+    </template>
+
+    <template class="portfolio_templateB">
+      <div class="itemB">
+        <div class="hojde">
+          <p class="titel_klonen"></p>
+        </div>
+        <img src="" alt="" class="pic" />
+      </div>
+    </template>
+
+    <!--Læser projektbillederne ind i singleview, som passer til det projekt der er klikket på-->
+    <template class="portfolio_single_skabelon">
+      <div class="projektbillede_wrapper">
+        <h1 class="titel"></h1>
+        <img src="" alt="" class="pic" />
+        <h2 class="project_video_text">
+          The campaign video
+        </h2>
+        <video class="projektvideo" poster="" controls src="" alt=""></video>
+        <h2 class="website_text">
+          The web project recorded
+        </h2>
+        <video class="website" poster="" controls src="" alt=""></video>
+        <h2 class="iframe_txt">Try it out for yourself!</h2>
+        <iframe src=""></iframe>
+      </div>
+    </template>
+
+    <header>
+      <!--MOBILMENU-->
+      <nav class="mobile">
+        <div class="streg"></div>
+        <div class="burger_wrap">
+          <p class="person mobile_menu">person</p>
+          <div class="kryds2">
+            <img src="static/billeder/minus.svg" alt="luk" />
+          </div>
+
+          <p class="portfolio mobile_menu">portfolio</p>
+          <div class="kryds1">
+            <img src="static/billeder/minus.svg" alt="luk" />
+          </div>
+
+          <div class="home">
+            <img src="static/billeder/home.svg" alt="home" />
+          </div>
+        </div>
+        <div class="burger1">
+          <ul>
+            <li class="web filter" data-kategori="web_productions">web_productions</li>
+            <li class="graphics filter" data-kategori="graphics">graphics</li>
+            <!-- IKKE SYNLIG -->
+            <li class="old_mobile filter none hidden_subject" data-kategori="old_stuff">old_stuff</li>
+          </ul>
+        </div>
+        <div class="burger2">
+          <ul class="right">
+            <li class="cv_punkt">cv</li>
+            <li class="contact_punkt">contact</li>
+            <li class="me_punkt">me</li>
+          </ul>
+        </div>
+      </nav>
+
+      <!--DESKTOPMENU-->
+      <nav class="desk">
+        <div class="desk_wrap">
+          <div class="hojre_menupunkter">
+            <p class="desk_person desk_menu alm_punkt" id="person">person</p>
+            <ul class="desk_right fade_out">
+              <li id="cv" class="alm_punkt cv_punkt">cv</li>
+              <!--MAILLINK-->
+              <li id="contact" class="alm_punkt contact_punkt">contact</li>
+              <li id="me" class="alm_punkt me_punkt">me</li>
+            </ul>
+          </div>
+          <div class="desk_home">
+            <img src="static/billeder/home.svg" alt="home" />
+          </div>
+          <div class="venstre_menupunkter">
+            <p class="desk_portfolio desk_menu alm_punkt" data-kategori="web_productions" id="portfolio">portfolio</p>
+            <ul class="desk_left fade_out">
+              <!--SORTERING PÅ INDEXSIDEN-->
+              <li id="web_productions" class="alm_punkt filter" data-kategori="web_productions">web_productions</li>
+              <li id="graphics" class="alm_punkt filter" data-kategori="graphics">graphics</li>
+              <!-- IKKE SYNLIG -->
+              <li id="old_stuff" class="alm_punkt filter none hidden_subject" data-kategori="old_stuff">old_stuff</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="scroll_to"></div>
+    <section class="index_position green_bgcolor">
+      <div class="intro_heading">
+        <h1 class="navn">lisa søndergaard</h1>
+        <div class="line"></div>
+        <h2 class="ninja">aspiring frontnd.ninja at your service</h2>
+      </div>
+      <picture class="splash">
+        <source type="image/webp" srcset="static/billeder/lisa_xstor2.webp" />
+        <!--   <source type="image/jp2" srcset="static/billeder/lisa_xstor.jp2" /> -->
+        <source type="image/jpeg" srcset="static/billeder/lisa_xstor.png" />
+        <img src="/static/billeder/lisa_xstor.png" class="splash_pic bw fade_in_back color_green" alt="Splash-image - Lisa Søndergaards portfolio" />
+        <img src="/static/billeder/lisa_xstor.png" class="splash_pic colored fade_out_back hide" alt="Splash-image - Lisa Søndergaards portfolio" />
+      </picture>
+      <div class="pil_wrapper">
+        <img src="/static/billeder/pil_ned_rund.svg" class="pil_ned pulse" alt="pil" />
+      </div>
+    </section>
+
+    <section class="om fade_out_quick" id="om">
+      <article class="profile_text">
+        <h1>[ p e r s o n ]</h1>
+        <h2 class="aspiring">My name is Lisa and if you’re reading this paragraph, then you found my portfolio. I'm a student in multimedia design at KEA, an education that focuses on enhancing digital skills in many areas.</h2>
+        <p>
+          During my 2 ½ semester I’ve come into contact with video production, sound editing, designing digital graphics, drawing illustrations, website production, UI design, game creation, animations and programming. And that’s just on the creative side. SEO, UX, iterative testing methods and agile work processes like SCRUM and Design Sprint has also been on the curriculum.
+        </p>
+        <p>For the 3rd semester we were to pick an elective to create our professional profile. For me there were no doubts: I wanted to primarily program and secondly design user interfaces, so I chose the profile <span class="italic">frontend design</span>. To me there is nothing more rewarding than to see a design being built from skratch through code.</p>
+        <p>In my professional life I am meticulous, thorough, and a bit of a perfectionist, but also encouraging, helpful and resourceful when it comes to being a teamplayer. This is something that comes in handy in my student job as a tutor in multimedia design. <br />Structure is important to me -you know the person who's always got several handwritten lists on their desk, so they can keep track of the tasks even if there's already a scrum board for the team? That's me. And I find it a little more satisfying than I should, when I can cross off an item!</p>
+
+        <p>
+          On the social side, I find it very important to connect with my co-workers and to socialize without it necessarily being in relation to the job. Maybe while drinking a beer or two when a project is done.
+        </p>
+        <p>My ambition is to apply for the bahelor programme in web development at KEA after my last semester of multimedia design. This is actually why I started at KEA in the first place, and I can’t wait to get an even more detailed look into the world of coding languages and web development.</p>
+
+        <p>You can skip through my cv <span class="cv_link">here</span>.</p>
+      </article>
+      <figure class="picture_om">
+        <picture>
+          <source type="image/webp" srcset="static/billeder/wooden_arrows_xstor_lille.webp" />
+          <source type="image/jp2" srcset="static/billeder/wooden_arrows_xstor_lille.jp2" />
+          <source type="image/jpeg" srcset="static/billeder/wooden_arrows_xstor_lille.jpg" />
+          <img src="static/billeder/wooden_arrows_xstor_lille.jpg" class="profile_pic color_greeny" alt="Photo by Jungwoo Hong on Unsplash" />
+        </picture>
+      </figure>
+    </section>
+
+    <section class="portfolioet hide" id="portfolioet">
+      <h1>[ p o r t f o l i o ]</h1>
+      <p class="tell">
+        This portfolio and the list of projects is an ongoing process. Check in one in a while, and maybe you'll see some new and exciting stuff.
+      </p>
+
+      <h3 class="kategori"></h3>
+
+      <!---POPUP PROJEKT-->
+      <article class="hide projekt_popup">
+        <div class="luk">
+          <img src="static/billeder/luk_u_ring.svg" alt="luk" />
+        </div>
+        <div class="beskrivelse_wrapper">
+          <h1 class="overskrift_beskriv">Overskrift</h1>
+          <h2 class="semester"></h2>
+          <img src="static/billeder/dotthei3.svg" alt="info" class="info" />
+          <img src="static/billeder/tilbage.svg" alt="info" class="tilbage hide" />
+          <p class="beskrivelse"></p>
+          <a href="" target="_blank" rel="noreferrer" class="link a">link to website</a><br /><br /><br />
+          <a href="" target="_blank" rel="noreferrer" class="documentation" download>download documentation</a>
+        </div>
+        <h1 class="titel"></h1>
+        <div class="projekt_billede_liste"></div>
+      </article>
+      <!---POPUP ENKELT BILLEDE-->
+      <article class="single fade_out">
+        <div class="luk enkelt">
+          <img src="static/billeder/luk_u_ring.svg" alt="luk" />
+        </div>
+        <figure class="singleBillede">
+          <img src="" alt="" class="et_billede" />
+          <!-- <figcaption class="beskriv"></figcaption> -->
+        </figure>
+        <div class="beskriv_wrapper">
+          <p class="beskriv"></p>
+        </div>
+      </article>
+      <!--  <article class="portfolio_liste"></article> -->
+      <article class="grid_container looking_glass">
+        <div class="background_above">
+          <article class="grid_pictures above"></article>
+        </div>
+        <div class="background_below">
+          <article class="grid_pictures below"></article>
+        </div>
+      </article>
+      <div class="arrow_wrapper">
+        <div class="left_arrow"><img src="/static/billeder/pil_hojre.svg" alt="next" /></div>
+        <div class="right_arrow"><img src="/static/billeder/pil_venstre.svg" alt="back" /></div>
+      </div>
+    </section>
+
+    <!--POPUP CONTACT-->
+    <section class="contact hide">
+      <h1>[ c o n t a c t ]</h1>
+      <div class="flex">
+        <figure class="contact_pic">
+          <picture class="hello">
+            <source type="image/webp" srcset="static/billeder/hellyeah.webp" />
+            <!--   <source type="image/jp2" srcset="static/billeder/hellyeah.jp2"> -->
+            <source type="image/jpeg" srcset="static/billeder/hellyeah.jpg" />
+            <img src="/static/billeder/hellyeah.jpg" class="contact_colorista" alt="Hello" />
+          </picture>
+        </figure>
+        <div class="contact_wrapper">
+          <p class="skriv_tekst fade_out">
+            I'm sitting here waiting for your message!
+          </p>
+
+          <!-- action="javascript:;" onsubmit="return validateForm(this)" -->
+          <form id="contact_form" action="mail.php" class="form" method="POST">
+            <!--  method="post" er fjerne fra select pga validation -->
+            <select id="select" name="selectOption">
+              <option value="why" selected>I'm sending this message because...</option>
+              <option value="I have a question for you">I have a question for you</option>
+              <option value="I wan't to meet up for a coffee">I wan't to meet up for a coffee</option>
+              <option value="There's a bug on your site">There's a bug on your site</option>
+              <option value="I don't really know...">I don't really know...</option>
+              <option value="None of the above">None of the above</option>
+            </select>
+            <br />
+            <input type="text" name="select" class="select" /><br />
+            <input type="text" placeholder="Name *" name="firstname" class="fnavn input" required />
+            <br />
+            <input type="email" name="email" placeholder="Email *" class="mail input" required />
+            <br />
+            <textarea name="message" rows="5" cols="20" class="besked input" placeholder="Message *" required></textarea><br />
+            <p>* Mandatory</p>
+            <input type="submit" value="SEND" class="send" />
+          </form>
+          <p class="error"></p>
+        </div>
+      </div>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/lisa-bianca/" rel="noreferrer" target="_blank"><img src="static/billeder/linkedin.png" alt="Lisa's linkedIn" title="My linkedIn profile" /></a>
+        <a href="mailto:iam@frontnd.ninja"><img src="static/billeder/mailicon.png" alt="Lisa's mail address" title="If you prefer mail" /></a>
+      </div>
+    </section>
+
+    <!--POPUP CV-->
+    <section class="cv hide">
+      <div class="submenu_wrapper">
+        <div class="submenu_container">
+          <!--     <h1>[<span class="cv_headings">education</span>]</h1> -->
+          <!-- <img class="submenu_arrow down" src="/static/billeder/down.png" alt="next" /> -->
+        </div>
+        <!--  <div class="arrow_container">
+          <img class="submenu_arrow side" src="/static/billeder/next.png" alt="next" />
+        </div>
+ -->
+        <nav class="sideMenu">
+          <input type="checkbox" class="menu-open big" name="menu-open" id="menu-open" />
+          <label class="menu-open-button" for="menu-open">
+            <span class="hamburger hamburger-1"></span>
+            <span class="hamburger hamburger-2"></span>
+            <span class="hamburger hamburger-3"></span>
+          </label>
+
+          <!--  <a href="" id="i1" class="menu-item"> -->
+          <div id="education" class="sub_cv menu-item">
+            <i class="fa fa-graduation-cap">
+              <span class="icon_txt">education</span>
+            </i>
+          </div>
+          <!--         </a> -->
+
+          <!-- <a href="" id="i2" class="menu-item"> -->
+          <div id="experience" class="sub_cv menu-item">
+            <i class="fas fa fa-briefcase">
+              <span class="icon_txt">experience</span>
+            </i>
+          </div>
+          <!--    </a> -->
+
+          <!--     <a href="" id="i3" class="menu-item"> -->
+          <div id="tech" class="sub_cv menu-item">
+            <i class="fas fa fa-cogs">
+              <span class="icon_txt">technology</span>
+            </i>
+          </div>
+          <!--    </a> -->
+
+          <!--         <a href="" id="i4" class="menu-item"> -->
+          <div id="software" class="sub_cv menu-item">
+            <i class="fas fa fa-window-restore">
+              <span class="icon_txt">software</span>
+            </i>
+          </div>
+          <!--     </a> -->
+          <!--        <a href="" id="i5" class="menu-item"> -->
+          <div id="volunteer" class="sub_cv menu-item">
+            <i class="fas fa fa-hands-helping">
+              <span class="icon_txt">volunteer</span>
+            </i>
+          </div>
+          <!--      </a> -->
+          <!--    <a href="" id="i6" class="menu-item"> -->
+          <div id="language" class="sub_cv menu-item">
+            <i class="fas fa fa-globe">
+              <span class="icon_txt">language</span>
+            </i>
+          </div>
+          <!--    </a> -->
+        </nav>
+      </div>
+      <article class="grid_cv">
+        <div id="edu" class="grid_section education">
+          <h1>[education]</h1>
+          <h2 class="noMargin" id="back">Multimedia design</h2>
+          <p>
+            Academy profession degree (AP)<br />
+            KEA - Copenhagen School of Design and Technology - 2019 - 2021<br />
+            Professional profile: Front-end design/development
+          </p>
+
+          <h2>EUX Business</h2>
+          <p>
+            Secondary education<br />
+            Skive College 2017 - 2019<br />
+            Profile: IT and business economics
+          </p>
+
+          <h2>Event Management</h2>
+          <p>
+            Single course, Academy course<br />
+            Erhvervsakademi Dania - 2012 - 2012
+          </p>
+
+          <h2>Event coordinator</h2>
+          <p>
+            Secondary education<br />
+            CPH WEST - 2011 - 2012
+          </p>
+
+          <h2>Makeup artist</h2>
+          <p>
+            Creative education<br />
+            Fagskolen for dekorativ kosmetik - 2008 - 2009<br />
+            Professional profile: Beauty makeup
+          </p>
+        </div>
+        <div id="exp" class="grid_section experience">
+          <h1>[experience]</h1>
+          <h2 class="noMargin">Tutor in multimedia design</h2>
+          <p>
+            KEA - Copenhagen School of Design and Technology - 2020 - Current <br />
+            Helping and coaching other multimedia students with issues related to code / rest API / git ect.
+          </p>
+
+          <h2>Owner of beauty/wellness salon</h2>
+          <p>
+            HaarStraa / S:HE Copenhagen - 2013 - 2019<br />
+            S: HE Copenhagen was a wellness and beauty salon that housed 4 other small beauty / wellness companies. HaarStraa was a sub-brand.<br />
+            Main responsibilities: Concept and brand development, management, graphic design, web design, social media management, administration, budgets, customer relations, strategi and business analysis.
+          </p>
+
+          <h2>Event coordinator intern</h2>
+          <p>
+            Rust ApS - 2012 - 2013 <br />
+            I got the task to create a new concept for Thursday concerts, and then being the manager each Thursday evening / night while the club was live. I had the responsibility for staff, musicians, customer disputes, and general operation.<br />
+            Responsibilities: Concept development, public relations, online media, social media marketing, graphic design, club and staff management, concert pre-/production, promotion, strategy development.
+          </p>
+
+          <h2>Freelance makeup artist</h2>
+          <p>
+            By Lisa Bianca - 2008 - 2012 <br />
+            As a makeup artist I did runway shows, music videos and weddings.
+          </p>
+
+          <h2>Youth care and teaching assistant</h2>
+          <p>
+            In Fredericia, Odense and Copenhagen (various locations) - 2002 - 2010 <br />
+            Mainly with a musical focus: Music teacher in various primary schools, director of song and choir in youth musicals, additional educational work with children and young people.
+          </p>
+        </div>
+        <div id="tec" class="grid_section tech">
+          <h1>[technology]</h1>
+          <h2 class="noMargin">Spent most of my time on</h2>
+          <ul class="tech_list">
+            <li>HTML</li>
+            <li>HTML5</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+
+          <h2>Worked a lot with</h2>
+          <ul class="tech_list">
+            <li>Wordpress rest API</li>
+            <li>JSON</li>
+            <li>git</li>
+            <li>SVG</li>
+          </ul>
+
+          <h2>Fairly new</h2>
+          <ul class="tech_list">
+            <li>Parcel.js</li>
+            <li>SCSS/SASS</li>
+            <li>npm</li>
+            <li>Node modules</li>
+          </ul>
+        </div>
+
+        <div id="soft" class="grid_section software">
+          <h1>[software]</h1>
+          <h2 class="noMargin">Graphics</h2>
+          <ul class="tech_list">
+            <li>Adobe Photoshop</li>
+            <li>Adobe Indesign</li>
+            <li>Adobe Illustrator</li>
+          </ul>
+          <h2>Video & sound</h2>
+          <ul class="tech_list">
+            <li>Premier Pro</li>
+            <li>Adobe Audition</li>
+            <li>Logic pro</li>
+          </ul>
+          <h2>Wireframing & mockups</h2>
+          <ul class="tech_list">
+            <li>Adobe XD</li>
+            <li>Invision Studio</li>
+          </ul>
+          <h2>Coding editors</h2>
+          <ul class="tech_list">
+            <li>Brackets</li>
+            <li>Visual Studio code</li>
+          </ul>
+          <h2>Communication & other</h2>
+          <ul class="tech_list">
+            <li>Slack</li>
+            <li>Teams</li>
+            <li>cPanel</li>
+            <li>Screaming frog</li>
+          </ul>
+        </div>
+        <div id="oth" class="grid_section other">
+          <h1>[volunteer]</h1>
+          <h2 class="noMargin">Board chairwoman</h2>
+          <p>Housing cooperative Rørholmsgade 15 a / b - 2018 - Current Responsibilities: Budget planning and general operations.</p>
+
+          <h2>Singer/songwriter</h2>
+          <p>Lisa Vegas - 2003 - 2009 Responsibilities: Songwriting, web design, graphic design, music production, event planning, booking, promotion.</p>
+
+          <h2>Member of the board</h2>
+          <p>Rytmisk Musik Forening Fredericia (RMF) - 2008 - 2009 Responsibilities: Booking of artists, member surveys, administration, concert production, organization planning.</p>
+
+          <h2>Booker</h2>
+          <p>Kulturmilitzen 2001 - 2003 Responsibilities: Booking of artists, pre-production and concert production.</p>
+        </div>
+        <div id="lan" class="grid_section language">
+          <h1>[language]</h1>
+          <h2 class="noMargin">Danish</h2>
+          <p>(native language)</p>
+          <h2>English</h2>
+          <p>(read, write, speak)</p>
+          <h2>German</h2>
+          <p>(read)</p>
+        </div>
+      </article>
+    </section>
+    <section class="explorer">
+      <div>
+        <h2>Sorry, this website is not optimized for Internet Explorer!</h2>
+        <p>Please switch to Chrome, Firefox, Safari or Edge.<br /><br /><span class="thanks">Thank you!</span></p>
+      </div>
+    </section>
+    <footer>
+      <p>© f r o n t n d . n i n j a &nbsp;&nbsp;&nbsp;<span class="year">2 0 2 0</span>.</p>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/lisa-bianca/" rel="noreferrer" target="_blank"><img src="static/billeder/linkedin.png" alt="Lisa's linkedIn" title="My linkedIn profile" /></a>
+        <a href="mailto:iam@frontnd.ninja"><img src="static/billeder/mailicon.png" alt="Lisa's mail address" title="If you prefer mail" /></a>
+      </div>
+    </footer>
+    <div class="fixed_scroll">
+      <div class="progress-container">
+        <div id="scrollbar"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

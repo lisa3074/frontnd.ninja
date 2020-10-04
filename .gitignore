@@ -1,0 +1,6 @@
+.cache/
+dist/
+node_modules/
+*.mp3
+wordpress/
+
