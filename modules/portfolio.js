@@ -1,5 +1,7 @@
-const portfolioUrl = "https://frontnd.ninja/wordpress/wp-json/wp/v2/portfolio?per_page=100";
-const projectInfoUrl = "https://frontnd.ninja/wordpress/wp-json/wp/v2/projektbilleder?per_page=100";
+const portfolioUrl =
+  "https://frontnd.ninja/wordpress/wp-json/wp/v2/portfolio?per_page=100";
+const projectInfoUrl =
+  "https://frontnd.ninja/wordpress/wp-json/wp/v2/projektbilleder?per_page=100";
 let count;
 let filter = "web_productions";
 let json = 0;
@@ -13,12 +15,26 @@ let resetLength;
 export async function loadPortfolio() {
   let response = await fetch(portfolioUrl);
   portfolio = await response.json();
+  portfolio.catch((err) =>
+    res
+      .status(501)
+      .send(
+        "User- query promise was rejected. Handle according to specific case."
+      )
+  );
   countJSON();
 }
 
 export async function loadProjectInfo() {
   let response = await fetch(projectInfoUrl);
   projectInfo = await response.json();
+  portfolio.catch((err) =>
+    res
+      .status(501)
+      .send(
+        "User- query promise was rejected. Handle according to specific case."
+      )
+  );
   countJSON();
 }
 
@@ -54,8 +70,11 @@ function displayPortfolio() {
         const klon = portfolioTemplateA.cloneNode(true).content;
         screenSize(project, klon);
         klon.querySelector("img").alt = project.titel;
-        klon.querySelector(".titel_klonen").textContent = project.titel + " - " + project.semester;
-        klon.querySelector(".itemA").setAttribute("class", "pr" + count + " portfolio_klonen itemA");
+        klon.querySelector(".titel_klonen").textContent =
+          project.titel + " - " + project.semester;
+        klon
+          .querySelector(".itemA")
+          .setAttribute("class", "pr" + count + " portfolio_klonen itemA");
         klon.firstElementChild.addEventListener("click", function () {
           singlePicInfo.textContent = "";
           projectList.innerHTML = "";
@@ -68,8 +87,11 @@ function displayPortfolio() {
         const klon = portfolioTemplateB.cloneNode(true).content;
         screenSize(project, klon);
         klon.querySelector("img").alt = project.titel;
-        klon.querySelector(".titel_klonen").textContent = project.titel + " - " + project.semester;
-        klon.querySelector(".itemB").setAttribute("class", "pr" + count + " portfolio_klonen itemB");
+        klon.querySelector(".titel_klonen").textContent =
+          project.titel + " - " + project.semester;
+        klon
+          .querySelector(".itemB")
+          .setAttribute("class", "pr" + count + " portfolio_klonen itemB");
         klon.firstElementChild.addEventListener("click", function () {
           singlePicInfo.textContent = "";
           projectList.innerHTML = "";
@@ -140,7 +162,9 @@ function checkType(project, singlePicInfo, projectList) {
 
 function displayProject(project, projectList) {
   console.log("diplayProject");
-  const singlePicTemplate = document.querySelector(".portfolio_single_skabelon");
+  const singlePicTemplate = document.querySelector(
+    ".portfolio_single_skabelon"
+  );
   const klon = singlePicTemplate.cloneNode(true).content;
   const billede = klon.querySelector("img");
   projectList.innerHTML = "";
@@ -165,7 +189,8 @@ function displayProject(project, projectList) {
     klon.querySelector(".project_video_text").classList.add("hide");
   } else {
     klon.querySelector(".projektvideo").src = project.projektvideo.guid;
-    klon.querySelector(".projektvideo").poster = project.projektvideo_poster.guid;
+    klon.querySelector(".projektvideo").poster =
+      project.projektvideo_poster.guid;
   }
   klon.querySelector(".titel").textContent = project.titel;
   if (innerWidth >= 880) {
@@ -241,11 +266,13 @@ function checkLink(project) {
     link.classList.add("a");
     link.href = project.link;
     link.textContent = "link to website";
-    document.querySelector(".tilbage").addEventListener("mouseover", function () {
-      setTimeout(function () {
-        link.classList = "link a fade_out_quick";
-      }, 300);
-    });
+    document
+      .querySelector(".tilbage")
+      .addEventListener("mouseover", function () {
+        setTimeout(function () {
+          link.classList = "link a fade_out_quick";
+        }, 300);
+      });
   }
 }
 
@@ -272,7 +299,14 @@ function galleryStart() {
   gridPositionB = 0;
   finalGridLength = resetLength;
 
-  console.log("gridPositionA: " + gridPositionA + " gridPositionB: " + gridPositionB + " finalGridLength: " + finalGridLength);
+  console.log(
+    "gridPositionA: " +
+      gridPositionA +
+      " gridPositionB: " +
+      gridPositionB +
+      " finalGridLength: " +
+      finalGridLength
+  );
   document.querySelector(".right_arrow").addEventListener("click", moveStuffR);
   document.querySelector(".left_arrow").addEventListener("click", moveStuffL);
 }
@@ -385,8 +419,10 @@ function setLength() {
   document.querySelector(".background_below").style.width = gridLength + "vw";
   document.querySelector(".background_above").style.width = gridLength + "vw";
   document.querySelector(".grid_pictures").style.width = gridLength + "vw";
-  document.querySelector(".background_below").style.transform = "translateX(-" + translate + "vw)";
-  document.querySelector(".background_above").style.transform = "translateX(0vw)";
+  document.querySelector(".background_below").style.transform =
+    "translateX(-" + translate + "vw)";
+  document.querySelector(".background_above").style.transform =
+    "translateX(0vw)";
 }
 
 function calculateMovement() {
