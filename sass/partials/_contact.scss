@@ -19,10 +19,15 @@ option {
   outline-style: none;
 }
 
+select,
+option {
+  background-color: #efece7;
+}
+
 input.fnavn,
 input.mail,
 textarea.besked {
-  background-color: #f0dcd9;
+  background-color: #dbaba2;
   opacity: 0.9;
   width: 100%;
   padding: 0 1rem;
@@ -39,6 +44,8 @@ textarea.besked {
   padding: 0.2rem 1.5rem;
   background-color: #efece7;
   opacity: 0.9;
+  height: 2rem;
+  width: 8rem;
 }
 
 .error {
@@ -68,6 +75,7 @@ select {
 .contact {
   overflow: scroll;
   height: calc(100% - 60px);
+  z-index: 1;
 }
 
 .flex {
@@ -75,9 +83,10 @@ select {
   flex-wrap: wrap;
   flex-direction: row-reverse;
   width: 100%;
-  height: 90%;
+  height: calc(85% - 70px);
   justify-content: center;
   align-items: flex-start;
+  overflow: scroll;
 }
 
 .contact_pic {
@@ -100,7 +109,33 @@ select {
 .contact_wrapper {
   flex-basis: 400px;
   flex-grow: 1;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
+}
+
+.social {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0 0 2rem 2rem;
+  width: 100%;
+  justify-content: flex-end;
+  height: calc(5% - 70px);
+  align-items: flex-start;
+}
+
+.social img {
+  object-fit: contain;
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
+  padding: 0.75rem;
+  padding: 0 2rem 0.75rem 0;
+}
+
+.social a {
+  margin: 0;
+  padding: 0;
+  top: auto;
+  left: auto;
 }
 @media (min-width: 900px) {
   .contact_pic,
