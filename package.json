@@ -14,10 +14,6 @@
     "start": "parcel index.html --open",
     "build": "parcel build *.html --public-url ./"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lisa3074/frontnd.ninja.git"
-  },
   "author": "Lisa Søndergaard",
   "license": "ISC"
 }
