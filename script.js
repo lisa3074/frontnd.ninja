@@ -57,8 +57,8 @@ function mainDelegation() {
 function isBrowserChrome() {
   if (innerWidth < 500) {
     console.log("mobile");
-    document.querySelector(".linkPil").setAttribute("href", true);
-    document.querySelector(".linkPil").href = "#om";
+    document.querySelector(".linkPil").setAttribute("href", "#om");
+    //document.querySelector(".linkPil").href = "#om";
   }
 }
 function setHeight() {

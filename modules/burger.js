@@ -39,8 +39,8 @@ export function burgerMenu() {
 
     if (innerWidth < 500) {
       console.log("chrome");
-      document.querySelector(".linkPerson").setAttribute("href", true);
-      document.querySelector(".linkPerson").href = "#om";
+      document.querySelector(".linkPerson").setAttribute("href", "#om");
+      //document.querySelector(".linkPerson").href = "#om";
     } else {
       console.log("not chrome");
       /*   document.querySelector(".om").scrollIntoViewIfNeeded(false); */
@@ -80,8 +80,8 @@ export function burgerMenu() {
     contact.classList = "contact fade_out_quick";
     if (innerWidth < 500) {
       console.log("chrome");
-      document.querySelector(".linkPortfolio").setAttribute("href", true);
-      document.querySelector(".linkPortfolio").href = "#portfolioet";
+      document.querySelector(".linkPortfolio").setAttribute("href", "#portfolioet");
+      //document.querySelector(".linkPortfolio").href = "#portfolioet";
     } else {
       document.querySelector(".portfolioet").scrollIntoView({
         behavior: "smooth",
