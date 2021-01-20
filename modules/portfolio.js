@@ -1,7 +1,7 @@
 const portfolioUrl = "https://frontnd.ninja/wordpress/wp-json/wp/v2/portfolio?per_page=100";
 const projectInfoUrl = "https://frontnd.ninja/wordpress/wp-json/wp/v2/projektbilleder?per_page=100";
 let count;
-let filter = "web_productions";
+let filter = "4th_sem";
 let json = 0;
 let portfolio;
 let projectInfo;
@@ -296,15 +296,15 @@ function moveStuffR() {
     gridPositionA += -100;
     gridPositionB += 100;
   } else {
-    if (finalGridLength > gridPositionB) {
-      console.log("mindre");
+    /*     if (finalGridLength < gridPositionB) {
+      console.log("mindre " + finalGridLength, gridPositionB);
       gridPositionA += -100;
       gridPositionB += 100;
-    } else {
-      console.log("større");
-      gridPositionA += -50;
-      gridPositionB += 50;
-    }
+    } else { */
+    console.log("større " + finalGridLength, gridPositionB);
+    gridPositionA += -50;
+    gridPositionB += 50;
+    /* } */
   }
   console.log("final: " + finalGridLength + " position B: " + gridPositionB);
   console.log("right");

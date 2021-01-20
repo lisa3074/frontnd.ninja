@@ -81,16 +81,12 @@ export function burgerMenu() {
     if (innerWidth < 500) {
       console.log("chrome");
       document.querySelector(".linkPortfolio").setAttribute("href", "#portfolioet");
-      //document.querySelector(".linkPortfolio").href = "#portfolioet";
     } else {
       document.querySelector(".portfolioet").scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
     }
-    document.querySelector(".kategori").textContent = "[ w e b _ p r o d u c t i o n s ]";
-    document.querySelector(".tell").textContent =
-      "This portfolio and the list of projects is an ongoing process. Check in one in a while, and maybe you'll see some new and exciting stuff.";
   });
 
   kryds1.addEventListener("click", function () {
@@ -125,29 +121,41 @@ export function burgerMenu() {
     });
   });
 
-  document.querySelectorAll(".contact_punkt, .cv_punkt, .me_punkt, .graphics, .old_mobile, .web").forEach((li) => {
-    li.addEventListener("click", function () {
-      kryds1.classList = "kryds1 scale_down";
-      kryds2.classList = "kryds2 scale_down";
-      burger1.classList.add("transition_left_back");
-      burger2.classList.add("transition_right_back");
-      person.classList = "person scale_up mobile_menu";
-      portfolio.classList = "scale_up portfolio mobile_menu";
-      streg.classList = "streg height60px";
+  document
+    .querySelectorAll(
+      ".contact_punkt, .cv_punkt, .me_punkt, .graphics, .old_mobile, .web, .first_sem, .second_sem, .third_sem, .fourth_sem"
+    )
+    .forEach((li) => {
+      li.addEventListener("click", function () {
+        kryds1.classList = "kryds1 scale_down";
+        kryds2.classList = "kryds2 scale_down";
+        burger1.classList.add("transition_left_back");
+        burger2.classList.add("transition_right_back");
+        person.classList = "person scale_up mobile_menu";
+        portfolio.classList = "scale_up portfolio mobile_menu";
+        streg.classList = "streg height60px";
+      });
     });
-  });
 
-  document.querySelector(".graphics").addEventListener("click", function () {
-    document.querySelector(".kategori").textContent = "[ g r a p h i c s ]";
-    document.querySelector(".tell").textContent = "Graphics includes illustrations, photos and everything in between.";
+  document.querySelector(".first_sem").addEventListener("click", function () {
+    document.querySelector(".kategori").textContent = "[   1 s t _ s e m e s t e r   ]";
+    document.querySelector(".tell").textContent =
+      "Projects from 1. semester in Multimedia Design. Includes simple websites, mini-games, prototypes and animations.";
   });
-  document.querySelector(".web").addEventListener("click", function () {
-    document.querySelector(".kategori").textContent = "[  w e b _ p r o d u c t i o n s ]";
-    document.querySelector(".tell").textContent = "Web productions include websites, mini-games and animations.";
+  document.querySelector(".second_sem").addEventListener("click", function () {
+    document.querySelector(".kategori").textContent = "[   2 n d _ s e m e s t e r   ]";
+    document.querySelector(".tell").textContent =
+      "Projects from 2. semester in Multimedia Design. Includes static and dynamic websites (with headless Wordpress / WP rest API)";
   });
-
-  document.querySelector(".old_mobile").addEventListener("click", function () {
-    document.querySelector(".kategori").textContent = "[ o l d _ s t u f f ]";
+  document.querySelector(".third_sem").addEventListener("click", function () {
+    document.querySelector(".kategori").textContent = "[   3 r d _ s e m e s t e r   ]";
+    document.querySelector(".tell").textContent =
+      "Projects from 3. semester in Multimedia Design. Includes more complex, interactive and dynamic web productions.";
+  });
+  document.querySelector(".fourth_sem").addEventListener("click", function () {
+    document.querySelector(".kategori").textContent = "[   4 t h _ s e m e s t e r   ]";
+    document.querySelector(".tell").textContent =
+      "Projects from 4. semester in Multimedia Design. Includes Includes more complex, interactive and dynamic web applications";
   });
 
   //mobil

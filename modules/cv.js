@@ -5,10 +5,14 @@ export function delegatenCv() {
   currPos = 0;
   pos = 0;
 
-  document.querySelectorAll("#cv, .cv_punkt, .cv_link, #contact, #person, #me, #portfolio, .desk_home, .person, web, .graphics, .contact_punkt, .me_punkt").forEach((punkt) => {
-    punkt.addEventListener("click", reset);
-    punkt.addEventListener("touchstart", reset);
-  });
+  document
+    .querySelectorAll(
+      "#cv, .cv_punkt, .cv_link, #contact, #person, #me, #portfolio, .desk_home, .person, web, .graphics, .contact_punkt, .me_punkt"
+    )
+    .forEach((punkt) => {
+      punkt.addEventListener("click", reset);
+      punkt.addEventListener("touchstart", reset);
+    });
   setPosition();
 }
 

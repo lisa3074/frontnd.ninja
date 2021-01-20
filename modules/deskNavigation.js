@@ -22,10 +22,10 @@ export function delegateMenu() {
   almPunkter.forEach((alm) => {
     alm.addEventListener("click", function () {
       almPunkter.forEach((alm) => {
-        let idAttDiff = alm.getAttribute("id");
+        let idAttDiff = alm.getAttribute("data-kategori");
         alm.textContent = idAttDiff;
       });
-      let idAtt = this.getAttribute("id");
+      let idAtt = this.getAttribute("data-kategori");
       this.textContent = "[" + idAtt + "]";
       desk.classList.remove("height_up_down");
       index.offsetHeight;
@@ -80,29 +80,41 @@ export function subMenu() {
     });
   });
 
-  document.querySelector("#graphics").addEventListener("click", function () {
+  document.querySelector("#first_sem").addEventListener("click", function () {
     document.querySelector(".portfolioet").scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
-    document.querySelector(".tell").textContent = "Graphics includes illustrations, photos and everything in between.";
-  });
-
-  document.querySelector("#web_productions").addEventListener("click", function () {
-    document.querySelector(".portfolioet").scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-    document.querySelector(".tell").textContent = "Web productions include websites, mini-games and animations.";
-  });
-
-  document.querySelector("#old_stuff").addEventListener("click", function () {
-    document.querySelector(".portfolioet").scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    document.querySelector(".kategori").textContent = "[   1 s t _ s e m e s t e r   ]";
     document.querySelector(".tell").textContent =
-      "This is the part of my portfolio, where I have selected some of my old stuff from before I started studying multimedia design";
+      "Projects from 1. semester in Multimedia Design. Includes simple websites, mini-games, prototypes and animations.";
+  });
+  document.querySelector("#second_sem").addEventListener("click", function () {
+    document.querySelector(".portfolioet").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+    document.querySelector(".kategori").textContent = "[   2 n d _ s e m e s t e r   ]";
+    document.querySelector(".tell").textContent =
+      "Projects from 2. semester in Multimedia Design. Includes static and dynamic websites (with headless Wordpress / WP rest API)";
+  });
+  document.querySelector("#third_sem").addEventListener("click", function () {
+    document.querySelector(".portfolioet").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+    document.querySelector(".kategori").textContent = "[   3 r d _ s e m e s t e r   ]";
+    document.querySelector(".tell").textContent =
+      "Projects from 3. semester in Multimedia Design. Includes more complex, interactive and dynamic web productions.";
+  });
+  document.querySelector("#fourth_sem").addEventListener("click", function () {
+    document.querySelector(".portfolioet").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+    document.querySelector(".kategori").textContent = "[   4 t h _ s e m e s t e r   ]";
+    document.querySelector(".tell").textContent =
+      "Projects from 4. semester in Multimedia Design. Includes Includes more complex, interactive and dynamic web applications";
   });
 }
 
@@ -166,7 +178,8 @@ function clickPortfolio() {
   document.querySelector(".portfolioet").classList = "portfolioet";
   document.querySelector(".contact").classList = "contact hide";
   document.querySelector(".cv").classList = "cv hide";
-  document.querySelector("#web_productions").textContent = "[web_productions]";
+  document.querySelector("#fourth_sem").textContent = "[4th_sem]";
+  document.querySelector(".kategori").textContent = "[   4 t h _ s e m e s t e r   ]";
   cv.classList = "cv hide";
   contact.classList = "contact hide";
 

@@ -67,9 +67,10 @@
   z-index: 0;
   margin: 10vw 8vw;
   text-align: center;
+  filter: invert(1);
 }
 
-/* For the aroows, when the slide is out of pictures */
+/* For the arrows, when the slide is out of pictures */
 .none {
   pointer-events: none;
 }
