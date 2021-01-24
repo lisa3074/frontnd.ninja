@@ -95,7 +95,7 @@ function displayPortfolio() {
 }
 
 function screenSize(project, klon) {
-  if (innerWidth <= 800) {
+  /*   if (innerWidth <= 800) {
     klon.querySelector("img").src = project.thumbnail_lille.guid;
   } else if (innerWidth <= 1050) {
     klon.querySelector("img").src = project.thumbnail_medium.guid;
@@ -103,7 +103,8 @@ function screenSize(project, klon) {
     klon.querySelector("img").src = project.thumbnail_stor.guid;
   } else {
     klon.querySelector("img").src = project.thumbnail_xstor.guid;
-  }
+  } */
+  klon.querySelector("img").src = project.thumbnail_xstor.guid;
 }
 
 function hideArrows() {
@@ -144,7 +145,7 @@ function checkType(project, singlePicInfo, projectList) {
   }
   document.querySelector(".luk").addEventListener("click", function () {
     console.log("luk");
-    document.querySelector("iframe").src = "";
+    document.querySelector(".embed").src = "";
   });
 }
 
@@ -163,12 +164,26 @@ function displayProject(project, projectList) {
   } else {
     document.querySelector(".documentation").href = project.dokumentation.guid;
   }
-  if (project.video == "") {
+  if (project.video == "" && project.video_link == "") {
     klon.querySelector(".website").classList.add("hide");
     klon.querySelector(".website_text").classList.add("hide");
+    klon.querySelector(".youtube").classList.add("hide");
+    klon.querySelector(".youtube_text").classList.add("hide");
+  } else if (project.video == "") {
+    klon.querySelector(".website").classList.add("hide");
+    klon.querySelector(".website_text").classList.add("hide");
+    klon.querySelector(".youtube_text").classList.remove("hide");
+    klon.querySelector(".youtube").classList.remove("hide");
+    klon.querySelector(".youtube").src = project.video_link;
+    console.log("YOUTUBE " + project.video_link);
+    klon.querySelector(".youtube").title = project.titel;
   } else {
+    klon.querySelector(".website").classList.remove("hide");
+    klon.querySelector(".website_text").classList.remove("hide");
     klon.querySelector(".website").src = project.video.guid;
     klon.querySelector(".website").poster = project.videoposter.guid;
+    klon.querySelector(".youtube").classList.add("hide");
+    klon.querySelector(".youtube_text").classList.add("hide");
   }
   if (project.projektvideo == "") {
     klon.querySelector(".projektvideo").classList.add("hide");
@@ -180,13 +195,13 @@ function displayProject(project, projectList) {
   klon.querySelector(".titel").textContent = project.titel;
   if (innerWidth >= 880) {
     if (project.embed == 1) {
-      klon.querySelector("iframe").src = project.embedlink;
+      klon.querySelector(".embed").src = project.embedlink;
     } else {
-      klon.querySelector("iframe").classList.add("hide");
+      klon.querySelector(".embed").classList.add("hide");
       klon.querySelector(".iframe_txt").classList.add("hide");
     }
   } else {
-    klon.querySelector("iframe").classList.add("hide");
+    klon.querySelector(".embed").classList.add("hide");
     klon.querySelector(".iframe_txt").classList.add("hide");
   }
   projectSize(project, billede);
@@ -208,7 +223,7 @@ function displaySiglePicture(project, singlePicInfo) {
 
 function projectSize(project, billede) {
   console.log("projectSize");
-  if (innerWidth <= 400) {
+  /*   if (innerWidth <= 400) {
     if (project.projektbillede_xlille == false) {
       billede.src = project.projektbillede_lille.guid;
     } else {
@@ -226,7 +241,8 @@ function projectSize(project, billede) {
     } else {
       billede.src = project.projektbillede_xstor.guid;
     }
-  }
+  } */
+  billede.src = project.projektbillede_xstor.guid;
 }
 
 function listen(klon, project) {
@@ -296,15 +312,9 @@ function moveStuffR() {
     gridPositionA += -100;
     gridPositionB += 100;
   } else {
-    /*     if (finalGridLength < gridPositionB) {
-      console.log("mindre " + finalGridLength, gridPositionB);
-      gridPositionA += -100;
-      gridPositionB += 100;
-    } else { */
     console.log("større " + finalGridLength, gridPositionB);
     gridPositionA += -50;
     gridPositionB += 50;
-    /* } */
   }
   console.log("final: " + finalGridLength + " position B: " + gridPositionB);
   console.log("right");
