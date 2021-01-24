@@ -350,6 +350,7 @@ _:future,
   display: flex;
   flex-wrap: wrap;
   min-height: calc(100vh - 60px);
+  min-height: calc((var(--vh, 1vh) * 100) - 60px);
 }
 
 .aspiring {

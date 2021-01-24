@@ -12,7 +12,6 @@ const deskLeft = document.querySelector(".desk_left");
 const deskRLi = document.querySelectorAll(".desk_right li");
 
 export function delegateMenu() {
-  // let menuPunkter = document.querySelectorAll(".desk_punkt");
   //Ryd op
   deskHome.removeEventListener("click", function () {});
   deskPortfolio.removeEventListener("click", function () {});
@@ -22,11 +21,28 @@ export function delegateMenu() {
   almPunkter.forEach((alm) => {
     alm.addEventListener("click", function () {
       almPunkter.forEach((alm) => {
-        let idAttDiff = alm.getAttribute("data-kategori");
-        alm.textContent = idAttDiff;
+        let idAttDiff = alm.getAttribute("id");
+
+        idAttDiff === "first_year"
+          ? (alm.textContent = "1st_year")
+          : idAttDiff === "second_year"
+          ? (alm.textContent = "2nd_year")
+          : idAttDiff === "third_year"
+          ? (alm.textContent = "3rd_year")
+          : idAttDiff === "fourth_year"
+          ? (alm.textContent = "4th_year")
+          : (alm.textContent = idAttDiff);
       });
-      let idAtt = this.getAttribute("data-kategori");
-      this.textContent = "[" + idAtt + "]";
+      let idAtt = this.getAttribute("id");
+      idAtt === "first_year"
+        ? (this.textContent = "[ 1st_year ]")
+        : idAtt === "second_year"
+        ? (this.textContent = "[ 2nd_year ]")
+        : idAtt === "third_year"
+        ? (this.textContent = "[ 3rd_year ]")
+        : idAtt === "fourth_year"
+        ? (this.textContent = "[ 4th_year ]")
+        : (this.textContent = "[" + idAtt + "]");
       desk.classList.remove("height_up_down");
       index.offsetHeight;
       desk.classList.add("height_up_down");
@@ -135,7 +151,7 @@ function clickHome() {
 
   deskHome.classList = "home_center desk_home";
   deskRight.classList = "fade_out desk_right";
-  deskLeft.classList = "fade_out desk_left";
+  deskLeft.classList = "fade_out hide desk_left";
 
   deskRLi.forEach((RPunkt) => {
     RPunkt.classList.remove("desk_punkt");
@@ -156,11 +172,11 @@ function clickHome() {
 function clickPerson() {
   setTimeout(() => {
     document.querySelector(".portfolioet").classList = "portfolioet hide";
-    /*     setTimeout(() => {
+    setTimeout(() => {
       document.querySelector("#me").textContent = "[me]";
       document.querySelector("#contact").textContent = "contact";
       document.querySelector(".#cv").textContent = "cv";
-    }, 500); */
+    }, 500);
   }, 500);
   desk.classList.remove("height_up_down");
   index.offsetHeight;
@@ -203,6 +219,7 @@ function clickPortfolio() {
   deskRLi.forEach((RPunkt) => {
     RPunkt.classList.remove("desk_punkt");
   });
+  deskLeft.classList = "fade_out desk_left";
   setTimeout(function () {
     deskLeft.classList = "desk_left fade_in";
     deskPerson.classList = "desk_person desk_menu fade_in alm_punkt";

@@ -31,7 +31,8 @@ textarea.besked {
   opacity: 0.9;
   width: 100%;
   padding: 0 1rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
+  font-family: "Montserrat";
 }
 
 .contact textarea {
@@ -66,6 +67,7 @@ textarea.besked {
 select {
   margin: 1rem 0 0 0;
   height: 35px;
+  padding: 0 0.5rem;
 }
 
 .contact .skriv_tekst {
