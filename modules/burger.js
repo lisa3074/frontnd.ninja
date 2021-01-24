@@ -123,7 +123,7 @@ export function burgerMenu() {
 
   document
     .querySelectorAll(
-      ".contact_punkt, .cv_punkt, .me_punkt, .graphics, .old_mobile, .web, .first_sem, .second_sem, .third_sem, .fourth_sem"
+      ".contact_punkt, .cv_punkt, .me_punkt, .graphics, .old_mobile, .web, .first_year, .second_year, .third_year, .fourth_year"
     )
     .forEach((li) => {
       li.addEventListener("click", function () {
@@ -137,26 +137,35 @@ export function burgerMenu() {
       });
     });
 
-  document.querySelector(".first_sem").addEventListener("click", function () {
-    document.querySelector(".kategori").textContent = "[   1 s t _ s e m e s t e r   ]";
-    document.querySelector(".tell").textContent =
-      "Projects from 1. semester in Multimedia Design. Includes simple websites, mini-games, prototypes and animations.";
+  document.querySelector(".first_year").addEventListener("click", function () {
+    document.querySelector(".kategori").textContent = "[   1 s t _ y e a r   ]";
+    document.querySelector(".tell").textContent = "Projects from 1. & 2. semester in Multimedia Design. ";
+    document.querySelector(".tell2").textContent =
+      "1. semester: simple websites, mini-games, prototypes and animations. 2. semester: static and dynamic websites (with headless Wordpress / WP rest API)";
   });
-  document.querySelector(".second_sem").addEventListener("click", function () {
-    document.querySelector(".kategori").textContent = "[   2 n d _ s e m e s t e r   ]";
-    document.querySelector(".tell").textContent =
-      "Projects from 2. semester in Multimedia Design. Includes static and dynamic websites (with headless Wordpress / WP rest API)";
+
+  document.querySelector(".second_year").addEventListener("click", function () {
+    document.querySelector(".kategori").textContent = "[   2 n d _ y e a r   ]";
+    document.querySelector(".tell").textContent = "Projects from 3. & 4. semester in Multimedia Design.";
+    document.querySelector(".tell2").textContent =
+      "Includes semi complex, interactive and dynamic web productions and applications.";
   });
-  document.querySelector(".third_sem").addEventListener("click", function () {
-    document.querySelector(".kategori").textContent = "[   3 r d _ s e m e s t e r   ]";
+
+  //FOR THE NEXT SEMESTERS
+  /*   document.querySelector(".third_year").addEventListener("click", function () {
+    document.querySelector(".kategori").textContent = "[   3 r d _ y e a r  ]";
     document.querySelector(".tell").textContent =
-      "Projects from 3. semester in Multimedia Design. Includes more complex, interactive and dynamic web productions.";
+      "Projects from 1. & 2. semester in Web development.";
+    document.querySelector(".tell2").textContent =
+      "Includes more complex, interactive and dynamic web productions.";
   });
-  document.querySelector(".fourth_sem").addEventListener("click", function () {
-    document.querySelector(".kategori").textContent = "[   4 t h _ s e m e s t e r   ]";
+  document.querySelector(".fourth_year").addEventListener("click", function () {
+    document.querySelector(".kategori").textContent = "[   4 t h _ y e a r   ]";
     document.querySelector(".tell").textContent =
-      "Projects from 4. semester in Multimedia Design. Includes Includes more complex, interactive and dynamic web applications";
-  });
+      "Projects from 3. semester in Web development.";
+        document.querySelector(".tell2").textContent =
+      "Includes more complex, interactive and dynamic web productions.";
+  }); */
 
   //mobil
   document.querySelector(".cv_punkt").addEventListener("click", function () {

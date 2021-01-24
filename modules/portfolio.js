@@ -1,7 +1,7 @@
 const portfolioUrl = "https://frontnd.ninja/wordpress/wp-json/wp/v2/portfolio?per_page=100";
 const projectInfoUrl = "https://frontnd.ninja/wordpress/wp-json/wp/v2/projektbilleder?per_page=100";
 let count;
-let filter = "4th_sem";
+let filter = "2nd_year";
 let json = 0;
 let portfolio;
 let projectInfo;
@@ -52,50 +52,63 @@ function displayPortfolio() {
   const singlePicInfo = document.querySelector(".beskriv");
   portfolioGridA.innerHTML = "";
   portfolioGridB.innerHTML = "";
+  let upperSlide = [];
+  let lowerSlide = [];
   count = 0;
-
+  portfolio.sort((a, b) => new Date(b.date) - new Date(a.date));
   portfolio.forEach((project) => {
+    console.log(project.date);
     if (project.kategori == filter || filter == "alle") {
       count++;
-
+      //The projects are loaded into two arrays. One has the newest date on index[0] the other the oldest date on index[0] (to make sure the newest projects are viewed first.)
       if (count % 2 == 0) {
-        console.log("Even Number");
-        console.log("Even" + " " + count);
-        const klon = portfolioTemplateA.cloneNode(true).content;
-        screenSize(project, klon);
-        klon.querySelector("img").alt = project.titel;
-        klon.querySelector(".titel_klonen").textContent = project.titel + " - " + project.semester;
-        klon.querySelector(".itemA").setAttribute("class", "pr" + count + " portfolio_klonen itemA");
-        klon.firstElementChild.addEventListener("click", function () {
-          singlePicInfo.textContent = "";
-          projectList.innerHTML = "";
-          checkType(project, singlePicInfo, projectList);
-        });
-        portfolioGridA.appendChild(klon);
+        upperSlide.push(project);
       } else {
-        console.log("Odd Number");
-        console.log("Odd" + " " + count);
-        const klon = portfolioTemplateB.cloneNode(true).content;
-        screenSize(project, klon);
-        klon.querySelector("img").alt = project.titel;
-        klon.querySelector(".titel_klonen").textContent = project.titel + " - " + project.semester;
-        klon.querySelector(".itemB").setAttribute("class", "pr" + count + " portfolio_klonen itemB");
-        klon.firstElementChild.addEventListener("click", function () {
-          singlePicInfo.textContent = "";
-          projectList.innerHTML = "";
-          checkType(project, singlePicInfo, projectList);
-        });
-        portfolioGridB.appendChild(klon);
-        countLength();
+        lowerSlide.unshift(project);
       }
     }
+  });
+  upperSlide.forEach((project) => {
+    console.log("Even" + " " + count);
+    const klon = portfolioTemplateA.cloneNode(true).content;
+    //Function that decides image size
+    // screenSize(project, klon);
+    klon.querySelector("img").src = project.thumbnail_xstor.guid;
+    klon.querySelector("img").alt = project.titel;
+    klon.querySelector(".titel_klonen").textContent = project.titel + " - " + project.semester;
+    klon.querySelector(".itemA").setAttribute("class", "pr" + count + " portfolio_klonen itemA");
+    klon.firstElementChild.addEventListener("click", function () {
+      singlePicInfo.textContent = "";
+      projectList.innerHTML = "";
+      checkType(project, singlePicInfo, projectList);
+    });
+    portfolioGridA.appendChild(klon);
+  });
+
+  lowerSlide.forEach((project) => {
+    console.log("Odd Number");
+    console.log("Odd" + " " + count);
+    const klon = portfolioTemplateB.cloneNode(true).content;
+    //Function that decides image size
+    // screenSize(project, klon);
+    klon.querySelector("img").src = project.thumbnail_xstor.guid;
+    klon.querySelector("img").alt = project.titel;
+    klon.querySelector(".titel_klonen").textContent = project.titel + " - " + project.semester;
+    klon.querySelector(".itemB").setAttribute("class", "pr" + count + " portfolio_klonen itemB");
+    klon.firstElementChild.addEventListener("click", function () {
+      singlePicInfo.textContent = "";
+      projectList.innerHTML = "";
+      checkType(project, singlePicInfo, projectList);
+    });
+    portfolioGridB.appendChild(klon);
+    countLength();
   });
   galleryStart();
   hideArrows();
 }
 
 function screenSize(project, klon) {
-  /*   if (innerWidth <= 800) {
+  if (innerWidth <= 800) {
     klon.querySelector("img").src = project.thumbnail_lille.guid;
   } else if (innerWidth <= 1050) {
     klon.querySelector("img").src = project.thumbnail_medium.guid;
@@ -103,8 +116,7 @@ function screenSize(project, klon) {
     klon.querySelector("img").src = project.thumbnail_stor.guid;
   } else {
     klon.querySelector("img").src = project.thumbnail_xstor.guid;
-  } */
-  klon.querySelector("img").src = project.thumbnail_xstor.guid;
+  }
 }
 
 function hideArrows() {
@@ -196,6 +208,9 @@ function displayProject(project, projectList) {
   if (innerWidth >= 880) {
     if (project.embed == 1) {
       klon.querySelector(".embed").src = project.embedlink;
+      if (project.embed_text !== "") {
+        klon.querySelector(".iframe_txt").textContent = project.embed_text;
+      }
     } else {
       klon.querySelector(".embed").classList.add("hide");
       klon.querySelector(".iframe_txt").classList.add("hide");
@@ -204,7 +219,8 @@ function displayProject(project, projectList) {
     klon.querySelector(".embed").classList.add("hide");
     klon.querySelector(".iframe_txt").classList.add("hide");
   }
-  projectSize(project, billede);
+  billede.src = project.projektbillede_xstor.guid;
+  //projectSize(project, billede);
   checkLink(project);
   listen(klon, project);
   projectList.appendChild(klon);
@@ -337,8 +353,8 @@ function moveStuffL() {
     gridPositionB += -100;
   } else {
     if (finalGridLength > gridPositionA) {
-      gridPositionA += 100;
-      gridPositionB += -100;
+      gridPositionA += 50;
+      gridPositionB += -50;
     } else {
       gridPositionA += 50;
       gridPositionB += -50;

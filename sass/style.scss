@@ -349,6 +349,7 @@ _:future,
 #om {
   display: flex;
   flex-wrap: wrap;
+  min-height: calc(100vh - 60px);
 }
 
 .aspiring {
@@ -655,7 +656,8 @@ figure {
   object-fit: contain;
 }
 
-.tell {
+.tell,
+.tell2 {
   max-width: 65ch;
 }
 
