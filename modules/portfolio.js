@@ -55,19 +55,21 @@ function displayPortfolio() {
   let upperSlide = [];
   let lowerSlide = [];
   count = 0;
-  portfolio.sort((a, b) => new Date(b.date) - new Date(a.date));
-  portfolio.forEach((project) => {
-    console.log(project.date);
-    if (project.kategori == filter || filter == "alle") {
-      count++;
-      //The projects are loaded into two arrays. One has the newest date on index[0] the other the oldest date on index[0] (to make sure the newest projects are viewed first.)
-      if (count % 2 == 0) {
-        upperSlide.push(project);
-      } else {
-        lowerSlide.unshift(project);
+  if (portfolio) {
+    portfolio.sort((a, b) => new Date(b.date) - new Date(a.date));
+    portfolio.forEach((project) => {
+      console.log(project.date);
+      if (project.kategori == filter || filter == "alle") {
+        count++;
+        //The projects are loaded into two arrays. One has the newest date on index[0] the other the oldest date on index[0] (to make sure the newest projects are viewed first.)
+        if (count % 2 == 0) {
+          upperSlide.push(project);
+        } else {
+          lowerSlide.unshift(project);
+        }
       }
-    }
-  });
+    });
+  }
   upperSlide.forEach((project) => {
     console.log("Even" + " " + count);
     const klon = portfolioTemplateA.cloneNode(true).content;
@@ -281,17 +283,46 @@ function listen(klon, project) {
 
 function checkLink(project) {
   const link = document.querySelector(".link");
+  const link2 = document.querySelector(".link2");
   if (project.link == "") {
-    link.classList.remove("a");
+    //link.classList.remove("a");
+    link.classList = "link";
     link.textContent = "";
     link.removeAttribute("href");
   } else {
-    link.classList.add("a");
+    // link.classList.add("a");
+    link.classList = "a link padding";
     link.href = project.link;
-    link.textContent = "link to website";
+    if (project.link_name === "") {
+      link.textContent = "link to website";
+    } else {
+      link.textContent = "link to " + project.link_name;
+    }
+    //  link.textContent = "link to website";
     document.querySelector(".tilbage").addEventListener("mouseover", function () {
       setTimeout(function () {
         link.classList = "link a fade_out_quick";
+      }, 300);
+    });
+  }
+  if (project.secondary_link == "") {
+    link2.classList = "link2";
+    link2.textContent = "";
+    link2.removeAttribute("href");
+  } else {
+    //link2.classList.add("a");
+    link2.classList = "fade_in_quick a link2 padding";
+    link2.href = project.secondary_link;
+    console.log(project.link_name2, project.link_name);
+    if (project.link_name2 === "") {
+      link2.textContent = "link to second website";
+    } else {
+      link2.textContent = "link to " + project.link_name2;
+    }
+    // link2.textContent = "link to second website";
+    document.querySelector(".tilbage").addEventListener("mouseover", function () {
+      setTimeout(function () {
+        link2.classList = "link2 a fade_out_quick";
       }, 300);
     });
   }

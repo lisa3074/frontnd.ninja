@@ -4,6 +4,7 @@
   height: 50vh;
   margin: 0 auto;
   overflow: hidden;
+  padding-bottom: 1rem;
 }
 /* The div that slides the upper grid */
 .background_above {
@@ -82,7 +83,7 @@
 
   .arrow_wrapper {
     position: absolute;
-    top: 7rem;
+    top: 5.5rem;
     justify-content: flex-end;
   }
   .background_above {
@@ -93,14 +94,13 @@
   }
   .grid_container {
     width: 100vw;
-    height: calc((var(--vh, 1vh) * 100) - 287px - 67px);
+    height: calc((var(--vh, 1vh) * 100) - 290px);
   }
   .grid_pictures {
     display: grid;
     grid-template-columns: repeat(auto-fill, 50vw);
     grid-template-rows: 100%;
     height: 100%;
-
     margin: 0 auto;
   }
 
@@ -112,5 +112,10 @@
   .left_arrow {
     margin: 2rem 2rem;
     text-align: right;
+  }
+}
+@media (min-width: 700px) {
+  .arrow_wrapper {
+    top: 8rem;
   }
 }

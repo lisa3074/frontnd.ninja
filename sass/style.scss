@@ -549,6 +549,7 @@ figure {
   z-index: 1;
   div {
     height: auto;
+    padding-bottom: 4rem;
   }
 }
 
@@ -605,18 +606,23 @@ figure {
 }
 
 .link,
-.documentation {
-  padding: 2rem;
+.documentation,
+.link2 {
+  // padding: 1rem 0;
   font-size: 1rem;
   font-weight: 600;
   padding-left: 1rem;
   opacity: 0;
+  display: block;
   text-decoration: overline;
 }
 
+.padding {
+  padding: 0 0 2rem 1rem;
+}
 .documentation {
   height: 2rem;
-  margin-top: 2rem;
+  //padding: 1rem 0 3rem 1rem;
 }
 
 .a {
@@ -1085,6 +1091,10 @@ picture.splash {
   .person,
   .contact {
     padding-top: 60px;
+    // height: calc((var(--vh, 1vh) * 100) - 60px - 30px);
+  }
+  .portfolioet {
+    height: calc((var(--vh, 1vh) * 100) - 60px);
   }
 
   header {

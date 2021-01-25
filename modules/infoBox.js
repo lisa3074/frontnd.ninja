@@ -9,10 +9,8 @@ export function delegateBox() {
   document.querySelector(".tilbage").addEventListener("mouseover", closeInfo);
 
   document.querySelector(".luk").addEventListener("click", function () {
-    setTimeout(() => {
-      document.querySelector(".projekt_popup").classList = "projekt_popup fade_out";
-      closeInfo();
-    }, 500);
+    document.querySelector(".projekt_popup").classList = "projekt_popup fade_out";
+    closeInfo();
   });
 }
 
@@ -21,7 +19,6 @@ function displayInfo() {
   document.querySelector(".beskrivelse_wrapper").classList = "enlarge beskrivelse_wrapper";
   document.querySelector(".info").style.right = "-1rem";
   setTimeout(function () {
-    console.log("opacity 1, mouse");
     opacityContainers.forEach((container) => {
       container.classList.add("fade_in_quick");
       container.classList.remove("fade_out_quick");
