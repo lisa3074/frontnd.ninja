@@ -86,20 +86,21 @@
     justify-content: flex-end;
   }
   .background_above {
-    height: 34vh;
+    height: 50%;
   }
   .background_below {
-    height: 34vh;
+    height: 50%;
   }
   .grid_container {
     width: 100vw;
-    height: 68vh;
+    height: calc((var(--vh, 1vh) * 100) - 287px - 67px);
   }
   .grid_pictures {
     display: grid;
     grid-template-columns: repeat(auto-fill, 50vw);
-    grid-template-rows: 34vh;
-    height: 34vh;
+    grid-template-rows: 100%;
+    height: 100%;
+
     margin: 0 auto;
   }
 

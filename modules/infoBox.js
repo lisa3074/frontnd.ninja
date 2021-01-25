@@ -1,4 +1,6 @@
-const opacityContainers = document.querySelectorAll(".beskrivelse, .overskrift_beskriv, .link, .semester, .documentation");
+const opacityContainers = document.querySelectorAll(
+  ".beskrivelse, .overskrift_beskriv, .link, .semester, .documentation"
+);
 
 export function delegateBox() {
   document.querySelector(".info").addEventListener("mouseenter", displayInfo);
@@ -7,8 +9,10 @@ export function delegateBox() {
   document.querySelector(".tilbage").addEventListener("mouseover", closeInfo);
 
   document.querySelector(".luk").addEventListener("click", function () {
-    document.querySelector(".projekt_popup").classList = "projekt_popup hide";
-    closeInfo();
+    setTimeout(() => {
+      document.querySelector(".projekt_popup").classList = "projekt_popup fade_out";
+      closeInfo();
+    }, 500);
   });
 }
 

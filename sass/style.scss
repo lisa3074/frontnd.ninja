@@ -400,7 +400,7 @@ figure {
 
 .portfolioet {
   width: 100%;
-  min-height: 93vh;
+  // min-height: 93vh;
   background-color: white;
   padding-top: 80px;
 }
@@ -496,7 +496,7 @@ figure {
   color: black;
   height: 3rem;
   position: absolute;
-  bottom: 0.2rem;
+  bottom: 0rem;
   font-weight: 600;
   letter-spacing: 1px;
   white-space: nowrap;
@@ -506,9 +506,10 @@ figure {
 }
 
 .hojde {
-  height: 100%;
+  height: 3rem;
   opacity: 0;
   background: linear-gradient(0deg, rgba(228, 204, 200, 1) 20%, rgba(205, 205, 205, 0) 20%);
+  background: rgba(228, 204, 200, 1);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -516,8 +517,8 @@ figure {
   cursor: pointer;
 }
 
-.hojde:hover {
-  transition: 1.5s;
+.portfolio_klonen:hover .hojde {
+  transition: 0.7s;
   opacity: 1;
 }
 
@@ -538,6 +539,7 @@ figure {
 
 .beskrivelse_wrapper {
   height: 100%;
+
   width: 4rem;
   background: rgba(228, 204, 200, 1);
   position: fixed;
@@ -545,6 +547,9 @@ figure {
   left: 0;
   top: 0;
   z-index: 1;
+  div {
+    height: auto;
+  }
 }
 
 .projekt_popup::-webkit-scrollbar,
@@ -660,6 +665,7 @@ figure {
 .tell,
 .tell2 {
   max-width: 65ch;
+  margin: 0;
 }
 
 .portfolioet .beskriv {
@@ -675,8 +681,8 @@ figure {
 
 .overskrift_beskriv {
   opacity: 0;
-  padding: 1rem 5rem 0rem 2rem;
-  margin: 1.5rem 0 0rem;
+  padding: 2.5rem 5rem 0rem 2rem;
+  margin: 0rem 0 0rem;
 }
 
 /*---------------KONTAKT---------------*/
@@ -996,13 +1002,7 @@ picture.splash {
     position: relative;
   }
 }
-@media (max-width: 500px) {
-  /*   .splash_pic {
-    position: relative;
-    bottom: 0;
-    height: 80%;
-  } */
-}
+
 @media (min-width: 500px) {
   .titel {
     font-size: 2rem;
@@ -1059,17 +1059,6 @@ picture.splash {
     height: 100%;
     object-fit: cover;
     filter: brightness(65%) contrast(100%) sepia(0.9) hue-rotate(320deg) saturate(40%) brightness(125%) contrast(120%);
-  }
-
-  .hojde {
-    height: 100%;
-    opacity: 0;
-    background: linear-gradient(0deg, rgba(228, 204, 200, 1) 20%, rgba(205, 205, 205, 0) 20%);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
   }
 
   .hojde:hover + .color {

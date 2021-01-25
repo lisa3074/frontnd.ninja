@@ -54,7 +54,29 @@
   justify-content: space-between;
   padding-top: 0.5rem;
 }
+.italic {
+  font-family: "Libre Baskerville";
+  color: #285d6793;
+}
 
+.cv .google {
+  list-style: disc;
+  margin: 0;
+  li,
+  ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 1.2rem;
+  }
+  .tech_list {
+    padding-left: 0;
+    li {
+      white-space: pre-wrap;
+      list-style: none;
+    }
+  }
+}
 .down {
   width: 25px;
   margin-top: 1rem;

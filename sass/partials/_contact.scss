@@ -85,10 +85,11 @@ select {
   flex-wrap: wrap;
   flex-direction: row-reverse;
   width: 100%;
-  height: calc(85% - 70px);
+  //height: calc(85% - 70px);
   justify-content: center;
   align-items: flex-start;
   overflow: scroll;
+  height: calc((var(--vh, 1vh) * 100) - 215px);
 }
 
 .contact_pic {
@@ -117,7 +118,7 @@ select {
 .social {
   display: flex;
   flex-wrap: nowrap;
-  padding: 0 0 2rem 2rem;
+  //padding: 0 0 2rem 2rem;
   width: 100%;
   justify-content: flex-end;
   height: calc(5% - 70px);

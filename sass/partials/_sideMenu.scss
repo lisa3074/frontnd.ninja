@@ -5,6 +5,9 @@
 //config
 $menu-items: 6;
 
+.sideMenu div {
+  cursor: pointer;
+}
 .menu-item .fa,
 .menu-item .fas {
   line-height: 22px;

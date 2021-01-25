@@ -211,12 +211,12 @@
       <article class="profile_text">
         <h1>[ p e r s o n ]</h1>
         <h2 class="aspiring">
-          My name is Lisa and if you’re reading this paragraph, then you found my portfolio. I have just finished the mulimedia 
-          design programme at Kea (january 21) and now I'm a student in BA web development,
+          My name is Lisa and if you’re reading this paragraph, then you found my portfolio. I have just finished the Mulimedia 
+          design programme at KEA and now I'm a student in BA web development,
            also at KEA, an education that focuses on programming digital applications.
         </h2>
         <p>
-          During my 2 years in the multimedia design programme I’ve come into contact with video production, sound editing, designing digital
+          During my 2 years in the Multimedia design programme I’ve come into contact with video production, sound editing, designing digital
           graphics, drawing illustrations, website production, UI/UX design, game creation, animations and languages
           like HTML, CSS/SCSS/SASS, Javascript and React. And that’s just on the creative side. SEO, iterative testing
           methods and agile work processes like SCRUM and Design Sprint has also been on the curriculum.
@@ -266,24 +266,29 @@
         Projects from 3. & 4. semester in Multimedia Design.
       </p>
       <p class="tell2">
-       Includes semi complex, interactive and dynamic web productions and applications.
+       Includes semi complex, interactive and dynamic web productions.
       </p>
 
       <h3 class="kategori">[   4 t h _ s e m e s t e r   ]</h3>
 
       <!---POPUP PROJEKT-->
       <article class="hide projekt_popup">
+        <div class="scroller_wrapper">
         <div class="luk">
           <img src="static/billeder/luk_u_ring.svg" alt="luk" />
         </div>
-        <div class="beskrivelse_wrapper">
-          <h1 class="overskrift_beskriv">Overskrift</h1>
-          <h2 class="semester"></h2>
-          <img src="static/billeder/dotthei3.svg" alt="info" class="info" />
-          <img src="static/billeder/tilbage.svg" alt="info" class="tilbage hide" />
-          <p class="beskrivelse"></p>
-          <a href="" target="_blank" rel="noreferrer" class="link a">link to website</a><br /><br /><br />
-          <a href="" target="_blank" rel="noreferrer" class="documentation" download>download documentation</a>
+      </div>
+        <div class="beskrivelse_wrapper smaller">
+          <div class="scroller_wrapper">
+
+            <h1 class="overskrift_beskriv">Overskrift</h1>
+            <h2 class="semester"></h2>
+            <img src="static/billeder/dotthei3.svg" alt="info" class="info" />
+            <img src="static/billeder/tilbage.svg" alt="info" class="tilbage hide" />
+            <p class="beskrivelse"></p>
+            <a href="" target="_blank" rel="noreferrer" class="link a">link to website</a><br /><br /><br />
+            <a href="" target="_blank" rel="noreferrer" class="documentation" download>download documentation</a>
+          </div>
         </div>
         <h1 class="titel"></h1>
         <div class="projekt_billede_liste"></div>
@@ -369,14 +374,10 @@
     <!--POPUP CV-->
     <section class="cv hide">
       <div class="submenu_wrapper">
-        <div class="submenu_container">
-          <!--     <h1>[<span class="cv_headings">education</span>]</h1> -->
-          <!-- <img class="submenu_arrow down" src="/static/billeder/down.png" alt="next" /> -->
-        </div>
-        <!--  <div class="arrow_container">
-          <img class="submenu_arrow side" src="/static/billeder/next.png" alt="next" />
-        </div>
- -->
+       <!--  <div class="submenu_container">
+         
+        </div> -->
+  
         <nav class="sideMenu">
           <input type="checkbox" class="menu-open big" name="menu-open" id="menu-open" />
           <label class="menu-open-button" for="menu-open">
@@ -384,52 +385,36 @@
             <span class="hamburger hamburger-2"></span>
             <span class="hamburger hamburger-3"></span>
           </label>
-
-          <!--  <a href="" id="i1" class="menu-item"> -->
           <div id="education" class="sub_cv menu-item">
             <i class="fa fa-graduation-cap">
               <span class="icon_txt">education</span>
             </i>
           </div>
-          <!--         </a> -->
-
-          <!-- <a href="" id="i2" class="menu-item"> -->
           <div id="experience" class="sub_cv menu-item">
             <i class="fas fa fa-briefcase">
               <span class="icon_txt">experience</span>
             </i>
           </div>
-          <!--    </a> -->
-
-          <!--     <a href="" id="i3" class="menu-item"> -->
           <div id="tech" class="sub_cv menu-item">
             <i class="fas fa fa-cogs">
               <span class="icon_txt">technology</span>
             </i>
           </div>
-          <!--    </a> -->
-
-          <!--         <a href="" id="i4" class="menu-item"> -->
           <div id="software" class="sub_cv menu-item">
             <i class="fas fa fa-window-restore">
               <span class="icon_txt">software</span>
             </i>
           </div>
-          <!--     </a> -->
-          <!--        <a href="" id="i5" class="menu-item"> -->
           <div id="volunteer" class="sub_cv menu-item">
             <i class="fas fa fa-hands-helping">
               <span class="icon_txt">volunteer</span>
             </i>
           </div>
-          <!--      </a> -->
-          <!--    <a href="" id="i6" class="menu-item"> -->
           <div id="language" class="sub_cv menu-item">
             <i class="fas fa fa-globe">
               <span class="icon_txt">language</span>
             </i>
           </div>
-          <!--    </a> -->
         </nav>
       </div>
       <article class="grid_cv">
@@ -437,40 +422,50 @@
           <h1>[education]</h1>
           <h2 class="noMargin" id="back">BA in Web development</h2>
           <p>
+            Jan 2021 - June 2022<br />
             Bachelor degree<br />
-            KEA - Copenhagen School of Design and Technology - 2021 - 2022<br />
+            KEA - Copenhagen School of Design and Technology
           </p>
          
           <h2>Multimedia design</h2>
           <p>
+            Jan 2019 - Jan 2021<br />
             Academy profession degree (AP)<br />
-            KEA - Copenhagen School of Design and Technology - 2019 - 2021<br />
-            Professional profile: Front-end design/development
+            KEA - Copenhagen School of Design and Technology <br/>
+            Professional profile: Frontend design & development<br/>
+            <span class="italic">Average weighted grade: 11,75</span>
           </p>
 
           <h2>EUX Business</h2>
           <p>
+            Aug 2017 - Jan 2019<br />
             Secondary education<br />
-            Skive College 2017 - 2019<br />
-            Profile: IT and business economics
+            Skive College <br/>
+            Profile: IT and business economics<br/>
+            <span class="italic">Average weighted grade: 10,6</span>
           </p>
 
           <h2>Event Management</h2>
           <p>
+            March 2012 - April 2012<br/>
             Single course, Academy course<br />
-            Erhvervsakademi Dania - 2012 - 2012
+            Erhvervsakademi Dania<br/>
+            <span class="italic">Grade: 10</span>
           </p>
 
           <h2>Event coordinator</h2>
           <p>
+            Jan 2011 - Jan 2013<br/>
             Secondary education<br />
-            CPH WEST - 2011 - 2012
+            CPH WEST<br/>
+            <span class="italic">Average weighted grade: 8,5</span>
           </p>
 
           <h2>Makeup artist</h2>
           <p>
+            Aug 2008 - Jan 2009<br />
             Creative education<br />
-            Fagskolen for dekorativ kosmetik - 2008 - 2009<br />
+            Fagskolen for dekorativ kosmetik <br/>
             Professional profile: Beauty makeup
           </p>
         </div>
@@ -479,14 +474,15 @@
 
           <h2 class="noMargin">Tutor and Tutor coordinator in multimedia design</h2>
           <p>
-            KEA - Copenhagen School of Design and Technology / 2020 - Current <br />
-            Jan 2020 - Current (tutor), July 2020 - current (tutor coordinator) <br />
+            Jan 2020 - Current (tutor) || July 2020 - current (tutor coordinator) <br />
+            KEA - Copenhagen School of Design and Technology  <br />
             Helping and coaching other multimedia students with issues related to code / rest API / git ect.
           </p>
 
           <h2>Frontend developer and UX design intern</h2>
           <p>
-            Lomwas ApS / 2020 - 2020 <br />
+            Sep 2020 -  Nov 2020 <br />
+            Lomwas ApS <br/>
             10 weeks internship, where I developed the UX design and frontend for two interctive interfaces for the
             company's software:
             <ol>
@@ -500,8 +496,9 @@
          
           <h2 class="noMargin">Owner of beauty/wellness salon</h2>
           <p>
-            HaarStraa / S:HE Copenhagen / 2013 - 2019<br />
-            S: HE Copenhagen was a wellness and beauty salon that housed 4 other small beauty / wellness companies.
+            Nov 2013 - June 2019<br />
+            HaarStraa / S:HE Copenhagen <br/>
+            S:HE Copenhagen was a wellness and beauty salon that housed 4 other small beauty / wellness companies.
             HaarStraa was a sub-brand.<br />
             Main responsibilities: Concept and brand development, management, graphic design, web design, social media
             management, administration, budgets, customer relations, strategi and business analysis.
@@ -509,7 +506,8 @@
 
           <h2>Event coordinator intern</h2>
           <p>
-            Rust ApS / 2012 - 2013 <br />
+            Aug 2012 - Jan 2013 <br />
+            Rust ApS <br/>
             I got the task to create a new concept for Thursday concerts, and then being the manager each Thursday
             evening / night while the club was live. I had the responsibility for staff, musicians, customer disputes,
             and general operation.<br />
@@ -519,13 +517,14 @@
 
           <h2>Freelance makeup artist</h2>
           <p>
-            By Lisa Bianca / 2008 - 2012 <br />
-            As a makeup artist I did runway shows, music videos and weddings.
+            Dec 2008 - July 2012 <br />
+            As a makeup artist I did make up in runway shows, music videos and for weddings.
           </p>
 
           <h2>Youth care and teaching assistant</h2>
           <p>
-            In Fredericia, Odense and Copenhagen (various locations) / 2002 - 2010 <br />
+            Aug 2002 - Sep 2010 <br />
+            In Fredericia, Odense and Copenhagen (various locations)<br/>
             Mainly with a musical focus: Music teacher in various primary schools, director of song and choir in youth
             musicals, additional educational work with children and young people.
           </p>
@@ -535,28 +534,39 @@
           <h2 class="noMargin">Spending most of my time on</h2>
           <ul class="tech_list">
             <li>HTML / HTML5</li>
-            <li>CSS / SCSS / SASS</li>
-            <li>JavaScript</li>
+            <li>CSS / SCSS</li>
+            <li>Vanilla JavaScript / JS modules</li>
+            <li>React</li>
+            <li>JSON</li>
+            <li>Git</li>
+            <li>Parcels.js</li>
+            <li>Node.js (modules) / npm</li>
+            <li>Headless Wordpress / WP rest API</li>
+            <li>RestDB</li>
           </ul>
 
-          <h2>Worked a lot with</h2>
+          <h2>Worked with</h2>
           <ul class="tech_list">
-            <li>Wordpress rest API</li>
-            <li>JSON</li>
-            <li>git</li>
-            <li>Parcel.js</li>
-            <li>Node.js (modules)</li>
-            <li>npm</li>
-            <li>RestDb</li>
-            <li>SVG animation</li>
+            <li>SVG animation / dynamic SVGs</li>
+            <li>Material UI for React (MUI)</li>
+            <li>LambdaTest (cross browser testing)</li>
+            <li>SASS / partials</li>
+            <li>GreenSock (GSAP)</li>
+            <li>Heroku</li>
+            <li>DashForge</li>
+            <li>jQuery</li>
+            <li>Cards.js, Mark.js, Day.js, date.-fns, mark.js and other small js libraries</li>
           </ul>
 
           <h2>Fairly new but very exited by</h2>
-          <ul class="tech_list">
-            <li>React</li>
-            <li>MUI (w / React)</li>
-            <li>Cards.js, Mark.js, Day.js and other small js libraries</li>
-          </ul>
+          <ol class="google">
+            <li>Google Firebase clouds products:</li>
+            <ul class="tech_list">
+              <li>‣   Firestore</li>
+              <li>‣   Cloud Storage</li>
+              <li>‣   Authentication</li>
+            </ul>
+          </ol>
         </div>
 
         <div id="soft" class="grid_section software">

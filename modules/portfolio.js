@@ -158,6 +158,12 @@ function checkType(project, singlePicInfo, projectList) {
   document.querySelector(".luk").addEventListener("click", function () {
     console.log("luk");
     document.querySelector(".embed").src = "";
+    setTimeout(() => {
+      document.querySelectorAll(".projekt_popup").forEach((element) => {
+        element.scrollTo(0, 0);
+      });
+      document.querySelector(".beskrivelse_wrapper div").scrollIntoView({ block: "start", behavior: "smooth" });
+    }, 500);
   });
 }
 
