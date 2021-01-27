@@ -67,7 +67,8 @@ export function subMenu() {
   document.querySelectorAll("#cv, .cv_link").forEach((link) => {
     link.addEventListener("click", function () {
       setTimeout(function () {
-        document.querySelector(".contact").classList = "contact hide";
+        contact.classList = "contact hide";
+        document.querySelector(".contact .social").classList = "social hide";
         document.querySelector(".cv").classList = "cv";
         document.querySelector(".portfolioet").classList = "portfolioet hide";
       }, 500);
@@ -77,7 +78,8 @@ export function subMenu() {
   document.querySelector("#contact").addEventListener("click", function () {
     setTimeout(function () {
       document.querySelector(".cv").classList = "cv hide";
-      document.querySelector(".contact").classList = "contact";
+      contact.classList = "contact";
+      document.querySelector(".contact .social").classList = "social";
       document.querySelector(".portfolioet").classList = "portfolioet hide";
       document.querySelector(".skriv_tekst").classList = "skriv_tekst";
       document.querySelectorAll(".grid_section").forEach((section) => {});
@@ -87,7 +89,8 @@ export function subMenu() {
   document.querySelector("#me").addEventListener("click", function () {
     setTimeout(function () {
       document.querySelector(".cv").classList = "cv hide";
-      document.querySelector(".contact").classList = "contact hide";
+      contact.classList = "contact hide";
+      document.querySelector(".contact .social").classList = "social hide";
       document.querySelector(".portfolioet").classList = "portfolioet hide";
     }, 500);
     document.querySelector(".om").scrollIntoView({
@@ -197,7 +200,8 @@ function clickPerson() {
 function clickPortfolio() {
   console.log("clickPortfolio");
   document.querySelector(".portfolioet").classList = "portfolioet";
-  document.querySelector(".contact").classList = "contact hide";
+  contact.classList = "contact hide";
+  document.querySelector(".contact .social").classList = "social hide";
   document.querySelector(".cv").classList = "cv hide";
   document.querySelector("#second_year").textContent = "[2nd_year]";
   document.querySelector(".kategori").textContent = "[   2 n d _ y e a r  ]";

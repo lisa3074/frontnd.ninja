@@ -1,7 +1,9 @@
 .form {
   padding: 0 2rem;
 }
-
+.contact {
+  overflow-y: scroll;
+}
 .fnavn,
 .mail {
   height: 3rem;
@@ -88,7 +90,7 @@ select {
   //height: calc(85% - 70px);
   justify-content: center;
   align-items: flex-start;
-  overflow: scroll;
+  //  overflow: scroll;
   height: calc((var(--vh, 1vh) * 100) - 215px);
 }
 
@@ -119,10 +121,16 @@ select {
   display: flex;
   flex-wrap: nowrap;
   //padding: 0 0 2rem 2rem;
+
   width: 100%;
   justify-content: flex-end;
   height: calc(5% - 70px);
   align-items: flex-start;
+}
+
+.contact .social {
+  position: absolute;
+  top: 6.3rem;
 }
 
 .social img {
@@ -134,11 +142,27 @@ select {
   padding: 0 2rem 0.75rem 0;
 }
 
+.contact .social img {
+  width: 3rem;
+  padding: 0rem 1rem 0.75rem 0rem;
+}
+
 .social a {
   margin: 0;
   padding: 0;
   top: auto;
   left: auto;
+}
+@media (min-width: 450px) {
+  .contact .social img {
+    width: 4rem;
+    padding: 0 2rem 0.75rem 0;
+  }
+}
+@media (min-width: 700px) {
+  .contact .social {
+    top: 5rem;
+  }
 }
 @media (min-width: 900px) {
   .contact_pic,
@@ -150,9 +174,6 @@ select {
     margin-top: 2rem;
   }
 
-  .contact {
-    overflow: hidden;
-  }
   .contact_pic,
   .contact_pic img {
     padding: 0;

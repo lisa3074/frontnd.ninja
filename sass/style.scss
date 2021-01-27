@@ -616,7 +616,9 @@ figure {
   display: block;
   text-decoration: overline;
 }
-
+.grecaptcha-badge {
+  visibility: hidden;
+}
 .padding {
   padding: 0 0 2rem 1rem;
 }

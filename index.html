@@ -336,10 +336,8 @@
         </figure>
         <div class="contact_wrapper">
           <p class="skriv_tekst fade_out">I'm sitting here waiting for your message!</p>
-
-          <!-- action="javascript:;" onsubmit="return validateForm(this)" -->
+<!-- onsubmit="return submitUserForm();"" -->
           <form id="contact_form" action="mail.php" class="form" method="POST">
-            <!--  method="post" er fjerne fra select pga validation -->
             <select id="select" name="selectOption">
               <option value="why" selected>I'm sending this message because...</option>
               <option value="I have a question for you">I have a question for you</option>
@@ -357,6 +355,10 @@
             <textarea name="message" rows="5" cols="20" class="besked input" placeholder="Message *" required></textarea
             ><br />
             <p>* Mandatory</p>
+     <!--   <div class="g-recaptcha" data-sitekey="6LfMszwaAAAAAPaXo-A9vxcyD-p3tA1-Oh5NTXBu"  data-callback="verifyCaptcha"></div> 
+       <p id="g-recaptcha-error"></p> -->
+    
+            <br/>
             <input type="submit" value="SEND" class="send" />
           </form>
           <p class="error"></p>
@@ -661,5 +663,21 @@
       </div>
     </div>
     <script src="script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
+   <!--  <script>
+      function submitUserForm(e) {
+          var response = grecaptcha.getResponse();
+          console.log("submitted captcha")
+          if(response.length == 0) {
+              document.querySelector('#g-recaptcha-error').innerHTML = '<span style="color:red;">This field is required.</span>';
+              return false;
+          }
+          return true;
+      }
+      function verifyCaptcha() {
+        console.log("captcha")
+          document.querySelector('#g-recaptcha-error').textContent = '';
+      }
+      </script> -->
   </body>
 </html>
