@@ -1,5 +1,5 @@
 const opacityContainers = document.querySelectorAll(
-  ".beskrivelse, .overskrift_beskriv, .link, .semester, .documentation"
+  ".beskrivelse, .overskrift_beskriv, .link, .link2, .semester, .documentation"
 );
 
 export function delegateBox() {

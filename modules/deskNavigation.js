@@ -104,7 +104,7 @@ export function subMenu() {
       behavior: "smooth",
       block: "start",
     });
-    document.querySelector(".kategori").textContent = "[   1 s t _ y e a r   ]";
+    document.querySelector(".kategori").textContent = "[ 1st_year ]";
     document.querySelector(".tell").textContent = "Projects from 1. & 2. semester in Multimedia Design. ";
     document.querySelector(".tell2").textContent =
       "Static and dynamic websites, mini-games, prototypes and animations.";
@@ -115,7 +115,7 @@ export function subMenu() {
       behavior: "smooth",
       block: "start",
     });
-    document.querySelector(".kategori").textContent = "[   2 n d _ y e a r   ]";
+    document.querySelector(".kategori").textContent = "[ 2nd_year ]";
     document.querySelector(".tell").textContent = "Projects from 3. & 4. semester in Multimedia Design.";
     document.querySelector(".tell2").textContent = "Includes semi complex, interactive and dynamic web productions.";
   });
@@ -125,7 +125,7 @@ export function subMenu() {
       behavior: "smooth",
       block: "start",
     });
-    document.querySelector(".kategori").textContent = "[   3 r d _ y e a r   ]";
+    document.querySelector(".kategori").textContent = "[ 3rd_year ]";
       document.querySelector(".tell").textContent =
       "Projects from 1. & 2. semester in Web development.";
     document.querySelector(".tell2").textContent =
@@ -136,7 +136,7 @@ export function subMenu() {
       behavior: "smooth",
       block: "start",
     });
-    document.querySelector(".kategori").textContent = "[   4 t h _ y e a r   ]";
+    document.querySelector(".kategori").textContent = "[ 4th_year ]";
   document.querySelector(".tell").textContent =
       "Projects from 3. semester in Web development.";
     document.querySelector(".tell2").textContent =
@@ -204,7 +204,7 @@ function clickPortfolio() {
   document.querySelector(".contact .social").classList = "social hide";
   document.querySelector(".cv").classList = "cv hide";
   document.querySelector("#second_year").textContent = "[2nd_year]";
-  document.querySelector(".kategori").textContent = "[   2 n d _ y e a r  ]";
+  document.querySelector(".kategori").textContent = "[ 2nd_year ]";
   cv.classList = "cv hide";
   contact.classList = "contact hide";
 

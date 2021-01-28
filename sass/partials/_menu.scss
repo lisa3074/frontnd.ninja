@@ -148,7 +148,6 @@ nav li {
 .desk_left li {
   display: inline;
   font-size: 0.9rem;
-  //height: 60px;
   letter-spacing: 2px;
 }
 
@@ -170,7 +169,7 @@ nav li {
 
 .kryds1 img,
 .kryds2 img {
-  padding: 0.5rem;
+  padding: 0.9rem;
   width: 3.5rem;
   height: 3.5rem;
 }
@@ -207,10 +206,6 @@ nav li {
   .desk {
     display: block;
   }
-
-  /*  .desk li {
-    padding: 0 0 0 2rem;
-  } */
 
   .home_left {
     transition: 1.5s;

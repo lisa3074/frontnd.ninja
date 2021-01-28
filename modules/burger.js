@@ -138,28 +138,28 @@ export function burgerMenu() {
     });
 
   document.querySelector(".first_year").addEventListener("click", function () {
-    document.querySelector(".kategori").textContent = "[   1 s t _ y e a r   ]";
+    document.querySelector(".kategori").textContent = "[ 1st_year ]";
     document.querySelector(".tell").textContent = "Projects from 1. & 2. semester in Multimedia Design. ";
     document.querySelector(".tell2").textContent =
       "Static and dynamic websites, mini-games, prototypes and animations.";
   });
 
   document.querySelector(".second_year").addEventListener("click", function () {
-    document.querySelector(".kategori").textContent = "[   2 n d _ y e a r   ]";
+    document.querySelector(".kategori").textContent = "[ 2nd_year ]";
     document.querySelector(".tell").textContent = "Projects from 3. & 4. semester in Multimedia Design.";
     document.querySelector(".tell2").textContent = "Includes semi complex, interactive and dynamic web productions.";
   });
 
   //FOR THE NEXT SEMESTERS
   /*   document.querySelector(".third_year").addEventListener("click", function () {
-    document.querySelector(".kategori").textContent = "[   3 r d _ y e a r  ]";
+    document.querySelector(".kategori").textContent = "[ 3rd_year ]";
     document.querySelector(".tell").textContent =
       "Projects from 1. & 2. semester in Web development.";
     document.querySelector(".tell2").textContent =
       "Includes more complex, interactive and dynamic web productions.";
   });
   document.querySelector(".fourth_year").addEventListener("click", function () {
-    document.querySelector(".kategori").textContent = "[   4 t h _ y e a r   ]";
+    document.querySelector(".kategori").textContent = "[ 4th_year ]";
     document.querySelector(".tell").textContent =
       "Projects from 3. semester in Web development.";
         document.querySelector(".tell2").textContent =
@@ -170,12 +170,14 @@ export function burgerMenu() {
   document.querySelector(".cv_punkt").addEventListener("click", function () {
     document.querySelector(".cv").classList = "cv";
     document.querySelector(".contact").classList = "contact hide";
+    document.querySelector(".contact .social").classList = "social hide";
     document.querySelector(".skriv_tekst").classList = "fade_out_slow skriv_tekst";
     dry();
   });
   //mobil
   document.querySelector(".contact_punkt").addEventListener("click", function () {
     document.querySelector(".contact").classList = "contact";
+    document.querySelector(".contact .social").classList = "social";
     setTimeout(function () {
       document.querySelector(".skriv_tekst").classList = "fade_in_slow skriv_tekst";
     }, 500);
@@ -194,6 +196,7 @@ export function burgerMenu() {
     setTimeout(function () {
       document.querySelector(".cv").classList = "cv hide";
       document.querySelector(".contact").classList = "contact hide";
+      document.querySelector(".contact .social").classList = "social hide";
     }, 300);
     dry();
   });

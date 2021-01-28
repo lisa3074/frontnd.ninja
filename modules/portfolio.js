@@ -303,23 +303,20 @@ function checkLink(project) {
   const link = document.querySelector(".link");
   const link2 = document.querySelector(".link2");
   if (project.link == "") {
-    //link.classList.remove("a");
     link.classList = "link";
     link.textContent = "";
     link.removeAttribute("href");
   } else {
-    // link.classList.add("a");
-    link.classList = "a link padding";
+    link.classList = "a link";
     link.href = project.link;
     if (project.link_name === "") {
       link.textContent = "link to website";
     } else {
       link.textContent = "link to " + project.link_name;
     }
-    //  link.textContent = "link to website";
     document.querySelector(".tilbage").addEventListener("mouseover", function () {
       setTimeout(function () {
-        link.classList = "link a fade_out_quick";
+        link.classList = "link a";
       }, 300);
     });
   }
@@ -328,19 +325,16 @@ function checkLink(project) {
     link2.textContent = "";
     link2.removeAttribute("href");
   } else {
-    //link2.classList.add("a");
-    link2.classList = "fade_in_quick a link2 padding";
+    link2.classList = "a link2";
     link2.href = project.secondary_link;
-    console.log(project.link_name2, project.link_name);
     if (project.link_name2 === "") {
       link2.textContent = "link to second website";
     } else {
       link2.textContent = "link to " + project.link_name2;
     }
-    // link2.textContent = "link to second website";
     document.querySelector(".tilbage").addEventListener("mouseover", function () {
       setTimeout(function () {
-        link2.classList = "link2 a fade_out_quick";
+        link2.classList = "link2 a";
       }, 300);
     });
   }

@@ -403,6 +403,10 @@ figure {
   // min-height: 93vh;
   background-color: white;
   padding-top: 80px;
+  height: calc((var(--vh, 1vh) * 100) - 75px - 8px);
+  > h1 {
+    margin-top: 0;
+  }
 }
 
 .portfolio_liste {
@@ -592,6 +596,7 @@ figure {
 }
 .kategori {
   white-space: pre-wrap;
+  letter-spacing: 3px;
 }
 .beskrivelse {
   color: black;
@@ -624,9 +629,9 @@ figure {
 .grecaptcha-badge {
   visibility: hidden;
 }
-.padding {
+/* .padding {
   padding: 0 0 2rem 1rem;
-}
+} */
 .documentation {
   height: 2rem;
   //padding: 1rem 0 3rem 1rem;
@@ -870,6 +875,11 @@ figure {
   z-index: 15;
 }
 
+.link.fade_in_quick,
+.link2.fade_in_quick {
+  padding: 0 0 2rem 1rem;
+}
+
 .fade_out_quick {
   transition: 0.5s;
   opacity: 0;
@@ -908,9 +918,7 @@ figure {
 }
 
 .greyed_out {
-  /* filter: brightness(100%) hue-rotate(150deg);
-  filter: invert(1); */
-  filter: invert(0) brightness(2.5) grayscale(1);
+  filter: invert(0) brightness(3.5) grayscale(1);
 }
 
 .color_green {
@@ -1114,6 +1122,9 @@ picture.splash {
   }
   .portfolioet {
     height: calc((var(--vh, 1vh) * 100) - 60px);
+    > h1 {
+      margin-top: 2rem;
+    }
   }
 
   header {
