@@ -428,11 +428,14 @@ figure {
 .projekt_billede_liste {
   width: 100%;
   height: auto;
-  padding: 0 3rem 0 6rem;
+  padding: 0 1rem 0 5rem;
+  justify-content: center;
+  display: flex;
 }
 
 .titel {
-  padding: 1.2rem 0rem 3rem 0rem;
+  // padding: 1.2rem 0rem 3rem 0rem;
+  padding: 1.8rem 0rem 2rem 0rem;
   margin: 0;
   font-size: 1.5rem;
 }
@@ -440,15 +443,16 @@ figure {
 .embed {
   width: 100%;
   height: 57vw;
+  height: auto;
   max-width: 1200px;
   max-height: 977px;
-  min-width: 740px;
-  min-height: 603px;
+  // min-width: 740px;
+  //min-height: 603px;
   border: none;
   margin-bottom: 2rem;
 }
 .youtube {
-  height: 45vw;
+  height: 72vw;
   max-height: 675px;
 }
 
@@ -463,7 +467,7 @@ figure {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
-  // align-items: center;
+  //max-width: 950px;
 }
 
 .projektbillede_wrapper img {
@@ -483,6 +487,7 @@ figure {
   width: 100%;
   max-width: 1200px;
   margin-bottom: 2rem;
+  border: 1px solid #e4ccc8;
 }
 
 .portfolio_klonen {
@@ -665,11 +670,23 @@ figure {
 
 .et_billede {
   width: 100%;
-  max-width: 1200px;
+  /*  max-width: 1200px; */
   max-height: 100%;
   object-fit: contain;
 }
 
+.web_video {
+  width: 100%;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > div {
+    width: 100%;
+    max-width: 1200px;
+  }
+}
 .tell,
 .tell2 {
   max-width: 65ch;
@@ -1118,7 +1135,7 @@ picture.splash {
   }
 }
 
-@media (max-width: 890px) {
+@media (max-width: 650px) {
   .embed,
   .iframe_txt {
     display: none;
@@ -1305,6 +1322,14 @@ picture.splash {
   .ninja {
     line-height: 3rem;
   }
+  .projekt_billede_liste {
+    padding: 0 3rem 0 7rem;
+  }
+}
+@media (min-width: 1200px) {
+  .projektbillede_wrapper {
+    max-width: none;
+  }
 }
 @media (min-width: 1300px) {
   .intro_heading {
@@ -1317,9 +1342,6 @@ picture.splash {
 
   .ninja {
     font-size: 2rem;
-  }
-  .projekt_billede_liste {
-    padding: 0 10rem 0 16rem;
   }
 }
 

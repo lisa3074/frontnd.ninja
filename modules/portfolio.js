@@ -74,8 +74,8 @@ function displayPortfolio() {
     console.log("Even" + " " + count);
     const klon = portfolioTemplateA.cloneNode(true).content;
     //Function that decides image size
-    // screenSize(project, klon);
-    klon.querySelector("img").src = project.thumbnail_xstor.guid;
+    screenSize(project, klon);
+    //klon.querySelector("img").src = project.thumbnail_xstor.guid;
     klon.querySelector("img").alt = project.titel;
     klon.querySelector(".titel_klonen").textContent = project.titel + " - " + project.semester;
     klon.querySelector(".itemA").setAttribute("class", "pr" + count + " portfolio_klonen itemA");
@@ -92,8 +92,8 @@ function displayPortfolio() {
     console.log("Odd" + " " + count);
     const klon = portfolioTemplateB.cloneNode(true).content;
     //Function that decides image size
-    // screenSize(project, klon);
-    klon.querySelector("img").src = project.thumbnail_xstor.guid;
+    screenSize(project, klon);
+    // klon.querySelector("img").src = project.thumbnail_xstor.guid;
     klon.querySelector("img").alt = project.titel;
     klon.querySelector(".titel_klonen").textContent = project.titel + " - " + project.semester;
     klon.querySelector(".itemB").setAttribute("class", "pr" + count + " portfolio_klonen itemB");
@@ -110,12 +110,22 @@ function displayPortfolio() {
 }
 
 function screenSize(project, klon) {
-  if (innerWidth <= 800) {
+  /*   if (innerWidth <= 800) {
     klon.querySelector("img").src = project.thumbnail_lille.guid;
   } else if (innerWidth <= 1050) {
     klon.querySelector("img").src = project.thumbnail_medium.guid;
   } else if (innerWidth <= 1400) {
     klon.querySelector("img").src = project.thumbnail_stor.guid;
+  } else {
+    klon.querySelector("img").src = project.thumbnail_xstor.guid;
+  } */
+
+  if (innerWidth <= 800) {
+    if (project.thumbnail_medium.guid) {
+      klon.querySelector("img").src = project.thumbnail_medium.guid;
+    } else {
+      klon.querySelector("img").src = project.thumbnail_xstor.guid;
+    }
   } else {
     klon.querySelector("img").src = project.thumbnail_xstor.guid;
   }
@@ -213,7 +223,7 @@ function displayProject(project, projectList) {
     klon.querySelector(".projektvideo").poster = project.projektvideo_poster.guid;
   }
   klon.querySelector(".titel").textContent = project.titel;
-  if (innerWidth >= 880) {
+  if (innerWidth >= 88) {
     if (project.embed == 1) {
       klon.querySelector(".embed").src = project.embedlink;
       if (project.embed_text !== "") {
@@ -227,8 +237,8 @@ function displayProject(project, projectList) {
     klon.querySelector(".embed").classList.add("hide");
     klon.querySelector(".iframe_txt").classList.add("hide");
   }
-  billede.src = project.projektbillede_xstor.guid;
-  //projectSize(project, billede);
+  // billede.src = project.projektbillede_xstor.guid;
+  projectSize(project, billede);
   checkLink(project);
   listen(klon, project);
   projectList.appendChild(klon);
@@ -266,7 +276,15 @@ function projectSize(project, billede) {
       billede.src = project.projektbillede_xstor.guid;
     }
   } */
-  billede.src = project.projektbillede_xstor.guid;
+  if (innerWidth <= 1200) {
+    if (project.projektbillede_medium.guid) {
+      billede.src = project.projektbillede_medium.guid;
+    } else {
+      billede.src = project.projektbillede_xstor.guid;
+    }
+  } else {
+    billede.src = project.projektbillede_xstor.guid;
+  }
 }
 
 function listen(klon, project) {
