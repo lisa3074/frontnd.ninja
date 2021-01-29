@@ -18,7 +18,7 @@ $email = $_POST['email'];
 $message = $_POST['message'];
 $formcontent = "Emne: $select \n Fra: $firstname \n Email: $email \n Besked: $message";
 $recipient ="iam@frontnd.ninja";
-$subject ="Kontaktformular fra f r o n t n d . n i n j a";
+$subject ="Frontnd.ninja: $select \n";
 $mailheader = "Fra: $email \r\n";
 mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
 echo "[ thank you ]";

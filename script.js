@@ -37,6 +37,10 @@ function mainDelegation() {
   delegateSideMenu();
   setHeight();
   isBrowserChrome();
+  document.querySelector(".send").addEventListener("click", (e) => {
+    // e.preventDefault();
+    submitUserForm(e);
+  });
 
   document.querySelector("#select").addEventListener("change", function () {
     const subjecktChosen = event.target.value;
@@ -52,6 +56,29 @@ function mainDelegation() {
   document.querySelector(".enkelt").addEventListener("click", function () {
     document.querySelector(".et_billede").src = "";
   });
+}
+function submitUserForm(e) {
+  console.log("submitted captcha");
+  var response = grecaptcha.getResponse();
+  const select = document.querySelector(".select").value;
+  const fname = document.querySelector(".fnavn").value;
+  const mail = document.querySelector(".mail").value;
+  const message = document.querySelector(".besked").value;
+  if (response.length == 0) {
+    e.preventDefault();
+    console.log(response.length);
+    console.log("WHY");
+    document.querySelector("#g-recaptcha-error").innerHTML = '<span style="color:red;">This field is required.</span>';
+    return false;
+  } else {
+    document.querySelector(".select2").value = select;
+    document.querySelector(".fnavn2").value = fname;
+    document.querySelector(".mail2").value = mail;
+    document.querySelector(".besked2").value = message;
+    setTimeout(() => {
+      document.querySelector("#hidden_form").submit();
+    }, 200);
+  }
 }
 
 function isBrowserChrome() {

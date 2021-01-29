@@ -341,8 +341,8 @@
         </figure>
         <div class="contact_wrapper">
           <p class="skriv_tekst fade_out">I'm sitting here waiting for your message!</p>
-<!-- onsubmit="return submitUserForm();"" -->
-          <form id="contact_form" action="mail.php" class="form" method="POST">
+
+   <article id="contact_form" class="form"> 
             <select id="select" name="selectOption">
               <option value="why" selected>I'm sending this message because...</option>
               <option value="I have a question for you">I have a question for you</option>
@@ -352,21 +352,30 @@
               <option value="None of the above">None of the above</option>
             </select>
             <br />
-            <input type="text" name="select" class="select" /><br />
-            <input type="text" placeholder="Name *" name="firstname" class="fnavn input" required />
+            <input type="text" class="select" /><br />
+            <input type="text" placeholder="Name *" class="fnavn input" required />
             <br />
-            <input type="email" name="email" placeholder="Email *" class="mail input" required />
+            <input type="email" placeholder="Email *" class="mail input" required />
             <br />
-            <textarea name="message" rows="5" cols="20" class="besked input" placeholder="Message *" required></textarea
+            <textarea rows="5" cols="20" class="besked input" placeholder="Message *" required></textarea
             ><br />
             <p>* Mandatory</p>
-     <!--   <div class="g-recaptcha" data-sitekey="6LfMszwaAAAAAPaXo-A9vxcyD-p3tA1-Oh5NTXBu"  data-callback="verifyCaptcha"></div> 
-       <p id="g-recaptcha-error"></p> -->
-    
+           <div class="g-recaptcha" data-sitekey="6LfMszwaAAAAAPaXo-A9vxcyD-p3tA1-Oh5NTXBu"  data-callback="verifyCaptcha"></div> 
+           <p id="g-recaptcha-error"></p> 
             <br/>
-            <input type="submit" value="SEND" class="send" />
-          </form>
+             <input type="submit" value="SEND" name="submit" class="send"/> 
+       </article>
           <p class="error"></p>
+
+<!-- HIDDEN FORM -->
+          <form action="mail.php" class="hide" id="hidden_form" method="POST">
+            <input type="text" name="select" class="select2" /><br />
+            <input type="text" placeholder="Name *" name="firstname" class="fnavn2 input" required />
+            <input type="email" name="email" placeholder="Email *" class="mail2 input" required />
+            <textarea name="message" rows="5" cols="20" class="besked2 input" placeholder="Message *" required></textarea>
+          </form>
+
+          
         </div>
       </div>
       <div class="social">
@@ -382,10 +391,6 @@
     <!--POPUP CV-->
     <section class="cv hide">
       <div class="submenu_wrapper">
-       <!--  <div class="submenu_container">
-         
-        </div> -->
-  
         <nav class="sideMenu">
           <input type="checkbox" class="menu-open big" name="menu-open" id="menu-open" />
           <label class="menu-open-button" for="menu-open">
@@ -531,7 +536,7 @@
 
           <h2>Singer/songwriter</h2>
           <p>
-            Lisa Vegas <br/>
+            lisa vegas <br/>
             2003 - 2009 <br/>
             Responsibilities: Songwriting, web design, graphic design, music production, event
             planning, booking, promotion.
@@ -672,20 +677,11 @@
     </div>
     <script src="script.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
-   <!--  <script>
-      function submitUserForm(e) {
-          var response = grecaptcha.getResponse();
-          console.log("submitted captcha")
-          if(response.length == 0) {
-              document.querySelector('#g-recaptcha-error').innerHTML = '<span style="color:red;">This field is required.</span>';
-              return false;
-          }
-          return true;
-      }
+    <script>
       function verifyCaptcha() {
         console.log("captcha")
           document.querySelector('#g-recaptcha-error').textContent = '';
       }
-      </script> -->
+      </script> 
   </body>
 </html>
