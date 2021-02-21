@@ -15,18 +15,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="og:image" content="static/billeder/lisa_seo_img.jpg" />
+    <!-- <meta name="og:image" content="billeder/lisa_seo_img.jpg" /> -->
+    <meta name="image" property="og:image" content="static/billeder/lisa_seo_img.jpg">
     <meta name="designer" content="Lisa Bianca Henning Søndergaard | iam@frontnd.ninja | www.frontnd.ninja" />
     <meta
       name="description"
-      content="This is the online portfolio of Lisa Søndergaard, student in Multimedia design at KEA and aspiring frontend developer."
+      content="This is the online portfolio of Lisa Søndergaard, Multimedia designer, student in top up to bachelor in Web development at KEA and aspiring frontend developer."
     />
     <meta
       name="keywords"
       content="animation, code, css, designer, digital design, front end, front end developer, git, graphic, design, html, interface, javascript, json, multimedia design, programming, ui, web design, wordpress, web development, lisa, lisa bianca, lisa søndergaard, webudvikling, frontend udvikling, frontend, frontend developer, copenhagen, denmark, frontend copenhagen, intern copenhagen, web copenhagen, web development copenhagen, web development københavn, københavn, webdesign københavn, web design copenhagen"
     />
     <meta name="author" content="Lisa Søndergaard | Multimedia designer | future web developer" />
-    <title>Multimedia designer || Lisa Søndergaard || Online portfolio</title>
+    <title>Web developer & Multimedia designer || Lisa Søndergaard || Online portfolio</title>
     <link
       href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400i|Montserrat&display=swap"
       rel="stylesheet"
@@ -360,10 +361,15 @@
             <textarea rows="5" cols="20" class="besked input" placeholder="Message *" required></textarea
             ><br />
             <p>* Mandatory</p>
-           <div class="g-recaptcha" data-sitekey="6LfMszwaAAAAAPaXo-A9vxcyD-p3tA1-Oh5NTXBu"  data-callback="verifyCaptcha"></div> 
-           <p id="g-recaptcha-error"></p> 
-            <br/>
-             <input type="submit" value="SEND" name="submit" class="send"/> 
+          <!--  <div class="g-recaptcha" data-sitekey="6LfMszwaAAAAAPaXo-A9vxcyD-p3tA1-Oh5NTXBu"  data-callback="verifyCaptcha"></div>  -->
+          
+<!--          <input type="submit" value="SEND" name="submit" class="send"/>   -->
+          <button class="g-recaptcha send" 
+          data-sitekey="6LfMszwaAAAAAPaXo-A9vxcyD-p3tA1-Oh5NTXBu" 
+        data-callback='submitUserForm' 
+        data-action='submit'>Send</button>
+          <p id="g-recaptcha-error"></p> 
+          <p id="subject-error"></p> 
        </article>
           <p class="error"></p>
 
@@ -676,12 +682,13 @@
       </div>
     </div>
     <script src="script.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+  <!--   <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script> -->
     <script>
-      function verifyCaptcha() {
+  /*     function verifyCaptcha() {
         console.log("captcha")
           document.querySelector('#g-recaptcha-error').textContent = '';
-      }
+      } */
       </script> 
   </body>
 </html>

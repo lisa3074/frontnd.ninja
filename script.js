@@ -42,10 +42,14 @@ function mainDelegation() {
     submitUserForm(e);
   });
 
-  document.querySelector("#select").addEventListener("change", function () {
-    const subjecktChosen = event.target.value;
+  document.querySelector("#select").addEventListener("change", function (e) {
+    const subjecktChosen = e.target.value;
     subject(subjecktChosen);
   });
+
+  /*   if (document.querySelector(".select").value == "") {
+    document.querySelector("input.send").setAttribute("disabled", true);
+  } */
 
   window.addEventListener("resize", setHeight);
   document.querySelector(".pil_ned").addEventListener("click", clickPil);
@@ -59,17 +63,24 @@ function mainDelegation() {
 }
 function submitUserForm(e) {
   console.log("submitted captcha");
-  var response = grecaptcha.getResponse();
+  //var response = grecaptcha.getResponse();
   const select = document.querySelector(".select").value;
   const fname = document.querySelector(".fnavn").value;
   const mail = document.querySelector(".mail").value;
   const message = document.querySelector(".besked").value;
-  if (response.length == 0) {
+  /*   if (response.length == 0) {
     e.preventDefault();
     console.log(response.length);
     console.log("WHY");
-    document.querySelector("#g-recaptcha-error").innerHTML = '<span style="color:red;">This field is required.</span>';
+    document.querySelector("#g-recaptcha-error").innerHTML =
+      '<span style="color:red;">reCapcha.</span>';
     return false;
+  } else */ if (
+    document.querySelector(".select").value == "why" ||
+    document.querySelector(".select").value == ""
+  ) {
+    document.querySelector("#subject-error").innerHTML =
+      '<span style="color:red;">Please choose a subject at the top...</span>';
   } else {
     document.querySelector(".select2").value = select;
     document.querySelector(".fnavn2").value = fname;
@@ -170,4 +181,9 @@ function invertColors() {
 function subject(subjectChosen) {
   console.log("subject");
   document.querySelector(".select").value = subjectChosen;
+  /*   if (document.querySelector(".select").value == "why") {
+    document.querySelector("input.send").setAttribute("disabled", true);
+  } else {
+    document.querySelector("input.send").removeAttribute("disabled");
+  } */
 }
